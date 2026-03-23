@@ -260,7 +260,7 @@ async function fetchStaticSiteData(force = false) {
 }
 
 async function loadData(force = false) {
-  refreshBtn.disabled = true;
+  if (refreshBtn) refreshBtn.disabled = true;
   meta.textContent = 'Loading latest issue data...';
 
   try {
@@ -286,11 +286,13 @@ async function loadData(force = false) {
   } catch (error) {
     meta.textContent = `Load failed: ${error.message}`;
   } finally {
-    refreshBtn.disabled = false;
+    if (refreshBtn) refreshBtn.disabled = false;
   }
 }
 
-refreshBtn.addEventListener('click', () => loadData(true));
+if (refreshBtn) {
+  refreshBtn.addEventListener('click', () => loadData(true));
+}
 backToAllBtn.addEventListener('click', () => {
   setSelectedSourceId('');
   renderLayout(latestPayload, latestTranslationMap);

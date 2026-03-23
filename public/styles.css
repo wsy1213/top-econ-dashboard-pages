@@ -83,7 +83,7 @@ h1 {
 .controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
   margin-top: 18px;
 }
@@ -114,9 +114,21 @@ button:disabled {
   color: var(--muted);
 }
 
-.credit {
-  margin: 8px 0 0;
-  font-size: 13px;
+.meta-line {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sep {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.creator {
+  font-size: 14px;
   color: var(--muted);
 }
 
