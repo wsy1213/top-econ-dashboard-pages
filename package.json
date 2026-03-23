@@ -1,0 +1,14 @@
+{
+  "name": "top-econ-journals-reader",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "build:static": "node scripts/build-static-data.mjs",
+    "postinstall": "npx playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  }
+}

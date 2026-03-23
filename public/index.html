@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Economics Journals - Latest Issue Reader</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <main class="container">
+      <header class="hero">
+        <p class="kicker">Research Dashboard</p>
+        <h1>Top Economics Journals: Latest Issue Reader</h1>
+        <p class="subtitle">
+          Tracking the frontier of economic research from leading journals and top working papers worldwide.
+        </p>
+
+        <div class="controls">
+          <button id="refreshBtn" type="button">Refresh Data</button>
+          <p id="meta" class="meta">Loading...</p>
+        </div>
+        <p class="credit">Created and Designed by dramaticgirl</p>
+      </header>
+
+      <nav id="journalSwitcher" class="journal-switcher" aria-label="Journal switcher"></nav>
+
+      <section id="singleSection" class="section hidden">
+        <div class="section-head single-head">
+          <button id="backToAllBtn" type="button" class="ghost-btn">Back to All Journals</button>
+          <h2 id="singleTitle">Journal</h2>
+        </div>
+        <div id="singleGrid" class="grid single"></div>
+      </section>
+
+      <section id="nberSection" class="section overview-section">
+        <div class="section-head">
+          <h2>National Bureau of Economic Research</h2>
+        </div>
+        <div id="nberGrid" class="grid single"></div>
+      </section>
+
+      <section id="enSection" class="section overview-section">
+        <div class="section-head">
+          <h2>International Journals</h2>
+        </div>
+        <div id="enGrid" class="grid"></div>
+      </section>
+
+      <section id="zhSection" class="section overview-section">
+        <div class="section-head">
+          <h2>中文期刊</h2>
+        </div>
+        <div id="zhGrid" class="grid"></div>
+      </section>
+    </main>
+
+    <template id="cardTpl">
+      <article class="card">
+        <div class="card-head">
+          <h3 class="journal-name"></h3>
+        </div>
+        <p class="issue"></p>
+        <ul class="articles"></ul>
+      </article>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
