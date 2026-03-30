@@ -298,6 +298,19 @@ h2 {
   line-height: 1.42;
 }
 
+.topic-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #0b5f57;
+  background: color-mix(in srgb, var(--accent-soft), #ffffff 25%);
+  border: 1px solid #9ed2c9;
+  vertical-align: middle;
+}
+
 .title-zh {
   margin-top: 3px;
   color: #4a566c;

@@ -15,6 +15,35 @@ let latestTranslationMap = {};
 let openDropdown = null;
 const PAGE_BASE = window.location.pathname.replace(/[^/]*$/, '');
 
+const PUBLIC_ECON_PATTERNS_EN = [
+  /\bpublic economics?\b/i,
+  /\bpublic finance\b/i,
+  /\btax(?:ation)?\b/i,
+  /\bfiscal\b/i,
+  /\bgovernment\b/i,
+  /\bpublic spending\b/i,
+  /\bmedicaid\b/i,
+  /\bmedicare\b/i,
+  /\bsocial security\b/i,
+  /\bwelfare\b/i,
+  /\btransfer(?:s)?\b/i,
+  /\bredistribution\b/i,
+  /\bpoverty\b/i,
+  /\binequalit/i,
+  /\bhealth insurance\b/i,
+  /\beducation policy\b/i,
+  /\bunemployment insurance\b/i,
+  /\bminimum wage\b/i,
+  /\bsubsid(?:y|ies)\b/i,
+  /\bcarbon tax\b/i
+];
+
+const PUBLIC_ECON_KEYWORDS_ZH = [
+  '财政', '税', '税收', '公共', '政府', '公共服务', '公共政策',
+  '社保', '社会保障', '医保', '养老', '教育', '扶贫', '贫困',
+  '再分配', '转移支付', '地方债', '补贴', '预算', '财政政策'
+];
+
 function clearNodes(el) {
   while (el.firstChild) el.removeChild(el.firstChild);
 }
@@ -24,6 +53,13 @@ function toLocaleDate(value) {
   const d = new Date(value);
   if (Number.isNaN(d.getTime())) return value;
   return d.toLocaleString();
+}
+
+function isPublicEconomicsArticle(title = '', translated = '') {
+  const t = String(title || '').toLowerCase();
+  const z = String(translated || '');
+  if (PUBLIC_ECON_PATTERNS_EN.some((re) => re.test(t))) return true;
+  return PUBLIC_ECON_KEYWORDS_ZH.some((kw) => z.includes(kw) || String(title).includes(kw));
 }
 
 function renderSource(source, translationMap = {}) {
@@ -47,14 +83,28 @@ function renderSource(source, translationMap = {}) {
 
   for (const article of source.articles) {
     const li = document.createElement('li');
+    const rawTitle = String(article.title || 'Untitled');
+    const cleanTitleForTranslate = rawTitle
+      .replace(/\s*(?:--|—|-|,|;)\s*by\s+.+$/i, '')
+      .trim();
+    const zhTitle = source.language === 'en'
+      ? (translationMap[cleanTitleForTranslate] || translationMap[rawTitle] || '')
+      : '';
 
     const a = document.createElement('a');
     a.href = article.url || source.sourceUrl;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
-    a.textContent = article.title || 'Untitled';
+    a.textContent = rawTitle;
 
     li.appendChild(a);
+
+    if (isPublicEconomicsArticle(rawTitle, zhTitle)) {
+      const tag = document.createElement('span');
+      tag.className = 'topic-tag';
+      tag.textContent = 'Public Economics';
+      li.appendChild(tag);
+    }
 
     if (source.id === 'nber' && article.authors) {
       const authorInline = document.createElement('span');
@@ -64,10 +114,6 @@ function renderSource(source, translationMap = {}) {
     }
 
     if (source.language === 'en') {
-      const cleanTitleForTranslate = String(article.title || '')
-        .replace(/\s*(?:--|—|-|,|;)\s*by\s+.+$/i, '')
-        .trim();
-      const zhTitle = translationMap[cleanTitleForTranslate] || translationMap[article.title] || '';
       if (zhTitle && zhTitle !== article.title) {
         const zhDiv = document.createElement('div');
         zhDiv.className = 'title-zh';
