@@ -8,13 +8,15 @@ const singleSection = document.getElementById('singleSection');
 const singleTitle = document.getElementById('singleTitle');
 const journalSwitcher = document.getElementById('journalSwitcher');
 const backToAllBtn = document.getElementById('backToAllBtn');
-const topicSelect = document.getElementById('topicSelect');
+const topicResultsSection = document.getElementById('topicResultsSection');
+const topicTitle = document.getElementById('topicTitle');
 const topicList = document.getElementById('topicList');
 const overviewSections = Array.from(document.querySelectorAll('.overview-section'));
 const cardTpl = document.getElementById('cardTpl');
 let latestPayload = null;
 let latestTranslationMap = {};
 let openDropdown = null;
+let selectedTopic = 'journal';
 const PAGE_BASE = window.location.pathname.replace(/[^/]*$/, '');
 
 const PUBLIC_ECON_PATTERNS_EN = [
@@ -78,12 +80,22 @@ const TRADE_KEYWORDS_ZH = ['贸易', '关税', '进出口', '出口', '进口', 
 const ENV_KEYWORDS_ZH = ['环境', '气候', '碳', '排放', '污染', '绿色', '生态'];
 
 const TOPIC_LABELS = {
+  journal: 'By Journal',
   public: 'Public Economics',
   industry: 'Industrial Policy',
   trade: 'Trade',
   environment: 'Environment',
   other: 'Other'
 };
+
+const TOPIC_OPTIONS = [
+  { id: 'journal', label: 'By Journal' },
+  { id: 'public', label: 'Public Economics' },
+  { id: 'industry', label: 'Industrial Policy' },
+  { id: 'trade', label: 'Trade' },
+  { id: 'environment', label: 'Environment' },
+  { id: 'other', label: 'Other' }
+];
 
 function clearNodes(el) {
   while (el.firstChild) el.removeChild(el.firstChild);
@@ -157,7 +169,7 @@ function renderSource(source, translationMap = {}) {
     li.appendChild(a);
 
     const tag = document.createElement('span');
-    tag.className = 'topic-tag';
+    tag.className = `topic-tag topic-${topic}`;
     tag.textContent = TOPIC_LABELS[topic];
     li.appendChild(tag);
 
@@ -225,7 +237,7 @@ function collectTopicEntries(payload, translationMap = {}, selected = 'all') {
 
 function renderTopicList(payload, translationMap = {}) {
   clearNodes(topicList);
-  const selected = topicSelect?.value || 'all';
+  const selected = selectedTopic;
   if (selected === 'journal') return;
   const items = collectTopicEntries(payload, translationMap, selected);
 
@@ -249,7 +261,7 @@ function renderTopicList(payload, translationMap = {}) {
     li.appendChild(a);
 
     const tag = document.createElement('span');
-    tag.className = 'topic-tag';
+    tag.className = `topic-tag topic-${item.topic}`;
     tag.textContent = TOPIC_LABELS[item.topic];
     li.appendChild(tag);
 
@@ -287,6 +299,52 @@ function setSelectedSourceId(sourceId) {
 
 function buildSwitcher(payload) {
   clearNodes(journalSwitcher);
+
+  const topicWrap = document.createElement('div');
+  topicWrap.className = 'dropdown';
+
+  const topicTrigger = document.createElement('button');
+  topicTrigger.type = 'button';
+  topicTrigger.className = 'dropdown-btn';
+  topicTrigger.textContent = `Topic: ${TOPIC_LABELS[selectedTopic]}`;
+  topicTrigger.setAttribute('aria-expanded', 'false');
+
+  const topicMenu = document.createElement('div');
+  topicMenu.className = 'dropdown-menu';
+
+  for (const opt of TOPIC_OPTIONS) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'dropdown-item';
+    btn.textContent = opt.label;
+    btn.addEventListener('click', () => {
+      selectedTopic = opt.id;
+      setSelectedSourceId('');
+      topicWrap.classList.remove('open');
+      topicTrigger.setAttribute('aria-expanded', 'false');
+      openDropdown = null;
+      renderLayout(latestPayload, latestTranslationMap);
+    });
+    topicMenu.appendChild(btn);
+  }
+
+  topicTrigger.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    const willOpen = !topicWrap.classList.contains('open');
+    if (openDropdown && openDropdown !== topicWrap) {
+      const prevBtn = openDropdown.querySelector('.dropdown-btn');
+      openDropdown.classList.remove('open');
+      if (prevBtn) prevBtn.setAttribute('aria-expanded', 'false');
+    }
+    topicWrap.classList.toggle('open', willOpen);
+    topicTrigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    openDropdown = willOpen ? topicWrap : null;
+  });
+
+  topicWrap.appendChild(topicTrigger);
+  topicWrap.appendChild(topicMenu);
+  journalSwitcher.appendChild(topicWrap);
+
   const groups = [
     {
       label: 'National Bureau of Economic Research',
@@ -378,10 +436,10 @@ function renderSingle(payload, translationMap = {}) {
 
 function renderLayout(payload, translationMap = {}) {
   if (!payload) return;
-  const selectedTopic = topicSelect?.value || 'journal';
   const topicMode = selectedTopic !== 'journal';
 
   renderTopicList(payload, translationMap);
+  topicTitle.textContent = topicMode ? `Topic: ${TOPIC_LABELS[selectedTopic]}` : 'Topic View';
   buildSwitcher(payload);
   if (!topicMode) {
     renderOverview(payload, translationMap);
@@ -396,6 +454,7 @@ function renderLayout(payload, translationMap = {}) {
   for (const section of overviewSections) {
     section.classList.toggle('hidden', hasSingle || topicMode);
   }
+  topicResultsSection.classList.toggle('hidden', !topicMode);
   topicList.classList.toggle('hidden', !topicMode);
 
   const ts = toLocaleDate(payload.generatedAt);
@@ -483,11 +542,6 @@ async function loadData(force = false) {
 
 if (refreshBtn) {
   refreshBtn.addEventListener('click', () => loadData(true));
-}
-if (topicSelect) {
-  topicSelect.addEventListener('change', () => {
-    renderLayout(latestPayload, latestTranslationMap);
-  });
 }
 backToAllBtn.addEventListener('click', () => {
   setSelectedSourceId('');

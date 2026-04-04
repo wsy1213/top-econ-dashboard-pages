@@ -27,25 +27,13 @@
         </div>
       </header>
 
-      <section class="section topic-tools">
-        <div class="section-head topic-head">
-          <h2>Thematic View</h2>
-          <div class="topic-filter">
-            <label for="topicSelect">Topic</label>
-            <select id="topicSelect">
-              <option value="journal">By Journal (Default)</option>
-              <option value="public">Public Economics</option>
-              <option value="industry">Industrial Policy</option>
-              <option value="trade">Trade</option>
-              <option value="environment">Environment</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
+      <nav id="journalSwitcher" class="journal-switcher" aria-label="Journal switcher"></nav>
+      <section id="topicResultsSection" class="section hidden">
+        <div class="section-head">
+          <h2 id="topicTitle">Topic View</h2>
         </div>
         <ul id="topicList" class="topic-list"></ul>
       </section>
-
-      <nav id="journalSwitcher" class="journal-switcher" aria-label="Journal switcher"></nav>
 
       <section id="singleSection" class="section hidden">
         <div class="section-head single-head">
