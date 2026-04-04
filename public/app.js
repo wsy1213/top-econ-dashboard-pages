@@ -226,6 +226,7 @@ function collectTopicEntries(payload, translationMap = {}, selected = 'all') {
 function renderTopicList(payload, translationMap = {}) {
   clearNodes(topicList);
   const selected = topicSelect?.value || 'all';
+  if (selected === 'journal') return;
   const items = collectTopicEntries(payload, translationMap, selected);
 
   if (!items.length) {
@@ -377,15 +378,25 @@ function renderSingle(payload, translationMap = {}) {
 
 function renderLayout(payload, translationMap = {}) {
   if (!payload) return;
+  const selectedTopic = topicSelect?.value || 'journal';
+  const topicMode = selectedTopic !== 'journal';
+
   renderTopicList(payload, translationMap);
   buildSwitcher(payload);
-  renderOverview(payload, translationMap);
-
-  const hasSingle = renderSingle(payload, translationMap);
-  singleSection.classList.toggle('hidden', !hasSingle);
-  for (const section of overviewSections) {
-    section.classList.toggle('hidden', hasSingle);
+  if (!topicMode) {
+    renderOverview(payload, translationMap);
+  } else {
+    clearNodes(enGrid);
+    clearNodes(zhGrid);
+    clearNodes(nberGrid);
   }
+
+  const hasSingle = topicMode ? false : renderSingle(payload, translationMap);
+  singleSection.classList.toggle('hidden', !hasSingle || topicMode);
+  for (const section of overviewSections) {
+    section.classList.toggle('hidden', hasSingle || topicMode);
+  }
+  topicList.classList.toggle('hidden', !topicMode);
 
   const ts = toLocaleDate(payload.generatedAt);
   meta.textContent = `Updated: ${ts}`;
@@ -475,7 +486,7 @@ if (refreshBtn) {
 }
 if (topicSelect) {
   topicSelect.addEventListener('change', () => {
-    renderTopicList(latestPayload, latestTranslationMap);
+    renderLayout(latestPayload, latestTranslationMap);
   });
 }
 backToAllBtn.addEventListener('click', () => {

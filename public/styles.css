@@ -180,6 +180,10 @@ button:disabled {
   gap: 10px;
 }
 
+.topic-list.hidden {
+  display: none;
+}
+
 .topic-item {
   border: 1px solid var(--border);
   border-radius: 12px;
