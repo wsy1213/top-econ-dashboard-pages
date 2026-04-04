@@ -33,7 +33,18 @@ const ENGLISH_JOURNALS = [
   { id: 'aej_policy', name: 'American Economic Journal: Economic Policy', issn: '1945-7731' },
   { id: 'restat', name: 'Review of Economics and Statistics', issn: '0034-6535' },
   { id: 'jpube', name: 'Journal of Public Economics', issn: '0047-2727' },
+  { id: 'jinteco', name: 'Journal of International Economics', issn: '0022-1996' },
+  {
+    id: 'jebo',
+    name: 'Journal of Economic Behavior and Organization',
+    issns: ['0167-2681', '1879-1751']
+  },
   { id: 'jde', name: 'Journal of Development Economics', issn: '0304-3878' },
+  {
+    id: 'jeem',
+    name: 'Journal of Environmental Economics and Management',
+    issns: ['0095-0696', '1096-0449']
+  },
   { id: 'aer_insights', name: 'American Economic Review: Insights', issn: '2640-205X' },
   { id: 'rand', name: 'The RAND Journal of Economics', issn: '0741-6261' },
   { id: 'jole', name: 'Journal of Labor Economics', issn: '0734-306X' },
