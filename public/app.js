@@ -8,6 +8,8 @@ const singleSection = document.getElementById('singleSection');
 const singleTitle = document.getElementById('singleTitle');
 const journalSwitcher = document.getElementById('journalSwitcher');
 const backToAllBtn = document.getElementById('backToAllBtn');
+const topicSelect = document.getElementById('topicSelect');
+const topicList = document.getElementById('topicList');
 const overviewSections = Array.from(document.querySelectorAll('.overview-section'));
 const cardTpl = document.getElementById('cardTpl');
 let latestPayload = null;
@@ -44,6 +46,45 @@ const PUBLIC_ECON_KEYWORDS_ZH = [
   '再分配', '转移支付', '地方债', '补贴', '预算', '财政政策'
 ];
 
+const INDUSTRY_PATTERNS_EN = [
+  /\bindustrial policy\b/i,
+  /\bindustr(?:y|ies)\b/i,
+  /\bmanufactur(?:e|ing)\b/i,
+  /\bfirm\b/i,
+  /\binnovation\b/i,
+  /\bsubsid(?:y|ies)\b/i
+];
+
+const TRADE_PATTERNS_EN = [
+  /\btrade\b/i,
+  /\btariff\b/i,
+  /\bimport\b/i,
+  /\bexport\b/i,
+  /\bglobal value chain\b/i,
+  /\bWTO\b/i
+];
+
+const ENV_PATTERNS_EN = [
+  /\benvironment(?:al)?\b/i,
+  /\bclimate\b/i,
+  /\bcarbon\b/i,
+  /\benergy transition\b/i,
+  /\bemission(?:s)?\b/i,
+  /\bpollution\b/i
+];
+
+const INDUSTRY_KEYWORDS_ZH = ['产业', '工业', '制造业', '企业', '创新', '补贴', '机器人', '技术进口'];
+const TRADE_KEYWORDS_ZH = ['贸易', '关税', '进出口', '出口', '进口', '全球价值链', '供应链'];
+const ENV_KEYWORDS_ZH = ['环境', '气候', '碳', '排放', '污染', '绿色', '生态'];
+
+const TOPIC_LABELS = {
+  public: 'Public Economics',
+  industry: 'Industrial Policy',
+  trade: 'Trade',
+  environment: 'Environment',
+  other: 'Other'
+};
+
 function clearNodes(el) {
   while (el.firstChild) el.removeChild(el.firstChild);
 }
@@ -60,6 +101,21 @@ function isPublicEconomicsArticle(title = '', translated = '') {
   const z = String(translated || '');
   if (PUBLIC_ECON_PATTERNS_EN.some((re) => re.test(t))) return true;
   return PUBLIC_ECON_KEYWORDS_ZH.some((kw) => z.includes(kw) || String(title).includes(kw));
+}
+
+function isByPatterns(title = '', translated = '', patterns = [], zhKeywords = []) {
+  const t = String(title || '').toLowerCase();
+  const z = String(translated || '');
+  if (patterns.some((re) => re.test(t))) return true;
+  return zhKeywords.some((kw) => z.includes(kw) || String(title).includes(kw));
+}
+
+function classifyTopic(title = '', translated = '') {
+  if (isPublicEconomicsArticle(title, translated)) return 'public';
+  if (isByPatterns(title, translated, INDUSTRY_PATTERNS_EN, INDUSTRY_KEYWORDS_ZH)) return 'industry';
+  if (isByPatterns(title, translated, TRADE_PATTERNS_EN, TRADE_KEYWORDS_ZH)) return 'trade';
+  if (isByPatterns(title, translated, ENV_PATTERNS_EN, ENV_KEYWORDS_ZH)) return 'environment';
+  return 'other';
 }
 
 function renderSource(source, translationMap = {}) {
@@ -90,6 +146,7 @@ function renderSource(source, translationMap = {}) {
     const zhTitle = source.language === 'en'
       ? (translationMap[cleanTitleForTranslate] || translationMap[rawTitle] || '')
       : '';
+    const topic = classifyTopic(rawTitle, zhTitle);
 
     const a = document.createElement('a');
     a.href = article.url || source.sourceUrl;
@@ -99,12 +156,10 @@ function renderSource(source, translationMap = {}) {
 
     li.appendChild(a);
 
-    if (isPublicEconomicsArticle(rawTitle, zhTitle)) {
-      const tag = document.createElement('span');
-      tag.className = 'topic-tag';
-      tag.textContent = 'Public Economics';
-      li.appendChild(tag);
-    }
+    const tag = document.createElement('span');
+    tag.className = 'topic-tag';
+    tag.textContent = TOPIC_LABELS[topic];
+    li.appendChild(tag);
 
     if (source.id === 'nber' && article.authors) {
       const authorInline = document.createElement('span');
@@ -137,6 +192,84 @@ function renderSource(source, translationMap = {}) {
   }
 
   return frag;
+}
+
+function collectTopicEntries(payload, translationMap = {}, selected = 'all') {
+  const items = [];
+  for (const source of payload.sources || []) {
+    for (const article of source.articles || []) {
+      const rawTitle = String(article.title || 'Untitled');
+      const cleanTitleForTranslate = rawTitle
+        .replace(/\s*(?:--|—|-|,|;)\s*by\s+.+$/i, '')
+        .trim();
+      const zhTitle = source.language === 'en'
+        ? (translationMap[cleanTitleForTranslate] || translationMap[rawTitle] || '')
+        : '';
+      const topic = classifyTopic(rawTitle, zhTitle);
+      if (selected !== 'all' && topic !== selected) continue;
+
+      items.push({
+        topic,
+        sourceName: source.name,
+        sourceIssue: source.latestIssue || '',
+        title: rawTitle,
+        zhTitle,
+        url: article.url || source.sourceUrl || '',
+        authors: article.authors || '',
+        date: article.date || ''
+      });
+    }
+  }
+  return items;
+}
+
+function renderTopicList(payload, translationMap = {}) {
+  clearNodes(topicList);
+  const selected = topicSelect?.value || 'all';
+  const items = collectTopicEntries(payload, translationMap, selected);
+
+  if (!items.length) {
+    const li = document.createElement('li');
+    li.className = 'topic-item';
+    li.textContent = 'No records under this topic in the current snapshot.';
+    topicList.appendChild(li);
+    return;
+  }
+
+  for (const item of items) {
+    const li = document.createElement('li');
+    li.className = 'topic-item';
+
+    const a = document.createElement('a');
+    a.href = item.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = item.title;
+    li.appendChild(a);
+
+    const tag = document.createElement('span');
+    tag.className = 'topic-tag';
+    tag.textContent = TOPIC_LABELS[item.topic];
+    li.appendChild(tag);
+
+    if (item.zhTitle && item.zhTitle !== item.title) {
+      const zh = document.createElement('div');
+      zh.className = 'title-zh';
+      zh.textContent = item.zhTitle;
+      li.appendChild(zh);
+    }
+
+    const src = document.createElement('div');
+    src.className = 'topic-source';
+    const bits = [item.sourceName];
+    if (item.sourceIssue) bits.push(item.sourceIssue);
+    if (item.authors) bits.push(item.authors);
+    if (item.date) bits.push(item.date);
+    src.textContent = bits.join(' | ');
+    li.appendChild(src);
+
+    topicList.appendChild(li);
+  }
 }
 
 function getSelectedSourceId() {
@@ -244,6 +377,7 @@ function renderSingle(payload, translationMap = {}) {
 
 function renderLayout(payload, translationMap = {}) {
   if (!payload) return;
+  renderTopicList(payload, translationMap);
   buildSwitcher(payload);
   renderOverview(payload, translationMap);
 
@@ -338,6 +472,11 @@ async function loadData(force = false) {
 
 if (refreshBtn) {
   refreshBtn.addEventListener('click', () => loadData(true));
+}
+if (topicSelect) {
+  topicSelect.addEventListener('change', () => {
+    renderTopicList(latestPayload, latestTranslationMap);
+  });
 }
 backToAllBtn.addEventListener('click', () => {
   setSelectedSourceId('');
