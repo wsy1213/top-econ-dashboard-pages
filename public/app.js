@@ -192,11 +192,16 @@ function renderSource(source, translationMap = {}) {
     tag.textContent = TOPIC_LABELS[topic];
     li.appendChild(tag);
 
-    if (source.id === 'nber' && article.authors) {
-      const authorInline = document.createElement('span');
-      authorInline.className = 'mini';
-      authorInline.textContent = ` (${article.authors})`;
-      li.appendChild(authorInline);
+    if (source.id === 'nber') {
+      const nberBits = [];
+      if (article.authors) nberBits.push(article.authors);
+      if (article.date) nberBits.push(article.date);
+      if (nberBits.length) {
+        const authorInline = document.createElement('span');
+        authorInline.className = 'mini';
+        authorInline.textContent = ` (${nberBits.join(' | ')})`;
+        li.appendChild(authorInline);
+      }
     }
 
     if (source.language === 'en') {
