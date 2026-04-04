@@ -1001,10 +1001,20 @@ function parseRssItems(xml) {
   const items = [];
   const chunks = xml.split('<item>').slice(1);
 
+  const parseRssDateString = (value) => {
+    const v = String(value || '').trim();
+    if (!v) return '';
+    const ts = new Date(v).getTime();
+    if (Number.isFinite(ts)) return formatDate(new Date(ts));
+    const iso = v.match(/\b(\d{4}-\d{2}-\d{2})\b/);
+    if (iso) return iso[1];
+    return '';
+  };
+
   for (const raw of chunks) {
     const block = raw.split('</item>')[0] || '';
     const get = (tag) => {
-      const match = block.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`, 'i'));
+      const match = block.match(new RegExp(`<${tag}(?:\\s+[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, 'i'));
       if (!match) return '';
       return match[1]
         .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
@@ -1012,12 +1022,20 @@ function parseRssItems(xml) {
         .replace(/\s+/g, ' ')
         .trim();
     };
+    const first = (tags) => {
+      for (const tag of tags) {
+        const value = get(tag);
+        if (value) return value;
+      }
+      return '';
+    };
+    const rawDate = first(['pubDate', 'dc:date', 'date', 'updated', 'atom:updated']);
 
     items.push({
-      title: get('title'),
-      url: get('link'),
-      date: get('pubDate'),
-      description: get('description')
+      title: first(['title']),
+      url: first(['link', 'guid']),
+      date: parseRssDateString(rawDate),
+      description: first(['description', 'content:encoded'])
     });
   }
 

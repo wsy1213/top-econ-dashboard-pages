@@ -195,7 +195,8 @@ function renderSource(source, translationMap = {}) {
     if (source.id === 'nber') {
       const nberBits = [];
       if (article.authors) nberBits.push(article.authors);
-      if (article.date) nberBits.push(article.date);
+      const nberDate = article.date || (article.firstSeen ? String(article.firstSeen).slice(0, 10) : '');
+      if (nberDate) nberBits.push(nberDate);
       if (nberBits.length) {
         const authorInline = document.createElement('span');
         authorInline.className = 'mini';
