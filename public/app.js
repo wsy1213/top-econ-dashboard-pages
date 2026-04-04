@@ -14,9 +14,11 @@ const topicList = document.getElementById('topicList');
 const overviewSections = Array.from(document.querySelectorAll('.overview-section'));
 const cardTpl = document.getElementById('cardTpl');
 let latestPayload = null;
+let archivePayload = null;
 let latestTranslationMap = {};
 let openDropdown = null;
 let selectedTopic = 'journal';
+let selectedScope = 'latest';
 const PAGE_BASE = window.location.pathname.replace(/[^/]*$/, '');
 
 const PUBLIC_ECON_PATTERNS_EN = [
@@ -97,6 +99,16 @@ const TOPIC_OPTIONS = [
   { id: 'other', label: 'Other' }
 ];
 
+const SCOPE_LABELS = {
+  latest: 'Latest + Forthcoming',
+  archive: 'Historical Archive'
+};
+
+const SCOPE_OPTIONS = [
+  { id: 'latest', label: 'Latest + Forthcoming' },
+  { id: 'archive', label: 'Historical Archive' }
+];
+
 function clearNodes(el) {
   while (el.firstChild) el.removeChild(el.firstChild);
 }
@@ -167,6 +179,13 @@ function renderSource(source, translationMap = {}) {
     a.textContent = rawTitle;
 
     li.appendChild(a);
+
+    if (article.articleType === 'forthcoming') {
+      const fcTag = document.createElement('span');
+      fcTag.className = 'article-type-tag article-type-forthcoming';
+      fcTag.textContent = 'Forthcoming';
+      li.appendChild(fcTag);
+    }
 
     const tag = document.createElement('span');
     tag.className = `topic-tag topic-${topic}`;
@@ -299,6 +318,51 @@ function setSelectedSourceId(sourceId) {
 
 function buildSwitcher(payload) {
   clearNodes(journalSwitcher);
+
+  const scopeWrap = document.createElement('div');
+  scopeWrap.className = 'dropdown';
+
+  const scopeTrigger = document.createElement('button');
+  scopeTrigger.type = 'button';
+  scopeTrigger.className = 'dropdown-btn';
+  scopeTrigger.textContent = `Scope: ${SCOPE_LABELS[selectedScope]}`;
+  scopeTrigger.setAttribute('aria-expanded', 'false');
+
+  const scopeMenu = document.createElement('div');
+  scopeMenu.className = 'dropdown-menu';
+
+  for (const opt of SCOPE_OPTIONS) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'dropdown-item';
+    btn.textContent = opt.label;
+    btn.addEventListener('click', () => {
+      selectedScope = opt.id;
+      setSelectedSourceId('');
+      scopeWrap.classList.remove('open');
+      scopeTrigger.setAttribute('aria-expanded', 'false');
+      openDropdown = null;
+      renderLayout(latestPayload, latestTranslationMap);
+    });
+    scopeMenu.appendChild(btn);
+  }
+
+  scopeTrigger.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    const willOpen = !scopeWrap.classList.contains('open');
+    if (openDropdown && openDropdown !== scopeWrap) {
+      const prevBtn = openDropdown.querySelector('.dropdown-btn');
+      openDropdown.classList.remove('open');
+      if (prevBtn) prevBtn.setAttribute('aria-expanded', 'false');
+    }
+    scopeWrap.classList.toggle('open', willOpen);
+    scopeTrigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    openDropdown = willOpen ? scopeWrap : null;
+  });
+
+  scopeWrap.appendChild(scopeTrigger);
+  scopeWrap.appendChild(scopeMenu);
+  journalSwitcher.appendChild(scopeWrap);
 
   const topicWrap = document.createElement('div');
   topicWrap.className = 'dropdown';
@@ -436,20 +500,21 @@ function renderSingle(payload, translationMap = {}) {
 
 function renderLayout(payload, translationMap = {}) {
   if (!payload) return;
+  const activePayload = selectedScope === 'archive' && archivePayload ? archivePayload : payload;
   const topicMode = selectedTopic !== 'journal';
 
-  renderTopicList(payload, translationMap);
+  renderTopicList(activePayload, translationMap);
   topicTitle.textContent = topicMode ? `Topic: ${TOPIC_LABELS[selectedTopic]}` : 'Topic View';
-  buildSwitcher(payload);
+  buildSwitcher(activePayload);
   if (!topicMode) {
-    renderOverview(payload, translationMap);
+    renderOverview(activePayload, translationMap);
   } else {
     clearNodes(enGrid);
     clearNodes(zhGrid);
     clearNodes(nberGrid);
   }
 
-  const hasSingle = topicMode ? false : renderSingle(payload, translationMap);
+  const hasSingle = topicMode ? false : renderSingle(activePayload, translationMap);
   singleSection.classList.toggle('hidden', !hasSingle || topicMode);
   for (const section of overviewSections) {
     section.classList.toggle('hidden', hasSingle || topicMode);
@@ -457,8 +522,8 @@ function renderLayout(payload, translationMap = {}) {
   topicResultsSection.classList.toggle('hidden', !topicMode);
   topicList.classList.toggle('hidden', !topicMode);
 
-  const ts = toLocaleDate(payload.generatedAt);
-  meta.textContent = `Updated: ${ts}`;
+  const ts = toLocaleDate(activePayload.generatedAt || payload.generatedAt);
+  meta.textContent = `Updated: ${ts} | ${SCOPE_LABELS[selectedScope]}`;
 }
 
 function collectEnglishTitles(payload) {
@@ -502,6 +567,7 @@ async function fetchStaticSiteData(force = false) {
     if (!payload?.sources?.length) return null;
     return {
       payload,
+      archivePayload: data?.archivePayload || null,
       translations: data?.translations || {}
     };
   } catch {
@@ -517,6 +583,7 @@ async function loadData(force = false) {
     const staticData = await fetchStaticSiteData(force);
     if (staticData) {
       latestPayload = staticData.payload;
+      archivePayload = staticData.archivePayload || null;
       latestTranslationMap = staticData.translations;
       renderLayout(latestPayload, latestTranslationMap);
       return;
@@ -527,6 +594,7 @@ async function loadData(force = false) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     latestPayload = payload;
+    archivePayload = null;
     renderLayout(payload, {});
 
     const titles = collectEnglishTitles(payload);

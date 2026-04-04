@@ -153,6 +153,14 @@ function parseDateFromCrossref(item) {
   return new Date(Date.UTC(y, m - 1, d));
 }
 
+function parseOnlineDateFromCrossref(item) {
+  const dateParts = item?.['published-online']?.['date-parts']?.[0]
+    || item?.accepted?.['date-parts']?.[0];
+  if (!dateParts) return null;
+  const [y, m = 1, d = 1] = dateParts;
+  return new Date(Date.UTC(y, m - 1, d));
+}
+
 function safeTitle(item) {
   if (!item?.title?.length) return 'Untitled';
   return item.title[0].replace(/\s+/g, ' ').trim();
@@ -277,6 +285,41 @@ function sortIssueItemsForDisplay(selectedEntries) {
     const tb = safeTitle(b.raw).toLowerCase();
     return ta.localeCompare(tb);
   });
+}
+
+function itemIdentityKey(item) {
+  return String(item?.DOI || item?.URL || safeTitle(item)).toLowerCase();
+}
+
+function isLikelyForthcoming(item) {
+  const hasIssue = Boolean(String(item?.volume || '').trim() || String(item?.issue || '').trim());
+  if (hasIssue) return false;
+  const relationText = JSON.stringify(item?.relation || {}).toLowerCase();
+  const subtypeText = String(item?.subtype || '').toLowerCase();
+  const typeText = String(item?.type || '').toLowerCase();
+  const titleText = safeTitle(item).toLowerCase();
+  if (relationText.includes('ahead') || relationText.includes('forthcoming')) return true;
+  if (subtypeText.includes('ahead') || subtypeText.includes('forthcoming')) return true;
+  if (titleText.includes('forthcoming')) return true;
+  // Fallback: no volume/issue but has online publication metadata.
+  return Boolean(parseOnlineDateFromCrossref(item));
+}
+
+function toArticle(entry, articleType = 'latest_issue') {
+  const item = entry.raw;
+  const url = item.URL || item.link?.[0]?.URL || '';
+  const authors = (item.author || [])
+    .map((a) => [a.given, a.family].filter(Boolean).join(' ').trim())
+    .filter(Boolean)
+    .join(', ');
+
+  return {
+    title: safeTitle(item),
+    url,
+    authors,
+    date: formatDate(entry.onlineDate || entry.date),
+    articleType
+  };
 }
 
 function sleep(ms) {
@@ -446,28 +489,34 @@ async function fetchJournal(source, language) {
     });
 
     const orderedSelected = sortIssueItemsForDisplay(selected);
-    const articles = orderedSelected.map((entry) => {
-      const item = entry.raw;
-      const url = item.URL || item.link?.[0]?.URL || '';
-      const authors = (item.author || [])
-        .map((a) => [a.given, a.family].filter(Boolean).join(' ').trim())
-        .filter(Boolean)
-        .join(', ');
+    const latestIssueArticles = orderedSelected.map((entry) => toArticle(entry, 'latest_issue'));
 
-      return {
-        title: safeTitle(item),
-        url,
-        authors,
-        date: formatDate(entry.date)
-      };
-    });
+    const selectedKeys = new Set(orderedSelected.map((entry) => itemIdentityKey(entry.raw)));
+    const forthcomingEntries = finalItems
+      .filter((item) => !selectedKeys.has(itemIdentityKey(item)))
+      .filter((item) => isLikelyForthcoming(item))
+      .map((item) => ({
+        raw: item,
+        date: parseDateFromCrossref(item),
+        onlineDate: parseOnlineDateFromCrossref(item)
+      }))
+      .sort((a, b) => {
+        const ta = (a.onlineDate || a.date)?.getTime() || 0;
+        const tb = (b.onlineDate || b.date)?.getTime() || 0;
+        return tb - ta;
+      })
+      .slice(0, Number(source.forthcomingLimit || 12));
+
+    const forthcomingArticles = forthcomingEntries.map((entry) => toArticle(entry, 'forthcoming'));
+    const articles = [...latestIssueArticles, ...forthcomingArticles];
+    const label = forthcomingArticles.length ? `${issueLabel} + Forthcoming` : issueLabel;
 
     return {
       id: source.id,
       name: source.name,
       language,
       status: articles.length ? 'ok' : 'empty',
-      latestIssue: issueLabel,
+      latestIssue: label,
       sourceUrl: usedEndpoint,
       articles
     };

@@ -344,6 +344,22 @@ h2 {
   vertical-align: middle;
 }
 
+.article-type-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.article-type-forthcoming {
+  color: #0b517a;
+  background: #dbeefe;
+  border: 1px solid #9cc5ea;
+}
+
 .topic-public {
   color: #0b5f57;
   background: #d7efe8;
