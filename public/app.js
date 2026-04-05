@@ -233,6 +233,7 @@ function renderSource(source, translationMap = {}) {
 
 function collectTopicEntries(payload, translationMap = {}, selected = 'all') {
   const items = [];
+  const seen = new Set();
   for (const source of payload.sources || []) {
     for (const article of source.articles || []) {
       const rawTitle = String(article.title || 'Untitled');
@@ -244,6 +245,14 @@ function collectTopicEntries(payload, translationMap = {}, selected = 'all') {
         : '';
       const topic = classifyTopic(rawTitle, zhTitle);
       if (selected !== 'all' && topic !== selected) continue;
+
+      const dedupKey = [
+        String(source.id || '').toLowerCase(),
+        rawTitle.toLowerCase().replace(/\s+/g, ' ').trim(),
+        String(article.authors || '').toLowerCase().replace(/\s+/g, ' ').trim()
+      ].join('|');
+      if (seen.has(dedupKey)) continue;
+      seen.add(dedupKey);
 
       items.push({
         topic,

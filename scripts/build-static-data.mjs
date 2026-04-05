@@ -35,8 +35,26 @@ function collectEnglishTitles(payload) {
   return titles;
 }
 
+function normalizeText(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .replace(/[，。、“”"':：;；,.!?！？()（）\[\]{}<>《》]/g, '')
+    .trim();
+}
+
 function articleKey(article) {
-  return String(article?.url || `${article?.title || ''}|${article?.authors || ''}`).trim().toLowerCase();
+  const doi = normalizeText(article?.doi || '');
+  if (doi) return `doi:${doi}`;
+
+  const title = normalizeText(article?.title || '');
+  const authors = normalizeText(article?.authors || '');
+  if (title && authors) return `ta:${title}|${authors}`;
+  if (title) return `t:${title}`;
+
+  const url = normalizeText(article?.url || '');
+  if (url) return `u:${url}`;
+  return '';
 }
 
 function parseSortableTime(value) {

@@ -1008,6 +1008,22 @@ function parseRssItems(xml) {
     if (Number.isFinite(ts)) return formatDate(new Date(ts));
     const iso = v.match(/\b(\d{4}-\d{2}-\d{2})\b/);
     if (iso) return iso[1];
+    const ym = v.match(/\b(20\d{2})[-\/.](0?[1-9]|1[0-2])\b/);
+    if (ym) return `${ym[1]}-${String(ym[2]).padStart(2, '0')}`;
+
+    const monthMap = {
+      january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
+      july: '07', august: '08', september: '09', october: '10', november: '11', december: '12'
+    };
+    const enMonth = v.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\b[\s,.-]*(20\d{2})/i)
+      || v.match(/\b(20\d{2})[\s,.-]*(january|february|march|april|may|june|july|august|september|october|november|december)\b/i);
+    if (enMonth) {
+      const m = (enMonth[1] && monthMap[String(enMonth[1]).toLowerCase()])
+        ? monthMap[String(enMonth[1]).toLowerCase()]
+        : monthMap[String(enMonth[2]).toLowerCase()];
+      const y = /\d{4}/.test(String(enMonth[1])) ? String(enMonth[1]) : String(enMonth[2]);
+      return `${y}-${m}`;
+    }
     return '';
   };
 
@@ -1030,12 +1046,13 @@ function parseRssItems(xml) {
       return '';
     };
     const rawDate = first(['pubDate', 'dc:date', 'date', 'updated', 'atom:updated']);
+    const rawDescription = first(['description', 'content:encoded']);
 
     items.push({
       title: first(['title']),
       url: first(['link', 'guid']),
-      date: parseRssDateString(rawDate),
-      description: first(['description', 'content:encoded'])
+      date: parseRssDateString(rawDate) || parseRssDateString(rawDescription),
+      description: rawDescription
     });
   }
 
