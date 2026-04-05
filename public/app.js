@@ -3,6 +3,9 @@ const meta = document.getElementById('meta');
 const enGrid = document.getElementById('enGrid');
 const zhGrid = document.getElementById('zhGrid');
 const nberGrid = document.getElementById('nberGrid');
+const nberSection = document.getElementById('nberSection');
+const enSection = document.getElementById('enSection');
+const zhSection = document.getElementById('zhSection');
 const singleGrid = document.getElementById('singleGrid');
 const singleSection = document.getElementById('singleSection');
 const singleTitle = document.getElementById('singleTitle');
@@ -296,6 +299,12 @@ function getFilteredSources(payload) {
   return (payload.sources || []).filter((s) => sourceMatchesJournalFilter(s));
 }
 
+function getSingleSelectedSource(payload) {
+  if (!selectedJournalFilter.startsWith('source:')) return null;
+  const id = selectedJournalFilter.slice('source:'.length);
+  return (payload.sources || []).find((s) => s.id === id) || null;
+}
+
 function journalFilterLabel(payload) {
   if (selectedJournalFilter === 'all') return 'All Journals';
   if (selectedJournalFilter === 'group:nber') return 'National Bureau of Economic Research';
@@ -576,6 +585,19 @@ function renderOverview(payload, translationMap = {}) {
   english.forEach((s) => enGrid.appendChild(renderSource(s, translationMap)));
   chinese.forEach((s) => zhGrid.appendChild(renderSource(s, translationMap)));
   if (nber) nberGrid.appendChild(renderSource(nber, translationMap));
+
+  nberSection.classList.toggle('hidden', !nber);
+  enSection.classList.toggle('hidden', english.length === 0);
+  zhSection.classList.toggle('hidden', chinese.length === 0);
+}
+
+function renderSingleSource(payload, translationMap = {}) {
+  clearNodes(singleGrid);
+  const source = getSingleSelectedSource(payload);
+  if (!source) return false;
+  singleGrid.appendChild(renderSource(source, translationMap));
+  singleTitle.textContent = source.name;
+  return true;
 }
 
 function renderLayout(payload, translationMap = {}) {
@@ -590,18 +612,33 @@ function renderLayout(payload, translationMap = {}) {
   }
   topicTitle.textContent = topicMode ? `Topic: ${TOPIC_LABELS[selectedTopic]}` : 'Topic View';
   buildSwitcher(activePayload);
-  if (!topicMode) {
-    renderOverview(activePayload, translationMap);
-  } else {
+  if (topicMode) {
     clearNodes(enGrid);
     clearNodes(zhGrid);
     clearNodes(nberGrid);
+    singleSection.classList.add('hidden');
+    for (const section of overviewSections) {
+      section.classList.add('hidden');
+    }
+  } else {
+    const hasSingle = renderSingleSource(activePayload, translationMap);
+    if (hasSingle) {
+      singleSection.classList.remove('hidden');
+      for (const section of overviewSections) {
+        section.classList.add('hidden');
+      }
+    } else {
+      singleSection.classList.add('hidden');
+      renderOverview(activePayload, translationMap);
+      for (const section of overviewSections) {
+        section.classList.remove('hidden');
+      }
+      nberSection.classList.toggle('hidden', nberGrid.childElementCount === 0);
+      enSection.classList.toggle('hidden', enGrid.childElementCount === 0);
+      zhSection.classList.toggle('hidden', zhGrid.childElementCount === 0);
+    }
   }
 
-  singleSection.classList.add('hidden');
-  for (const section of overviewSections) {
-    section.classList.toggle('hidden', topicMode);
-  }
   topicResultsSection.classList.toggle('hidden', !topicMode);
   topicList.classList.toggle('hidden', !topicMode);
 

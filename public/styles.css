@@ -161,6 +161,10 @@ button:disabled {
   line-height: 1.4;
 }
 
+.topic-card {
+  width: 100%;
+}
+
 .topic-item a {
   color: #0d3e78;
   text-decoration: none;
