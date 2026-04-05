@@ -17,8 +17,10 @@ let latestPayload = null;
 let archivePayload = null;
 let latestTranslationMap = {};
 let openDropdown = null;
-let selectedTopic = 'journal';
+let selectedMode = 'journal';
+let selectedTopic = 'all';
 let selectedScope = 'latest';
+let selectedJournalFilter = 'all';
 const PAGE_BASE = window.location.pathname.replace(/[^/]*$/, '');
 
 const PUBLIC_ECON_PATTERNS_EN = [
@@ -82,7 +84,7 @@ const TRADE_KEYWORDS_ZH = ['贸易', '关税', '进出口', '出口', '进口', 
 const ENV_KEYWORDS_ZH = ['环境', '气候', '碳', '排放', '污染', '绿色', '生态'];
 
 const TOPIC_LABELS = {
-  journal: 'By Journal',
+  all: 'All Topics',
   public: 'Public Economics',
   industry: 'Industrial Policy',
   trade: 'Trade',
@@ -91,12 +93,22 @@ const TOPIC_LABELS = {
 };
 
 const TOPIC_OPTIONS = [
-  { id: 'journal', label: 'By Journal' },
+  { id: 'all', label: 'All Topics' },
   { id: 'public', label: 'Public Economics' },
   { id: 'industry', label: 'Industrial Policy' },
   { id: 'trade', label: 'Trade' },
   { id: 'environment', label: 'Environment' },
   { id: 'other', label: 'Other' }
+];
+
+const MODE_LABELS = {
+  journal: 'By Journal',
+  topic: 'By Topic'
+};
+
+const MODE_OPTIONS = [
+  { id: 'journal', label: 'By Journal' },
+  { id: 'topic', label: 'By Topic' }
 ];
 
 const SCOPE_LABELS = {
@@ -269,11 +281,38 @@ function collectTopicEntries(payload, translationMap = {}, selected = 'all') {
   return items;
 }
 
+function sourceMatchesJournalFilter(source) {
+  if (selectedJournalFilter === 'all') return true;
+  if (selectedJournalFilter === 'group:nber') return source.id === 'nber';
+  if (selectedJournalFilter === 'group:en') return source.language === 'en' && source.id !== 'nber';
+  if (selectedJournalFilter === 'group:zh') return source.language === 'zh';
+  if (selectedJournalFilter.startsWith('source:')) {
+    return source.id === selectedJournalFilter.slice('source:'.length);
+  }
+  return true;
+}
+
+function getFilteredSources(payload) {
+  return (payload.sources || []).filter((s) => sourceMatchesJournalFilter(s));
+}
+
+function journalFilterLabel(payload) {
+  if (selectedJournalFilter === 'all') return 'All Journals';
+  if (selectedJournalFilter === 'group:nber') return 'National Bureau of Economic Research';
+  if (selectedJournalFilter === 'group:en') return 'International Journals';
+  if (selectedJournalFilter === 'group:zh') return '中文期刊';
+  if (selectedJournalFilter.startsWith('source:')) {
+    const id = selectedJournalFilter.slice('source:'.length);
+    const source = (payload.sources || []).find((s) => s.id === id);
+    return source ? source.name : 'Selected Journal';
+  }
+  return 'All Journals';
+}
+
 function renderTopicList(payload, translationMap = {}) {
   clearNodes(topicList);
-  const selected = selectedTopic;
-  if (selected === 'journal') return;
-  const items = collectTopicEntries(payload, translationMap, selected);
+  const filteredSourcesPayload = { ...payload, sources: getFilteredSources(payload) };
+  const items = collectTopicEntries(filteredSourcesPayload, translationMap, selectedTopic);
 
   if (!items.length) {
     const li = document.createElement('li');
@@ -319,18 +358,6 @@ function renderTopicList(payload, translationMap = {}) {
   }
 }
 
-function getSelectedSourceId() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('source') || '';
-}
-
-function setSelectedSourceId(sourceId) {
-  const url = new URL(window.location.href);
-  if (sourceId) url.searchParams.set('source', sourceId);
-  else url.searchParams.delete('source');
-  window.history.replaceState({}, '', url);
-}
-
 function buildSwitcher(payload) {
   clearNodes(journalSwitcher);
 
@@ -353,7 +380,6 @@ function buildSwitcher(payload) {
     btn.textContent = opt.label;
     btn.addEventListener('click', () => {
       selectedScope = opt.id;
-      setSelectedSourceId('');
       scopeWrap.classList.remove('open');
       scopeTrigger.setAttribute('aria-expanded', 'false');
       openDropdown = null;
@@ -379,111 +405,162 @@ function buildSwitcher(payload) {
   scopeWrap.appendChild(scopeMenu);
   journalSwitcher.appendChild(scopeWrap);
 
-  const topicWrap = document.createElement('div');
-  topicWrap.className = 'dropdown';
+  const modeWrap = document.createElement('div');
+  modeWrap.className = 'dropdown';
 
-  const topicTrigger = document.createElement('button');
-  topicTrigger.type = 'button';
-  topicTrigger.className = 'dropdown-btn';
-  topicTrigger.textContent = `Topic: ${TOPIC_LABELS[selectedTopic]}`;
-  topicTrigger.setAttribute('aria-expanded', 'false');
+  const modeTrigger = document.createElement('button');
+  modeTrigger.type = 'button';
+  modeTrigger.className = 'dropdown-btn';
+  modeTrigger.textContent = `Mode: ${MODE_LABELS[selectedMode]}`;
+  modeTrigger.setAttribute('aria-expanded', 'false');
 
-  const topicMenu = document.createElement('div');
-  topicMenu.className = 'dropdown-menu';
+  const modeMenu = document.createElement('div');
+  modeMenu.className = 'dropdown-menu';
 
-  for (const opt of TOPIC_OPTIONS) {
+  for (const opt of MODE_OPTIONS) {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'dropdown-item';
     btn.textContent = opt.label;
     btn.addEventListener('click', () => {
-      selectedTopic = opt.id;
-      setSelectedSourceId('');
-      topicWrap.classList.remove('open');
-      topicTrigger.setAttribute('aria-expanded', 'false');
+      selectedMode = opt.id;
+      modeWrap.classList.remove('open');
+      modeTrigger.setAttribute('aria-expanded', 'false');
       openDropdown = null;
       renderLayout(latestPayload, latestTranslationMap);
     });
-    topicMenu.appendChild(btn);
+    modeMenu.appendChild(btn);
   }
 
-  topicTrigger.addEventListener('click', (ev) => {
+  modeTrigger.addEventListener('click', (ev) => {
     ev.stopPropagation();
-    const willOpen = !topicWrap.classList.contains('open');
-    if (openDropdown && openDropdown !== topicWrap) {
+    const willOpen = !modeWrap.classList.contains('open');
+    if (openDropdown && openDropdown !== modeWrap) {
       const prevBtn = openDropdown.querySelector('.dropdown-btn');
       openDropdown.classList.remove('open');
       if (prevBtn) prevBtn.setAttribute('aria-expanded', 'false');
     }
-    topicWrap.classList.toggle('open', willOpen);
-    topicTrigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-    openDropdown = willOpen ? topicWrap : null;
+    modeWrap.classList.toggle('open', willOpen);
+    modeTrigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    openDropdown = willOpen ? modeWrap : null;
   });
 
-  topicWrap.appendChild(topicTrigger);
-  topicWrap.appendChild(topicMenu);
-  journalSwitcher.appendChild(topicWrap);
+  modeWrap.appendChild(modeTrigger);
+  modeWrap.appendChild(modeMenu);
+  journalSwitcher.appendChild(modeWrap);
 
-  const groups = [
-    {
-      label: 'National Bureau of Economic Research',
-      items: payload.sources.filter((s) => s.id === 'nber')
-    },
-    {
-      label: 'International Journals',
-      items: payload.sources.filter((s) => s.language === 'en' && s.id !== 'nber')
-    },
-    {
-      label: '中文期刊',
-      items: payload.sources.filter((s) => s.language === 'zh')
-    }
-  ];
+  if (selectedMode === 'topic') {
+    const topicWrap = document.createElement('div');
+    topicWrap.className = 'dropdown';
 
-  for (const group of groups) {
-    const wrap = document.createElement('div');
-    wrap.className = 'dropdown';
+    const topicTrigger = document.createElement('button');
+    topicTrigger.type = 'button';
+    topicTrigger.className = 'dropdown-btn';
+    topicTrigger.textContent = `Topic: ${TOPIC_LABELS[selectedTopic]}`;
+    topicTrigger.setAttribute('aria-expanded', 'false');
 
-    const trigger = document.createElement('button');
-    trigger.type = 'button';
-    trigger.className = 'dropdown-btn';
-    trigger.textContent = group.label;
-    trigger.setAttribute('aria-expanded', 'false');
+    const topicMenu = document.createElement('div');
+    topicMenu.className = 'dropdown-menu';
 
-    const menu = document.createElement('div');
-    menu.className = 'dropdown-menu';
-
-    for (const item of group.items) {
-      const opt = document.createElement('button');
-      opt.type = 'button';
-      opt.className = 'dropdown-item';
-      opt.textContent = item.name;
-      opt.addEventListener('click', () => {
-        setSelectedSourceId(item.id);
-        wrap.classList.remove('open');
-        trigger.setAttribute('aria-expanded', 'false');
+    for (const topicOption of TOPIC_OPTIONS) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dropdown-item';
+      btn.textContent = topicOption.label;
+      btn.addEventListener('click', () => {
+        selectedTopic = topicOption.id;
+        topicWrap.classList.remove('open');
+        topicTrigger.setAttribute('aria-expanded', 'false');
         openDropdown = null;
         renderLayout(latestPayload, latestTranslationMap);
       });
-      menu.appendChild(opt);
+      topicMenu.appendChild(btn);
     }
 
-    trigger.addEventListener('click', (ev) => {
+    topicTrigger.addEventListener('click', (ev) => {
       ev.stopPropagation();
-      const willOpen = !wrap.classList.contains('open');
-      if (openDropdown && openDropdown !== wrap) {
+      const willOpen = !topicWrap.classList.contains('open');
+      if (openDropdown && openDropdown !== topicWrap) {
         const prevBtn = openDropdown.querySelector('.dropdown-btn');
         openDropdown.classList.remove('open');
         if (prevBtn) prevBtn.setAttribute('aria-expanded', 'false');
       }
-      wrap.classList.toggle('open', willOpen);
-      trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-      openDropdown = willOpen ? wrap : null;
+      topicWrap.classList.toggle('open', willOpen);
+      topicTrigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      openDropdown = willOpen ? topicWrap : null;
     });
 
-    wrap.appendChild(trigger);
-    wrap.appendChild(menu);
-    journalSwitcher.appendChild(wrap);
+    topicWrap.appendChild(topicTrigger);
+    topicWrap.appendChild(topicMenu);
+    journalSwitcher.appendChild(topicWrap);
   }
+
+  const journalWrap = document.createElement('div');
+  journalWrap.className = 'dropdown';
+
+  const journalTrigger = document.createElement('button');
+  journalTrigger.type = 'button';
+  journalTrigger.className = 'dropdown-btn';
+  journalTrigger.textContent = `Journal: ${journalFilterLabel(payload)}`;
+  journalTrigger.setAttribute('aria-expanded', 'false');
+
+  const journalMenu = document.createElement('div');
+  journalMenu.className = 'dropdown-menu';
+
+  const fixedFilters = [
+    { value: 'all', label: 'All Journals' },
+    { value: 'group:nber', label: 'National Bureau of Economic Research' },
+    { value: 'group:en', label: 'International Journals' },
+    { value: 'group:zh', label: '中文期刊' }
+  ];
+
+  for (const f of fixedFilters) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'dropdown-item';
+    btn.textContent = f.label;
+    btn.addEventListener('click', () => {
+      selectedJournalFilter = f.value;
+      journalWrap.classList.remove('open');
+      journalTrigger.setAttribute('aria-expanded', 'false');
+      openDropdown = null;
+      renderLayout(latestPayload, latestTranslationMap);
+    });
+    journalMenu.appendChild(btn);
+  }
+
+  const sortedSources = [...(payload.sources || [])].sort((a, b) => a.name.localeCompare(b.name));
+  for (const item of sortedSources) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'dropdown-item';
+    btn.textContent = item.name;
+    btn.addEventListener('click', () => {
+      selectedJournalFilter = `source:${item.id}`;
+      journalWrap.classList.remove('open');
+      journalTrigger.setAttribute('aria-expanded', 'false');
+      openDropdown = null;
+      renderLayout(latestPayload, latestTranslationMap);
+    });
+    journalMenu.appendChild(btn);
+  }
+
+  journalTrigger.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    const willOpen = !journalWrap.classList.contains('open');
+    if (openDropdown && openDropdown !== journalWrap) {
+      const prevBtn = openDropdown.querySelector('.dropdown-btn');
+      openDropdown.classList.remove('open');
+      if (prevBtn) prevBtn.setAttribute('aria-expanded', 'false');
+    }
+    journalWrap.classList.toggle('open', willOpen);
+    journalTrigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    openDropdown = willOpen ? journalWrap : null;
+  });
+
+  journalWrap.appendChild(journalTrigger);
+  journalWrap.appendChild(journalMenu);
+  journalSwitcher.appendChild(journalWrap);
 }
 
 function renderOverview(payload, translationMap = {}) {
@@ -491,34 +568,26 @@ function renderOverview(payload, translationMap = {}) {
   clearNodes(zhGrid);
   clearNodes(nberGrid);
 
-  const english = payload.sources.filter((s) => s.language === 'en' && s.id !== 'nber');
-  const chinese = payload.sources.filter((s) => s.language === 'zh');
-  const nber = payload.sources.find((s) => s.id === 'nber');
+  const filtered = getFilteredSources(payload);
+  const english = filtered.filter((s) => s.language === 'en' && s.id !== 'nber');
+  const chinese = filtered.filter((s) => s.language === 'zh');
+  const nber = filtered.find((s) => s.id === 'nber');
 
   english.forEach((s) => enGrid.appendChild(renderSource(s, translationMap)));
   chinese.forEach((s) => zhGrid.appendChild(renderSource(s, translationMap)));
   if (nber) nberGrid.appendChild(renderSource(nber, translationMap));
 }
 
-function renderSingle(payload, translationMap = {}) {
-  clearNodes(singleGrid);
-  const selectedId = getSelectedSourceId();
-  const source = payload.sources.find((s) => s.id === selectedId);
-  if (!source) {
-    if (selectedId) setSelectedSourceId('');
-    return false;
-  }
-  singleGrid.appendChild(renderSource(source, translationMap));
-  singleTitle.textContent = source.name;
-  return true;
-}
-
 function renderLayout(payload, translationMap = {}) {
   if (!payload) return;
   const activePayload = selectedScope === 'archive' && archivePayload ? archivePayload : payload;
-  const topicMode = selectedTopic !== 'journal';
+  const topicMode = selectedMode === 'topic';
 
-  renderTopicList(activePayload, translationMap);
+  if (topicMode) {
+    renderTopicList(activePayload, translationMap);
+  } else {
+    clearNodes(topicList);
+  }
   topicTitle.textContent = topicMode ? `Topic: ${TOPIC_LABELS[selectedTopic]}` : 'Topic View';
   buildSwitcher(activePayload);
   if (!topicMode) {
@@ -529,16 +598,15 @@ function renderLayout(payload, translationMap = {}) {
     clearNodes(nberGrid);
   }
 
-  const hasSingle = topicMode ? false : renderSingle(activePayload, translationMap);
-  singleSection.classList.toggle('hidden', !hasSingle || topicMode);
+  singleSection.classList.add('hidden');
   for (const section of overviewSections) {
-    section.classList.toggle('hidden', hasSingle || topicMode);
+    section.classList.toggle('hidden', topicMode);
   }
   topicResultsSection.classList.toggle('hidden', !topicMode);
   topicList.classList.toggle('hidden', !topicMode);
 
   const ts = toLocaleDate(activePayload.generatedAt || payload.generatedAt);
-  meta.textContent = `Updated: ${ts} | ${SCOPE_LABELS[selectedScope]}`;
+  meta.textContent = `Updated: ${ts} | ${SCOPE_LABELS[selectedScope]} | ${MODE_LABELS[selectedMode]}`;
 }
 
 function collectEnglishTitles(payload) {
@@ -626,13 +694,7 @@ async function loadData(force = false) {
 if (refreshBtn) {
   refreshBtn.addEventListener('click', () => loadData(true));
 }
-backToAllBtn.addEventListener('click', () => {
-  setSelectedSourceId('');
-  renderLayout(latestPayload, latestTranslationMap);
-});
-window.addEventListener('popstate', () => {
-  renderLayout(latestPayload, latestTranslationMap);
-});
+backToAllBtn.addEventListener('click', () => renderLayout(latestPayload, latestTranslationMap));
 document.addEventListener('click', (ev) => {
   if (!openDropdown) return;
   if (openDropdown.contains(ev.target)) return;
