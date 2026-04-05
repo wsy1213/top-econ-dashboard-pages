@@ -139,7 +139,13 @@ function mergeArchive(existingArchive, latestPayload, nowIso) {
     sourceMap.set(latestSource.id, current);
   }
 
-  const sources = Array.from(sourceMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+  const latestOrder = new Map((latestPayload.sources || []).map((s, i) => [s.id, i]));
+  const sources = Array.from(sourceMap.values()).sort((a, b) => {
+    const ia = latestOrder.has(a.id) ? latestOrder.get(a.id) : 1_000_000;
+    const ib = latestOrder.has(b.id) ? latestOrder.get(b.id) : 1_000_000;
+    if (ia !== ib) return ia - ib;
+    return a.name.localeCompare(b.name);
+  });
   const archivePayload = {
     generatedAt: nowIso,
     totals: {

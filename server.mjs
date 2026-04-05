@@ -36,7 +36,7 @@ const ENGLISH_JOURNALS = [
   { id: 'jinteco', name: 'Journal of International Economics', issn: '0022-1996' },
   {
     id: 'jebo',
-    name: 'Journal of Economic Behavior and Organization',
+    name: 'Journal of Economic Behavior & Organization',
     issns: ['0167-2681', '1879-1751']
   },
   { id: 'jde', name: 'Journal of Development Economics', issn: '0304-3878' },
@@ -169,6 +169,69 @@ function safeTitle(item) {
 function formatDate(date) {
   if (!date) return '';
   return date.toISOString().slice(0, 10);
+}
+
+function isLikelyNonArticleTitle(title = '', language = 'en') {
+  const t = String(title || '').trim();
+  if (!t) return true;
+  const lower = t.toLowerCase();
+
+  const enPatterns = [
+    /^(front ?matter|frontmatter|back ?matter|backmatter)$/i,
+    /recent referees/i,
+    /turnaround times/i,
+    /annotated listing of new books/i,
+    /jel classification system/i,
+    /election of fellows/i,
+    /masthead/i,
+    /in this issue/i
+  ];
+  const zhPatterns = [
+    /欢迎订阅/,
+    /征文启事/,
+    /学院简介/,
+    /前线事项/,
+    /在线期刊/,
+    /访问量统计/,
+    /著作权使用声明/,
+    /学位授予单位/,
+    /原版目录浏览/,
+    /谨防受骗/,
+    /编辑部网站/,
+    /cajviewer/i,
+    /service\.cnki\.net/i,
+    /新浪微博客服/,
+    /^www\./i
+  ];
+
+  if (language === 'zh') {
+    return zhPatterns.some((re) => re.test(t));
+  }
+  return enPatterns.some((re) => re.test(lower));
+}
+
+function cleanSourceArticles(sourceObj) {
+  const language = sourceObj.language || 'en';
+  const seen = new Set();
+  const cleaned = [];
+  for (const article of sourceObj.articles || []) {
+    const title = String(article?.title || '').replace(/\s+/g, ' ').trim();
+    if (!title) continue;
+    if (isLikelyNonArticleTitle(title, language)) continue;
+    const key = [
+      String(sourceObj.id || ''),
+      title.toLowerCase(),
+      String(article?.authors || '').toLowerCase().replace(/\s+/g, ' ').trim()
+    ].join('|');
+    if (seen.has(key)) continue;
+    seen.add(key);
+    cleaned.push({ ...article, title });
+  }
+  return {
+    ...sourceObj,
+    articles: cleaned,
+    status: sourceObj.status === 'error' ? 'error' : (cleaned.length ? 'ok' : 'empty')
+  };
 }
 
 function buildCrossrefEndpoint(source) {
@@ -413,7 +476,7 @@ async function fetchJournal(source, language) {
 
   const endpoint = buildCrossrefEndpoint(source);
   const hasIssnQuery = Boolean(source.issn) || (Array.isArray(source.issns) && source.issns.length > 0);
-  const fallbackEndpoint = hasIssnQuery ? '' : buildCrossrefFallbackEndpoint(source);
+  const fallbackEndpoint = buildCrossrefFallbackEndpoint(source);
   const sourceNorm = normalize(source.queryTitle || source.name);
 
   try {
@@ -422,27 +485,36 @@ async function fetchJournal(source, language) {
 
     if (Array.isArray(source.issns) && source.issns.length) {
       const rows = Number(source.rows || 100);
-      const datasets = await Promise.all(
+      const datasets = await Promise.allSettled(
         source.issns.map(async (issn) => {
           const url = `https://api.crossref.org/journals/${encodeURIComponent(issn)}/works?sort=published&order=desc&rows=${rows}&filter=type:journal-article`;
           const data = await fetchJsonWithRetry(url);
           return { url, items: data?.message?.items || [] };
         })
       );
-      const merged = datasets.flatMap((d) => d.items);
+      const okDatasets = datasets
+        .filter((r) => r.status === 'fulfilled')
+        .map((r) => r.value);
+      const merged = okDatasets.flatMap((d) => d.items);
       const dedup = new Map();
       for (const it of merged) {
         const key = String(it.DOI || it.URL || safeTitle(it)).toLowerCase();
         if (!dedup.has(key)) dedup.set(key, it);
       }
       items = Array.from(dedup.values());
-      usedEndpoint = datasets.map((d) => d.url).join(' ; ');
+      usedEndpoint = okDatasets.map((d) => d.url).join(' ; ');
+
+      if (!items.length && fallbackEndpoint) {
+        const fallbackData = await fetchJsonWithRetry(fallbackEndpoint);
+        items = fallbackData?.message?.items || [];
+        usedEndpoint = fallbackEndpoint;
+      }
     } else {
       const data = await fetchJsonWithRetry(endpoint);
       items = data?.message?.items || [];
     }
 
-    if (!hasIssnQuery && !items.length && fallbackEndpoint) {
+    if (!items.length && fallbackEndpoint) {
       const fallbackData = await fetchJsonWithRetry(fallbackEndpoint);
       items = fallbackData?.message?.items || [];
       usedEndpoint = fallbackEndpoint;
@@ -1406,22 +1478,22 @@ async function mapWithConcurrency(items, limit, mapper) {
 
 export async function fetchAllSources() {
   const taskDefs = [
+    { type: 'nber' },
     ...ENGLISH_JOURNALS.map((j) => ({ type: 'journal', source: j, lang: 'en' })),
-    ...CHINESE_JOURNALS.map((j) => ({ type: 'journal_zh', source: j, lang: 'zh' })),
-    { type: 'nber' }
+    ...CHINESE_JOURNALS.map((j) => ({ type: 'journal_zh', source: j, lang: 'zh' }))
   ];
 
   const data = await mapWithConcurrency(taskDefs, FETCH_CONCURRENCY, async (task) => {
-    if (task.type === 'nber') return fetchNber();
+    if (task.type === 'nber') return cleanSourceArticles(await fetchNber());
     if (task.type === 'journal_zh') {
       const browser = await fetchChineseJournalFromBrowserNavi(task.source);
-      if (browser?.ok) return browser.data;
+      if (browser?.ok) return cleanSourceArticles(browser.data);
       const portal = await fetchChineseJournalFromCnkiPortal(task.source);
-      if (portal?.ok) return portal.data;
+      if (portal?.ok) return cleanSourceArticles(portal.data);
       const navi = await fetchChineseJournalFromCnkiNavi(task.source);
-      if (navi?.ok) return navi.data;
+      if (navi?.ok) return cleanSourceArticles(navi.data);
       const cnki = await fetchChineseJournalFromCnki(task.source);
-      if (cnki?.ok) return cnki.data;
+      if (cnki?.ok) return cleanSourceArticles(cnki.data);
       return {
         id: task.source.id,
         name: task.source.name,
@@ -1433,7 +1505,7 @@ export async function fetchAllSources() {
         articles: []
       };
     }
-    return fetchJournal(task.source, task.lang);
+    return cleanSourceArticles(await fetchJournal(task.source, task.lang));
   });
 
   return {

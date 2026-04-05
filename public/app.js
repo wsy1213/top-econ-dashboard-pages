@@ -538,8 +538,8 @@ function buildSwitcher(payload) {
     journalMenu.appendChild(btn);
   }
 
-  const sortedSources = [...(payload.sources || [])].sort((a, b) => a.name.localeCompare(b.name));
-  for (const item of sortedSources) {
+  const orderedSources = [...(payload.sources || [])];
+  for (const item of orderedSources) {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'dropdown-item';
