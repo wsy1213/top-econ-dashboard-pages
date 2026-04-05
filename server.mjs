@@ -1059,6 +1059,70 @@ function parseRssItems(xml) {
   return items;
 }
 
+function normalizeLooseDateText(value = '') {
+  const v = String(value || '').trim();
+  if (!v) return '';
+  const ts = new Date(v).getTime();
+  if (Number.isFinite(ts)) return formatDate(new Date(ts));
+
+  const ymd = v.match(/\b(20\d{2})[-\/.](0?[1-9]|1[0-2])[-\/.](0?[1-9]|[12]\d|3[01])\b/);
+  if (ymd) return `${ymd[1]}-${String(ymd[2]).padStart(2, '0')}-${String(ymd[3]).padStart(2, '0')}`;
+
+  const ym = v.match(/\b(20\d{2})[-\/.](0?[1-9]|1[0-2])\b/);
+  if (ym) return `${ym[1]}-${String(ym[2]).padStart(2, '0')}`;
+
+  const monthMap = {
+    january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
+    july: '07', august: '08', september: '09', october: '10', november: '11', december: '12'
+  };
+  const m1 = v.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\b[\s,.-]*(20\d{2})/i);
+  if (m1) return `${m1[2]}-${monthMap[m1[1].toLowerCase()]}`;
+  const m2 = v.match(/\b(20\d{2})[\s,.-]*(january|february|march|april|may|june|july|august|september|october|november|december)\b/i);
+  if (m2) return `${m2[1]}-${monthMap[m2[2].toLowerCase()]}`;
+  return '';
+}
+
+function parseNberDateFromHtml(html = '') {
+  const text = String(html || '');
+  if (!text) return '';
+
+  const patterns = [
+    /<meta[^>]+name=["']citation_publication_date["'][^>]+content=["']([^"']+)["']/i,
+    /<meta[^>]+property=["']article:published_time["'][^>]+content=["']([^"']+)["']/i,
+    /<meta[^>]+property=["']og:published_time["'][^>]+content=["']([^"']+)["']/i,
+    /"datePublished"\s*:\s*"([^"]+)"/i,
+    /<time[^>]+datetime=["']([^"']+)["']/i,
+    /Published\s*[:：]\s*([A-Za-z]+\s+\d{4}|\d{4}[-\/.]\d{1,2}(?:[-\/.]\d{1,2})?)/i
+  ];
+
+  for (const re of patterns) {
+    const m = text.match(re);
+    if (!m) continue;
+    const normalized = normalizeLooseDateText(m[1]);
+    if (normalized) return normalized;
+  }
+  return '';
+}
+
+async function fillMissingNberDates(articles) {
+  const targets = articles.filter((a) => !String(a.date || '').trim() && a.url);
+  if (!targets.length) return articles;
+
+  await mapWithConcurrency(targets.slice(0, 40), 6, async (article) => {
+    try {
+      const html = await fetchTextWithRetry(article.url, FETCH_TIMEOUT_MS, {
+        Referer: 'https://www.nber.org/',
+        Accept: 'text/html,application/xhtml+xml'
+      });
+      const parsed = parseNberDateFromHtml(html);
+      if (parsed) article.date = parsed;
+    } catch {
+      // Keep empty date if page parsing fails.
+    }
+  });
+  return articles;
+}
+
 function splitNberTitleAndAuthors(rawTitle = '', rawDescription = '') {
   const titleText = String(rawTitle || '').replace(/\s+/g, ' ').trim();
   const descText = String(rawDescription || '').replace(/\s+/g, ' ').trim();
@@ -1226,6 +1290,7 @@ async function fetchNber() {
         authors: split.authors
       };
     });
+    await fillMissingNberDates(articles);
 
     return {
       id: NBER_SOURCE.id,
@@ -1452,6 +1517,33 @@ const server = http.createServer(async (req, res) => {
       res.end(JSON.stringify({ error: error.message }));
     }
     return;
+  }
+
+  if (method === 'GET' && pathname === '/api/nber-debug') {
+    try {
+      const nber = await fetchNber();
+      const sample = (nber.articles || []).slice(0, 12).map((a) => ({
+        title: a.title,
+        date: a.date || '',
+        hasDate: Boolean(String(a.date || '').trim()),
+        url: a.url
+      }));
+      const withDate = sample.filter((x) => x.hasDate).length;
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        ok: true,
+        count: (nber.articles || []).length,
+        sampleCount: sample.length,
+        withDate,
+        ratio: sample.length ? Number((withDate / sample.length).toFixed(2)) : 0,
+        sample
+      }, null, 2));
+      return;
+    } catch (error) {
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ ok: false, error: error.message }, null, 2));
+      return;
+    }
   }
 
   if (method === 'POST' && pathname === '/api/translate-batch') {
