@@ -142,6 +142,8 @@ const NBER_SOURCE = {
   feedUrl: 'https://back.nber.org/rss/new.xml'
 };
 
+const DATE_PRECISION = Symbol('datePrecision');
+
 function parseDateFromCrossref(item) {
   const dateParts = item?.['published-print']?.['date-parts']?.[0]
     || item?.published?.['date-parts']?.[0]
@@ -150,7 +152,11 @@ function parseDateFromCrossref(item) {
 
   if (!dateParts) return null;
   const [y, m = 1, d = 1] = dateParts;
-  return new Date(Date.UTC(y, m - 1, d));
+  const date = new Date(Date.UTC(y, m - 1, d));
+  // Track original precision so formatDate can avoid showing fake 01-01
+  // when Crossref only provides year-level dates.
+  date[DATE_PRECISION] = dateParts.length < 2 ? 'year' : dateParts.length < 3 ? 'month' : 'day';
+  return date;
 }
 
 function parseOnlineDateFromCrossref(item) {
@@ -168,6 +174,9 @@ function safeTitle(item) {
 
 function formatDate(date) {
   if (!date) return '';
+  const prec = date[DATE_PRECISION];
+  if (prec === 'year') return String(date.getUTCFullYear());
+  if (prec === 'month') return date.toISOString().slice(0, 7);
   return date.toISOString().slice(0, 10);
 }
 
