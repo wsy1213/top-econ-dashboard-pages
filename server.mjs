@@ -279,12 +279,18 @@ function pickLatestIssue(items, options = {}) {
 
   const totalWithVI = enriched.filter((x) => x.volume || x.issue).length;
   const newestHasVI = !!(enriched[0] && (enriched[0].volume || enriched[0].issue));
-  const viRatio = enriched.length ? totalWithVI / enriched.length : 0;
 
-  // When a large share of items are online-first (no volume/issue metadata),
+  // Only check the most recent items for online-first ratio. Journals that
+  // fetch many rows (e.g. rows=1000 for EJ) can have high overall V/I ratios
+  // from old articles while the newest items are all online-first.
+  const recentSample = Math.min(30, enriched.length);
+  const recentWithVI = enriched.slice(0, recentSample).filter((x) => x.volume || x.issue).length;
+  const recentVIRatio = recentSample ? recentWithVI / recentSample : 0;
+
+  // When a large share of recent items are online-first (no volume/issue),
   // volume/issue grouping would latch onto stale issues. Fall back to
   // date-based grouping so the dashboard shows recent articles instead.
-  const useDateBased = totalWithVI === 0 || (!newestHasVI && viRatio < 0.5);
+  const useDateBased = totalWithVI === 0 || (!newestHasVI && recentVIRatio < 0.5);
 
   let selected = [];
   let issueLabel = '';
@@ -310,7 +316,17 @@ function pickLatestIssue(items, options = {}) {
       if (ts > g.latestTs) g.latestTs = ts;
     }
 
-    const groups = Array.from(grouped.values()).sort((a, b) => b.latestTs - a.latestTs);
+    const groups = Array.from(grouped.values()).sort((a, b) => {
+      if (b.latestTs !== a.latestTs) return b.latestTs - a.latestTs;
+      // Same timestamp (e.g. Crossref only has year-level dates): use
+      // volume / issue number as tiebreaker — higher is more recent.
+      const va = parseInt(a.volume, 10) || 0;
+      const vb = parseInt(b.volume, 10) || 0;
+      if (vb !== va) return vb - va;
+      const ia = parseInt(a.issue, 10) || 0;
+      const ib = parseInt(b.issue, 10) || 0;
+      return ib - ia;
+    });
     const preferred = groups.find((g) => g.items.length >= minIssueArticles)
       || groups.find((g) => g.items.length >= 3)
       || groups[0];
