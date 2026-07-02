@@ -139,7 +139,7 @@ const CHINESE_JOURNALS = [
 const NBER_SOURCE = {
   id: 'nber',
   name: 'NBER Working Papers',
-  feedUrl: 'https://www.nber.org/rss/new.xml'
+  feedUrl: 'https://back.nber.org/rss/new.xml'
 };
 
 function parseDateFromCrossref(item) {
@@ -277,11 +277,19 @@ function pickLatestIssue(items, options = {}) {
       return tb - ta;
     });
 
-  const withIssue = enriched.find((x) => x.volume || x.issue);
+  const totalWithVI = enriched.filter((x) => x.volume || x.issue).length;
+  const newestHasVI = !!(enriched[0] && (enriched[0].volume || enriched[0].issue));
+  const viRatio = enriched.length ? totalWithVI / enriched.length : 0;
+
+  // When a large share of items are online-first (no volume/issue metadata),
+  // volume/issue grouping would latch onto stale issues. Fall back to
+  // date-based grouping so the dashboard shows recent articles instead.
+  const useDateBased = totalWithVI === 0 || (!newestHasVI && viRatio < 0.5);
+
   let selected = [];
   let issueLabel = '';
 
-  if (withIssue) {
+  if (!useDateBased && totalWithVI > 0) {
     const grouped = new Map();
     for (const row of enriched) {
       const v = row.volume || '';
@@ -309,13 +317,32 @@ function pickLatestIssue(items, options = {}) {
     selected = preferred ? preferred.items : [];
     issueLabel = preferred
       ? `Vol. ${preferred.volume || '?'}${preferred.issue ? `, Issue ${preferred.issue}` : ''}`
-      : `Vol. ${withIssue.volume || '?'}${withIssue.issue ? `, Issue ${withIssue.issue}` : ''}`;
+      : `Vol. ${enriched.find((x) => x.volume || x.issue)?.volume || '?'}`;
   } else {
-    const newest = enriched[0];
-    const year = newest.date?.getUTCFullYear();
-    const month = newest.date?.getUTCMonth();
-    selected = enriched.filter((x) => x.date && x.date.getUTCFullYear() === year && x.date.getUTCMonth() === month);
-    issueLabel = newest.date ? `Latest month: ${newest.date.toISOString().slice(0, 7)}` : 'Latest records';
+    // Date-based grouping: collect articles from the most recent months
+    // until we have at least minIssueArticles, then take the newest month
+    // batch that meets the threshold.
+    const byMonth = new Map();
+    for (const row of enriched) {
+      if (!row.date) continue;
+      const key = row.date.toISOString().slice(0, 7); // YYYY-MM
+      if (!byMonth.has(key)) byMonth.set(key, []);
+      byMonth.get(key).push(row);
+    }
+    const sortedMonths = Array.from(byMonth.keys()).sort().reverse();
+    // Pick the most recent month that has >= minIssueArticles, or the
+    // most recent month if none meet the threshold.
+    let bestMonth = sortedMonths[0];
+    for (const m of sortedMonths) {
+      if ((byMonth.get(m) || []).length >= minIssueArticles) {
+        bestMonth = m;
+        break;
+      }
+    }
+    selected = byMonth.get(bestMonth) || enriched.filter((x) => x.date).slice(0, 10);
+    issueLabel = bestMonth
+      ? `Latest articles (${bestMonth})`
+      : 'Latest records';
   }
 
   if (!selected.length) selected = enriched.slice(0, 10);
