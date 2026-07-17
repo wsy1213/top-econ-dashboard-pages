@@ -40,7 +40,6 @@ const PUBLIC_ECON_PATTERNS_EN = [
   /\btransfer(?:s)?\b/i,
   /\bredistribution\b/i,
   /\bpoverty\b/i,
-  /\binequalit/i,
   /\bhealth insurance\b/i,
   /\beducation policy\b/i,
   /\bunemployment insurance\b/i,
@@ -98,13 +97,38 @@ const SPATIAL_PATTERNS_EN = [
   /\blocal labou?r market/i
 ];
 
+const OPT_TAX_PATTERNS_EN = [
+  /\boptimal (?:\w+[- ]){0,2}tax(?:ation|es)?\b/i,
+  /\btax design\b/i,
+  /\btax progressivity\b/i,
+  /\bramsey tax/i,
+  /\bmirrlees/i,
+  /\bredistributive tax/i
+];
+
+const INEQUALITY_PATTERNS_EN = [
+  /\binequalit/i,
+  /\bincome distribution\b/i,
+  /\bwealth distribution\b/i,
+  /\bwealth gap\b/i,
+  /\bwage gap\b/i,
+  /\btop income/i,
+  /\bgini\b/i,
+  /\bintergenerational mobility\b/i,
+  /\bsocial mobility\b/i
+];
+
 const INDUSTRY_KEYWORDS_ZH = ['产业', '工业', '制造业', '企业', '创新', '补贴', '机器人', '技术进口'];
 const TRADE_KEYWORDS_ZH = ['贸易', '关税', '进出口', '出口', '进口', '全球价值链', '供应链'];
 const ENV_KEYWORDS_ZH = ['环境', '气候', '碳', '排放', '污染', '绿色', '生态'];
 const SPATIAL_KEYWORDS_ZH = ['空间', '城市', '区域', '集聚', '地理', '住房', '房价', '土地', '交通', '通勤', '迁移', '人口流动'];
+const OPT_TAX_KEYWORDS_ZH = ['最优税收', '最优税制', '最优所得税', '最优征税', '税制设计', '税收累进', '拉姆齐', '米尔利斯'];
+const INEQUALITY_KEYWORDS_ZH = ['不平等', '收入分配', '收入差距', '贫富差距', '财富分配', '基尼', '代际流动', '阶层流动'];
 
 const TOPIC_LABELS = {
   all: 'All Topics',
+  opttax: 'Optimal Taxation',
+  inequality: 'Economic Inequality',
   public: 'Public Economics',
   industry: 'Industrial Policy',
   trade: 'Trade',
@@ -115,6 +139,8 @@ const TOPIC_LABELS = {
 
 const TOPIC_OPTIONS = [
   { id: 'all', label: 'All Topics' },
+  { id: 'opttax', label: 'Optimal Taxation' },
+  { id: 'inequality', label: 'Economic Inequality' },
   { id: 'public', label: 'Public Economics' },
   { id: 'industry', label: 'Industrial Policy' },
   { id: 'trade', label: 'Trade' },
@@ -170,6 +196,8 @@ function isByPatterns(title = '', translated = '', patterns = [], zhKeywords = [
 
 function classifyTopics(title = '', translated = '') {
   const topics = [];
+  if (isByPatterns(title, translated, OPT_TAX_PATTERNS_EN, OPT_TAX_KEYWORDS_ZH)) topics.push('opttax');
+  if (isByPatterns(title, translated, INEQUALITY_PATTERNS_EN, INEQUALITY_KEYWORDS_ZH)) topics.push('inequality');
   if (isPublicEconomicsArticle(title, translated)) topics.push('public');
   if (isByPatterns(title, translated, INDUSTRY_PATTERNS_EN, INDUSTRY_KEYWORDS_ZH)) topics.push('industry');
   if (isByPatterns(title, translated, TRADE_PATTERNS_EN, TRADE_KEYWORDS_ZH)) topics.push('trade');

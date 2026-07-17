@@ -394,6 +394,18 @@ h2 {
   border-color: #e3a9c9;
 }
 
+.topic-opttax {
+  color: #7a5c08;
+  background: #faf0d0;
+  border-color: #e2cc85;
+}
+
+.topic-inequality {
+  color: #4a3a8a;
+  background: #e7e2f9;
+  border-color: #b8aee6;
+}
+
 .topic-other {
   color: #4f4a63;
   background: #e8e5f2;
