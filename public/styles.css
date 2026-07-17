@@ -388,6 +388,12 @@ h2 {
   border-color: #a7d39b;
 }
 
+.topic-spatial {
+  color: #7a3057;
+  background: #f9e2ef;
+  border-color: #e3a9c9;
+}
+
 .topic-other {
   color: #4f4a63;
   background: #e8e5f2;

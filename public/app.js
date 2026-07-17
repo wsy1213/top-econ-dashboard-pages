@@ -82,9 +82,26 @@ const ENV_PATTERNS_EN = [
   /\bpollution\b/i
 ];
 
+const SPATIAL_PATTERNS_EN = [
+  /\bspatial\b/i,
+  /\burban\b/i,
+  /\bcit(?:y|ies)\b/i,
+  /\bregion(?:al)?\b/i,
+  /\bagglomeration\b/i,
+  /\beconomic geography\b/i,
+  /\bmigration\b/i,
+  /\bcommut(?:e|ing)\b/i,
+  /\bhousing\b/i,
+  /\bland use\b/i,
+  /\btransport(?:ation)?\b/i,
+  /\bplace-based\b/i,
+  /\blocal labou?r market/i
+];
+
 const INDUSTRY_KEYWORDS_ZH = ['产业', '工业', '制造业', '企业', '创新', '补贴', '机器人', '技术进口'];
 const TRADE_KEYWORDS_ZH = ['贸易', '关税', '进出口', '出口', '进口', '全球价值链', '供应链'];
 const ENV_KEYWORDS_ZH = ['环境', '气候', '碳', '排放', '污染', '绿色', '生态'];
+const SPATIAL_KEYWORDS_ZH = ['空间', '城市', '区域', '集聚', '地理', '住房', '房价', '土地', '交通', '通勤', '迁移', '人口流动'];
 
 const TOPIC_LABELS = {
   all: 'All Topics',
@@ -92,6 +109,7 @@ const TOPIC_LABELS = {
   industry: 'Industrial Policy',
   trade: 'Trade',
   environment: 'Environment',
+  spatial: 'Spatial Economics',
   other: 'Other'
 };
 
@@ -101,6 +119,7 @@ const TOPIC_OPTIONS = [
   { id: 'industry', label: 'Industrial Policy' },
   { id: 'trade', label: 'Trade' },
   { id: 'environment', label: 'Environment' },
+  { id: 'spatial', label: 'Spatial Economics' },
   { id: 'other', label: 'Other' }
 ];
 
@@ -149,12 +168,15 @@ function isByPatterns(title = '', translated = '', patterns = [], zhKeywords = [
   return zhKeywords.some((kw) => z.includes(kw) || String(title).includes(kw));
 }
 
-function classifyTopic(title = '', translated = '') {
-  if (isPublicEconomicsArticle(title, translated)) return 'public';
-  if (isByPatterns(title, translated, INDUSTRY_PATTERNS_EN, INDUSTRY_KEYWORDS_ZH)) return 'industry';
-  if (isByPatterns(title, translated, TRADE_PATTERNS_EN, TRADE_KEYWORDS_ZH)) return 'trade';
-  if (isByPatterns(title, translated, ENV_PATTERNS_EN, ENV_KEYWORDS_ZH)) return 'environment';
-  return 'other';
+function classifyTopics(title = '', translated = '') {
+  const topics = [];
+  if (isPublicEconomicsArticle(title, translated)) topics.push('public');
+  if (isByPatterns(title, translated, INDUSTRY_PATTERNS_EN, INDUSTRY_KEYWORDS_ZH)) topics.push('industry');
+  if (isByPatterns(title, translated, TRADE_PATTERNS_EN, TRADE_KEYWORDS_ZH)) topics.push('trade');
+  if (isByPatterns(title, translated, ENV_PATTERNS_EN, ENV_KEYWORDS_ZH)) topics.push('environment');
+  if (isByPatterns(title, translated, SPATIAL_PATTERNS_EN, SPATIAL_KEYWORDS_ZH)) topics.push('spatial');
+  if (!topics.length) return ['other'];
+  return topics.slice(0, 2);
 }
 
 function renderSource(source, translationMap = {}) {
@@ -185,7 +207,7 @@ function renderSource(source, translationMap = {}) {
     const zhTitle = source.language === 'en'
       ? (translationMap[cleanTitleForTranslate] || translationMap[rawTitle] || '')
       : '';
-    const topic = classifyTopic(rawTitle, zhTitle);
+    const topics = classifyTopics(rawTitle, zhTitle);
 
     const a = document.createElement('a');
     a.href = article.url || source.sourceUrl;
@@ -202,10 +224,12 @@ function renderSource(source, translationMap = {}) {
       li.appendChild(fcTag);
     }
 
-    const tag = document.createElement('span');
-    tag.className = `topic-tag topic-${topic}`;
-    tag.textContent = TOPIC_LABELS[topic];
-    li.appendChild(tag);
+    for (const topic of topics) {
+      const tag = document.createElement('span');
+      tag.className = `topic-tag topic-${topic}`;
+      tag.textContent = TOPIC_LABELS[topic];
+      li.appendChild(tag);
+    }
 
     if (source.id === 'nber') {
       const nberBits = [];
@@ -258,8 +282,8 @@ function collectTopicEntries(payload, translationMap = {}, selected = 'all') {
       const zhTitle = source.language === 'en'
         ? (translationMap[cleanTitleForTranslate] || translationMap[rawTitle] || '')
         : '';
-      const topic = classifyTopic(rawTitle, zhTitle);
-      if (selected !== 'all' && topic !== selected) continue;
+      const topics = classifyTopics(rawTitle, zhTitle);
+      if (selected !== 'all' && !topics.includes(selected)) continue;
 
       const dedupKey = [
         String(source.id || '').toLowerCase(),
@@ -270,7 +294,7 @@ function collectTopicEntries(payload, translationMap = {}, selected = 'all') {
       seen.add(dedupKey);
 
       items.push({
-        topic,
+        topics,
         sourceName: source.name,
         sourceIssue: source.latestIssue || '',
         title: rawTitle,
@@ -342,10 +366,12 @@ function renderTopicList(payload, translationMap = {}) {
     a.textContent = item.title;
     li.appendChild(a);
 
-    const tag = document.createElement('span');
-    tag.className = `topic-tag topic-${item.topic}`;
-    tag.textContent = TOPIC_LABELS[item.topic];
-    li.appendChild(tag);
+    for (const topic of item.topics) {
+      const tag = document.createElement('span');
+      tag.className = `topic-tag topic-${topic}`;
+      tag.textContent = TOPIC_LABELS[topic];
+      li.appendChild(tag);
+    }
 
     if (item.zhTitle && item.zhTitle !== item.title) {
       const zh = document.createElement('div');
