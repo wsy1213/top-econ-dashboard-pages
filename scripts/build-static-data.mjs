@@ -15,6 +15,7 @@ const HISTORY_DIR = path.join(PUBLIC_DATA_DIR, 'history');
 const HOST = '127.0.0.1';
 const PORT = Number(process.env.STATIC_BUILD_PORT || 3100);
 const BASE = `http://${HOST}:${PORT}`;
+const TRANSLATE_BUILD_TIMEOUT_MS = Number(process.env.STATIC_TRANSLATE_TIMEOUT_MS || 120000);
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -189,6 +190,32 @@ async function waitForServer(timeoutMs = 180000) {
   throw new Error(`Server start timeout: ${lastErr?.message || 'unknown'}`);
 }
 
+async function fetchTranslationsWithBudget(titles) {
+  if (!titles.length) return {};
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TRANSLATE_BUILD_TIMEOUT_MS);
+  try {
+    const trRes = await fetch(`${BASE}/api/translate-batch`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ titles }),
+      signal: controller.signal
+    });
+    if (!trRes.ok) {
+      console.warn(`Translation skipped: HTTP ${trRes.status}`);
+      return {};
+    }
+    const trData = await trRes.json();
+    return trData?.translations || {};
+  } catch (error) {
+    console.warn(`Translation skipped: ${error.message}`);
+    return {};
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function main() {
   const env = {
     ...process.env,
@@ -216,18 +243,7 @@ async function main() {
     const translationCache = await readJsonOrDefault(TRANSLATION_CACHE_FILE, {});
     const archiveTitles = collectEnglishTitles(archivePayload);
     const missingTitles = archiveTitles.filter((t) => !translationCache[t]);
-    let translatedNow = {};
-    if (missingTitles.length) {
-      const trRes = await fetch(`${BASE}/api/translate-batch`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ titles: missingTitles })
-      });
-      if (trRes.ok) {
-        const trData = await trRes.json();
-        translatedNow = trData?.translations || {};
-      }
-    }
+    const translatedNow = await fetchTranslationsWithBudget(missingTitles);
     const translations = { ...translationCache, ...translatedNow };
 
     await fs.mkdir(PUBLIC_DATA_DIR, { recursive: true });
