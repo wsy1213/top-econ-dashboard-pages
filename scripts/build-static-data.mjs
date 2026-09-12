@@ -15,7 +15,7 @@ const HISTORY_DIR = path.join(PUBLIC_DATA_DIR, 'history');
 const HOST = '127.0.0.1';
 const PORT = Number(process.env.STATIC_BUILD_PORT || 3100);
 const BASE = `http://${HOST}:${PORT}`;
-const TRANSLATE_BATCH_SIZE = Number(process.env.STATIC_TRANSLATE_BATCH_SIZE || 40);
+const TRANSLATE_BATCH_SIZE = Number(process.env.STATIC_TRANSLATE_BATCH_SIZE || 20);
 const TRANSLATE_BATCH_TIMEOUT_MS = Number(process.env.STATIC_TRANSLATE_BATCH_TIMEOUT_MS || 240000);
 
 function sleep(ms) {
