@@ -15,7 +15,8 @@ const HISTORY_DIR = path.join(PUBLIC_DATA_DIR, 'history');
 const HOST = '127.0.0.1';
 const PORT = Number(process.env.STATIC_BUILD_PORT || 3100);
 const BASE = `http://${HOST}:${PORT}`;
-const TRANSLATE_BUILD_TIMEOUT_MS = Number(process.env.STATIC_TRANSLATE_TIMEOUT_MS || 120000);
+const TRANSLATE_BATCH_SIZE = Number(process.env.STATIC_TRANSLATE_BATCH_SIZE || 40);
+const TRANSLATE_BATCH_TIMEOUT_MS = Number(process.env.STATIC_TRANSLATE_BATCH_TIMEOUT_MS || 240000);
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -190,11 +191,19 @@ async function waitForServer(timeoutMs = 180000) {
   throw new Error(`Server start timeout: ${lastErr?.message || 'unknown'}`);
 }
 
-async function fetchTranslationsWithBudget(titles) {
+function chunkArray(items, size) {
+  const chunks = [];
+  for (let i = 0; i < items.length; i += size) {
+    chunks.push(items.slice(i, i + size));
+  }
+  return chunks;
+}
+
+async function fetchTranslationBatch(titles) {
   if (!titles.length) return {};
 
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TRANSLATE_BUILD_TIMEOUT_MS);
+  const timer = setTimeout(() => controller.abort(), TRANSLATE_BATCH_TIMEOUT_MS);
   try {
     const trRes = await fetch(`${BASE}/api/translate-batch`, {
       method: 'POST',
@@ -214,6 +223,16 @@ async function fetchTranslationsWithBudget(titles) {
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function fetchTranslationsInChunks(titles) {
+  const translations = {};
+  const chunks = chunkArray(titles, Math.max(1, TRANSLATE_BATCH_SIZE));
+  for (let i = 0; i < chunks.length; i += 1) {
+    console.log(`Translating titles ${i + 1}/${chunks.length} (${chunks[i].length} titles)`);
+    Object.assign(translations, await fetchTranslationBatch(chunks[i]));
+  }
+  return translations;
 }
 
 async function main() {
@@ -243,7 +262,7 @@ async function main() {
     const translationCache = await readJsonOrDefault(TRANSLATION_CACHE_FILE, {});
     const archiveTitles = collectEnglishTitles(archivePayload);
     const missingTitles = archiveTitles.filter((t) => !translationCache[t]);
-    const translatedNow = await fetchTranslationsWithBudget(missingTitles);
+    const translatedNow = await fetchTranslationsInChunks(missingTitles);
     const translations = { ...translationCache, ...translatedNow };
 
     await fs.mkdir(PUBLIC_DATA_DIR, { recursive: true });

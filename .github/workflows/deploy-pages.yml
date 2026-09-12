@@ -3,7 +3,7 @@ name: Build and Deploy Pages
 on:
   workflow_dispatch:
   schedule:
-    - cron: '55 22 * * *'
+    - cron: '5 23 * * *'
 permissions:
   contents: write
   pages: write

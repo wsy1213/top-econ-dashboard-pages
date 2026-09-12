@@ -71,7 +71,7 @@ For some CNKI journals that cannot be fetched reliably via plain HTTP, the app u
 - Optional (recommended for CNKI-restricted journals): provide login cookie:
   - `CNKI_COOKIE='your_cookie_string' npm start`
 
-## Public Website + Daily 06:55 Auto Update (GitHub Actions)
+## Public Website + Daily 07:05 Auto Update (GitHub Actions)
 
 This copy supports static deployment to GitHub Pages.
 
@@ -110,4 +110,4 @@ Workflow file:
 It runs:
 
 - manually (`workflow_dispatch`)
-- daily at UTC `22:55`, which is Beijing time `06:55` next day.
+- daily at UTC `23:05`, which is Beijing time `07:05` next day.
