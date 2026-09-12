@@ -1456,15 +1456,32 @@ async function translateTitleEnToZh(title) {
     return cached.value;
   }
 
-  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&dt=t&q=${encodeURIComponent(trimmed)}`;
+  const finalText = await translateTitleWithMyMemory(trimmed);
+  titleTranslationCache.set(key, { value: finalText, updatedAt: now });
+  return finalText;
+}
+
+async function translateTitleWithGoogle(title) {
+  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&dt=t&q=${encodeURIComponent(title)}`;
   const raw = await fetchTextWithRetry(url, TRANSLATE_TIMEOUT_MS);
   const parsed = JSON.parse(raw);
   const translated = Array.isArray(parsed?.[0])
     ? parsed[0].map((seg) => seg?.[0] || '').join('').trim()
     : '';
-  const finalText = translated || trimmed;
-  titleTranslationCache.set(key, { value: finalText, updatedAt: now });
-  return finalText;
+  return translated || title;
+}
+
+async function translateTitleWithMyMemory(title) {
+  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(title)}&langpair=en%7Czh-CN`;
+  try {
+    const raw = await fetchTextWithRetry(url, TRANSLATE_TIMEOUT_MS);
+    const parsed = JSON.parse(raw);
+    const translated = String(parsed?.responseData?.translatedText || '').trim();
+    if (translated) return translated;
+  } catch {
+    // Fall through to Google below.
+  }
+  return await translateTitleWithGoogle(title);
 }
 
 async function translateTitlesBatch(titles) {
