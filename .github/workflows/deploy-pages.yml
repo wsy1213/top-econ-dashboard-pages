@@ -3,7 +3,7 @@ name: Build and Deploy Pages
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 16 * * *'
+    - cron: '55 22 * * *'
 permissions:
   contents: write
   pages: write
@@ -17,6 +17,9 @@ jobs:
   build:
     runs-on: [self-hosted, macOS]
     steps:
+      - name: Keep Mac awake during job
+        run: /usr/bin/caffeinate -dimsu -t 3600 &
+
       - name: Checkout
         uses: actions/checkout@v4
 
