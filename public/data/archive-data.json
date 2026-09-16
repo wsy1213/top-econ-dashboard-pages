@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T23:07:04.687Z",
+  "updatedAt": "2026-09-16T23:13:23.006Z",
   "sources": [
     {
       "id": "nber",
@@ -8,6 +8,306 @@
       "sourceUrl": "https://back.nber.org/rss/new.xml",
       "latestIssue": "Latest NBER Working Papers",
       "articles": [
+        {
+          "title": "(Mis)measuring Uncertainty: Bunching in Probabilistic Expectations",
+          "url": "https://www.nber.org/papers/w35733#fromrss",
+          "authors": "Carola Binder, Laura Crespo, Carlos Gento, Luis M. Guirola, Ernesto Villanueva",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "A Sin Ban, Not a Sin Tax? Consumption and Incidence of SNAP Soda Restrictions",
+          "url": "https://www.nber.org/papers/w35739#fromrss",
+          "authors": "Crossan Cooper, Katja Seim, Jintaek Song",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Automation and Optimal Taxation: A Task-Based Theory",
+          "url": "https://www.nber.org/papers/w35747#fromrss",
+          "authors": "Henrik Kleven, Owen M. Zidar",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Beyond the Conventional Narrative: Economic Heterogeneity and Human Capital Among American Indians",
+          "url": "https://www.nber.org/papers/w35730#fromrss",
+          "authors": "Randall Akee, Emilia Simeonova",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Correlation Neglect in Asset Prices",
+          "url": "https://www.nber.org/papers/w35753#fromrss",
+          "authors": "Hongye Guo, Jessica Wachter",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Diamond-Mirrlees meets Sims: Optimal Taxation with Rational Inattention",
+          "url": "https://www.nber.org/papers/w35741#fromrss",
+          "authors": "George-Marios Angeletos, Matias Bayas-Erazo",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Did COVID Change the Black Neighborhood Startup Deficit? Evidence from the Startup Cartography Project",
+          "url": "https://www.nber.org/papers/w35752#fromrss",
+          "authors": "Catherine E. Fazio, Jorge Guzman, Scott Stern, Yan Xu",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Did the Affordable Care Act Save Lives?",
+          "url": "https://www.nber.org/papers/w35751#fromrss",
+          "authors": "Anuj Gangopadhyaya, Cuiping Schiman, Robert Kaestner",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Disappearing Dollar Convenience?",
+          "url": "https://www.nber.org/papers/w35742#fromrss",
+          "authors": "Arvind Krishnamurthy, Miguel Chumbo",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Does Information Influence the Choice between Social Security Disability and Early Retirement Benefits?",
+          "url": "https://www.nber.org/papers/w35748#fromrss",
+          "authors": "Priyanka Anand, Tran Thi Phu-Duyen, Sita Slavov",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Flowers of Invention: The Economic Impacts of Patent Rights",
+          "url": "https://www.nber.org/papers/w35735#fromrss",
+          "authors": "Jacob Moscona",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Food Labeling Policies: Aggregate Impacts and Heterogeneity Across Categories",
+          "url": "https://www.nber.org/papers/w35737#fromrss",
+          "authors": "Nano Barahona, Cristóbal Otero, Sebastián Otero, Joshua J. Kim",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Heritability and Social Interaction in Labor Market Outcomes: Evidence from the Population of Twins in the United States",
+          "url": "https://www.nber.org/papers/w35746#fromrss",
+          "authors": "David Card, Jesse Rothstein, Moises Yi",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Housing Wealth Accumulation and Electoral Representation",
+          "url": "https://www.nber.org/papers/w35731#fromrss",
+          "authors": "Carlos Fernando Avenancio-León, Yutao He, Michael Reher",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "How Disability Benefits in Early Life Affect Adult Outcomes",
+          "url": "https://www.nber.org/papers/w35725#fromrss",
+          "authors": "Manasi Deshpande, Alessandra Voena, Jason B. Weitze",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Immigration and Child Mortality during the Age of Mass Migration",
+          "url": "https://www.nber.org/papers/w35743#fromrss",
+          "authors": "Katherine Eriksson, Peter Zhixian Lin, Gregory Niemesh",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Informed Choices: Gender Gaps in Career Advice",
+          "url": "https://www.nber.org/papers/w35750#fromrss",
+          "authors": "Yana Gallen, Melanie Wasserman",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Measuring Racial Disparities in Police Stops: Evidence from Telemetric Mobility Data",
+          "url": "https://www.nber.org/papers/w35727#fromrss",
+          "authors": "Xiaofeng Gong, Yuling Han, Susan T. Parker, Matthew B. Ross, Stephen Ross",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Racial Dynamics of Federal Property Buyouts in Flood-Prone Areas",
+          "url": "https://www.nber.org/papers/w35726#fromrss",
+          "authors": "Kay Jowers, Lala Ma, Christopher D. Timmins",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Social Capital and Innovation: Evidence from Facebook Friendship Networks",
+          "url": "https://www.nber.org/papers/w35732#fromrss",
+          "authors": "Brad Cannon, David Hirshleifer, Joshua Thornton",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Spillover Effects of Regulatory Inspections: Evidence from OSHA",
+          "url": "https://www.nber.org/papers/w35646#fromrss",
+          "authors": "Matthew S. Johnson, David Levine, Michael W. Toffel",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Strategic Sovereignty: U.S.–Israeli Strikes and the Reversal of Anti-Regime Protest in Iran",
+          "url": "https://www.nber.org/papers/w35734#fromrss",
+          "authors": "Sultan Mehmood, Yaroslav Prokhorskoy, Leonard Wantchekon",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "The City Through Her Eyes: Gender-Based Harassment in Public Spaces in Urban India",
+          "url": "https://www.nber.org/papers/w35738#fromrss",
+          "authors": "Lori A. Beaman, Seema Jayachandran, Anisha Sharma",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "The Federal Lands: An Economic Property Rights Perspective",
+          "url": "https://www.nber.org/papers/w35745#fromrss",
+          "authors": "Gary D. Libecap",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "The Measurement Revolution? Credible Measurement and Inference in the Age of AI",
+          "url": "https://www.nber.org/papers/w35744#fromrss",
+          "authors": "Melissa Dell, Ashesh Rambachan",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "The Welfare Impacts of Urban Renewal and Forced Relocation: Evidence from Chicago’s HOPE VI Demolitions",
+          "url": "https://www.nber.org/papers/w35736#fromrss",
+          "authors": "Milena Almagro, Eric Chyn, Bryan A. Stuart",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "We've Got You Covered: Establishment-Level Evidence on California's Fast-Food Minimum Wage",
+          "url": "https://www.nber.org/papers/w35749#fromrss",
+          "authors": "Vitor C. Melo, David Neumark, Liam Sigaud, Gary Wagner",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "When Microenterprises Grow, Are Consumers Better Off? Evidence from Large Loans to Microenterprises in Chile",
+          "url": "https://www.nber.org/papers/w35729#fromrss",
+          "authors": "Dean Karlan, Natalia Rigol, Benjamin N. Roth",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "When Resources Meet Relationships: The Returns to Personalized Supports for Low-Income Students",
+          "url": "https://www.nber.org/papers/w35740#fromrss",
+          "authors": "Benjamin Goldman, Jamie Gracie, Sonya Porter",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Who Matters in College? Familiarity, Ability Signals, and Student Achievement",
+          "url": "https://www.nber.org/papers/w35728#fromrss",
+          "authors": "Isaac Ahimbisibwe, Scott E. Carrell, Travis Lybbert",
+          "date": "2026-09-13",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
         {
           "title": "“Non-Marginal” Investor Beliefs",
           "url": "https://www.nber.org/papers/w35708#fromrss",
@@ -5844,8 +6144,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Corporate Tax Cuts, Firm Growth, and Workers' Earnings",
@@ -5854,8 +6154,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Defying Distance? The Provision of Medical Services in the Digital Age",
@@ -5864,8 +6164,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana",
@@ -5874,8 +6174,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Manipulation-Robust Prediction",
@@ -5884,8 +6184,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Marriage, Fertility, and Cultural Integration in Italy",
@@ -5894,8 +6194,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Optimal Public Transportation Networks: Evidence from the World's Largest Bus Rapid Transit System in Jakarta",
@@ -5904,8 +6204,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Presidential Address: Neighborhood Effects and Missing Markets for Opportunity",
@@ -5914,8 +6214,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Rationing by Race",
@@ -5924,8 +6224,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Risk-Sharing Tests and Covariate Shocks: Drought, Floods, and Pests in Uganda",
@@ -5934,8 +6234,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "The Environmental Bias of Corporate Income Taxation",
@@ -5944,8 +6244,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Additionality and Asymmetric Information in Environmental Markets: Evidence from Conservation Auctions",
@@ -6507,14 +6807,24 @@
       "latestIssue": "Latest articles (2026-09) + Forthcoming",
       "articles": [
         {
+          "title": "Regulatory Competition in the US Life Insurance Industry",
+          "url": "https://doi.org/10.1086/742725",
+          "authors": "Johnny Tang",
+          "date": "2026-09-15",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-06-17T18:29:00.388Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 32
+        },
+        {
           "title": "Behavioral Attenuation",
           "url": "https://doi.org/10.1086/744015",
           "authors": "Benjamin Enke, Thomas Graeber, Ryan Oprea, Jeffrey Yang",
           "date": "2026-09-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Equilibrium in the Market for Public School Teachers: District Wage Strategies and Teacher Comparative Advantage",
@@ -6523,8 +6833,8 @@
           "date": "2026-09-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Rethinking Reference Dependence: Wage Dynamics and Optimal Taxi Labor Supply",
@@ -6533,8 +6843,8 @@
           "date": "2026-09-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Timing is Everything: Parental Professional Connections and Labor Market Entry",
@@ -6543,8 +6853,8 @@
           "date": "2026-09-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Environmental Consequences of Hydrocarbon Infrastructure Policy",
@@ -6553,8 +6863,8 @@
           "date": "2026-09-04",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-17T18:29:00.388Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 33
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 34
         },
         {
           "title": "Peer Effects and Rank Concerns in the Classroom",
@@ -6563,8 +6873,8 @@
           "date": "2026-09-03",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Mis(sed) Diagnosis: Physician Decision-Making and ADHD",
@@ -6573,8 +6883,8 @@
           "date": "2026-09-02",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Collusion through Common Leadership",
@@ -6583,8 +6893,8 @@
           "date": "2026-08-31",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Connecting Common Ratio and Common Consequence Preferences",
@@ -6593,8 +6903,8 @@
           "date": "2026-08-31",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Not Learning from Others",
@@ -6603,8 +6913,8 @@
           "date": "2026-08-31",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Strategic Wishful Thinking: Implications for Forecasts",
@@ -6613,8 +6923,8 @@
           "date": "2026-08-31",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "The Long Run Economic Effects of Medical Innovation and the Role of Opportunities",
@@ -6623,8 +6933,8 @@
           "date": "2026-08-31",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "The Macroeconomic Dynamics of Labor Market Polices",
@@ -6633,8 +6943,8 @@
           "date": "2026-08-31",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Using Consumption Data to Derive Optimal Top Income and Capital Tax Rates",
@@ -6643,8 +6953,8 @@
           "date": "2026-08-31",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Who Values Democracy?",
@@ -6653,8 +6963,8 @@
           "date": "2026-08-31",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "The Impact of Unions on Nonunion Wage Setting: Threats and Bargaining",
@@ -6663,8 +6973,8 @@
           "date": "2026-08-25",
           "articleType": "forthcoming",
           "firstSeen": "2026-06-17T18:29:00.388Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 40
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 41
         },
         {
           "title": "Debiasing and <i>t</i> -Tests for Synthetic Control Inference on Average Causal Effects",
@@ -6673,8 +6983,8 @@
           "date": "2026-08-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "From Doubt to Devotion: Trials and Learning-Based Pricing",
@@ -6683,8 +6993,8 @@
           "date": "2026-08-13",
           "articleType": "forthcoming",
           "firstSeen": "2026-06-04T18:39:18.771Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 50
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 51
         },
         {
           "title": "Rent Guarantee Insurance",
@@ -6703,8 +7013,8 @@
           "date": "2026-08-10",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-11T17:06:18.536Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 12
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 13
         },
         {
           "title": "Blackwell-Monotone Updating Rules",
@@ -6990,16 +7300,6 @@
           "title": "Quota Mechanisms: Finite-Sample Optimality and Robustness",
           "url": "https://doi.org/10.1086/742716",
           "authors": "Ian Schofield Ball, Deniz Kattwinkel",
-          "date": "2026-06-15",
-          "articleType": "forthcoming",
-          "firstSeen": "2026-06-17T18:29:00.388Z",
-          "lastSeen": "2026-08-11T17:06:18.536Z",
-          "seenCount": 31
-        },
-        {
-          "title": "Regulatory Competition in the US Life Insurance Industry",
-          "url": "https://doi.org/10.1086/742725",
-          "authors": "Johnny Tang",
           "date": "2026-06-15",
           "articleType": "forthcoming",
           "firstSeen": "2026-06-17T18:29:00.388Z",
@@ -7376,14 +7676,24 @@
       "latestIssue": "Vol. 141, Issue 3 + Forthcoming",
       "articles": [
         {
+          "title": "Attention to the Macroeconomy",
+          "url": "https://doi.org/10.1093/qje/qjag047",
+          "authors": "Sebastian Link, Andreas Peichl, Oliver Pfäuti, Christopher Roth, Johannes Wohlfart",
+          "date": "2026-09-16",
+          "articleType": "forthcoming",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
           "title": "Fairness Across the World",
           "url": "https://doi.org/10.1093/qje/qjag044",
           "authors": "Ingvild Almås, Alexander W Cappelen, Erik Ø Sørensen, Bertil Tungodden",
           "date": "2026-09-07",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Wealth and Property Taxation in the United States",
@@ -7392,8 +7702,8 @@
           "date": "2026-09-04",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States",
@@ -7402,8 +7712,8 @@
           "date": "2026-08-14",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "Clause and Effect: Theory and Field Experimental Evidence on Noncompete Clauses",
@@ -7412,8 +7722,8 @@
           "date": "2026-08-07",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-11T17:06:18.536Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 12
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 13
         },
         {
           "title": "Capital Services in Global Value Chains",
@@ -7422,8 +7732,8 @@
           "date": "2026-07-28",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Correction to: A Further Augmentation of the Solow Model and the Empirics of Economic Growth for OECD Countries",
@@ -7432,8 +7742,8 @@
           "date": "2026-07-27",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Mental Models of the Stock Market",
@@ -7442,8 +7752,8 @@
           "date": "2026-07-25",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-26T17:11:47.090Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 17
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 18
         },
         {
           "title": "The Transmission of Reliable and Unreliable Information",
@@ -7452,8 +7762,8 @@
           "date": "2026-07-25",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-26T17:11:47.090Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 17
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 18
         },
         {
           "title": "“Compensate the Losers?” Economic Policy and the Origins of U.S. Partisan Realignment",
@@ -7462,8 +7772,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 78
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 79
         },
         {
           "title": "A Cognitive Theory of Reasoning and Choice",
@@ -7472,8 +7782,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-06T17:23:28.695Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 49
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 50
         },
         {
           "title": "Business, Liquidity, and Information Cycles",
@@ -7482,8 +7792,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-05-31T17:23:44.363Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 52
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 53
         },
         {
           "title": "Codification, Technology Absorption, and the Globalization of the Industrial Revolution",
@@ -7492,8 +7802,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-13T11:17:11.293Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 67
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 68
         },
         {
           "title": "Collusion with Optimal Information Disclosure",
@@ -7502,8 +7812,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-13T11:17:11.293Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 66
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 67
         },
         {
           "title": "International Reserve Management Under Rollover Crises",
@@ -7512,8 +7822,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-05-29T11:12:18.931Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 52
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 53
         },
         {
           "title": "Making the Invisible Hand Visible: Managers and the Allocation of Workers to Jobs",
@@ -7522,8 +7832,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 64
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 65
         },
         {
           "title": "Peer Effects and the Gender Gap in Corporate Leadership: Evidence from MBA Students",
@@ -7532,8 +7842,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 62
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 63
         },
         {
           "title": "Praying for Rain",
@@ -7542,8 +7852,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-05-29T11:12:18.931Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 53
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 54
         },
         {
           "title": "Public Services Under Private Management",
@@ -7552,8 +7862,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-05-29T11:12:18.931Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 53
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 54
         },
         {
           "title": "Technology Sophistication Across Establishments",
@@ -7562,8 +7872,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 68
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 69
         },
         {
           "title": "The Effects of Gender Integration on Men: Evidence from the U.S. Military",
@@ -7572,8 +7882,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 77
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 78
         },
         {
           "title": "The Effects of Mandatory Profit-Sharing on Workers and Firms: Evidence from France",
@@ -7582,8 +7892,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-28T18:03:38.501Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 56
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 57
         },
         {
           "title": "The Power of Proximity to Coworkers",
@@ -7592,8 +7902,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-05-29T11:12:18.931Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 36
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 37
         },
         {
           "title": "The Power of Proximity to Coworkres",
@@ -7612,8 +7922,8 @@
           "date": "2026-07-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-05-29T11:12:18.931Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 52
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 53
         },
         {
           "title": "In Their Shoes: Empathy Through Information",
@@ -7622,8 +7932,8 @@
           "date": "2026-07-06",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-07T18:10:19.019Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 27
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 28
         },
         {
           "title": "Global Working Hours",
@@ -7632,8 +7942,8 @@
           "date": "2026-07-02",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-05T08:30:15.475Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 29
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 30
         },
         {
           "title": "Who Pays for Unions?",
@@ -7642,8 +7952,8 @@
           "date": "2026-07-01",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-02T07:39:10.318Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 32
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 33
         },
         {
           "title": "What Jobs Come to Mind? Stereotypes About Fields of Study",
@@ -7982,7 +8292,7 @@
       "name": "Econometrica",
       "language": "en",
       "sourceUrl": "https://api.crossref.org/journals/0012-9682/works?sort=published&order=desc&rows=100&filter=type:journal-article",
-      "latestIssue": "Vol. 94, Issue 4",
+      "latestIssue": "Vol. 94, Issue 5",
       "articles": [
         {
           "title": "2025 Election of Fellows to the Econometric Society",
@@ -8045,6 +8355,36 @@
           "seenCount": 21
         },
         {
+          "title": "Backmatter of Econometrica Vol. 94 Iss. 5",
+          "url": "https://doi.org/10.3982/ecta945bm",
+          "authors": "",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Causal Inference for Spatial Treatments",
+          "url": "https://doi.org/10.3982/ecta21571",
+          "authors": "Michael Pollmann",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Causal Inference With Noisy Covariates: Heteroscedastic Measurement Error and Differential Privacy",
+          "url": "https://doi.org/10.3982/ecta23897",
+          "authors": "Anish Agarwal, Rahul Singh",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
           "title": "Comment on <i>‘Asset Bubbles and Overlapping Generations’ by Jean Tirole</i>",
           "url": "https://doi.org/10.3982/ecta24365",
           "authors": "Ngoc-Sang Pham, Alexis Akira Toda",
@@ -8093,6 +8433,16 @@
           "firstSeen": "2026-07-02T07:56:39.893Z",
           "lastSeen": "2026-07-15T17:26:16.762Z",
           "seenCount": 10
+        },
+        {
+          "title": "Curtailing False News, Amplifying Truth",
+          "url": "https://doi.org/10.3982/ecta22524",
+          "authors": "Sergei Guriev, Emeric Henry, Théo Marquis, Ekaterina Zhuravskaya",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
         },
         {
           "title": "Double Robustness of Local Projections and Some Unpleasant VARithmetic",
@@ -8225,6 +8575,26 @@
           "seenCount": 21
         },
         {
+          "title": "Frontmatter of Econometrica 94 Iss. 5",
+          "url": "https://doi.org/10.3982/ecta945fm",
+          "authors": "",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Genetic Prediction and Adverse Selection",
+          "url": "https://doi.org/10.3982/ecta24284",
+          "authors": "Eduardo Azevedo, Jonathan P. Beauchamp, Richard Karlsson Linnér",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
           "title": "Holding up Green Energy: Counterparty Risk in the Indian Solar Power Market",
           "url": "https://doi.org/10.3982/ecta21084",
           "authors": "Nicholas Ryan",
@@ -8263,6 +8633,16 @@
           "firstSeen": "2026-07-17T13:45:48.149Z",
           "lastSeen": "2026-09-13T23:07:04.687Z",
           "seenCount": 21
+        },
+        {
+          "title": "Locally Robust Semiparametrically Efficient Bayesian Inference",
+          "url": "https://doi.org/10.3982/ecta23242",
+          "authors": "Ulrich Müller, Andriy Norets",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
         },
         {
           "title": "Mechanism Design for Personalized Policy: A Field Experiment Incentivizing Exercise",
@@ -8315,6 +8695,26 @@
           "seenCount": 10
         },
         {
+          "title": "Physician Behavior in the Presence of a Secondary Market: The Case of Prescription Opioids",
+          "url": "https://doi.org/10.3982/ecta20884",
+          "authors": "Molly Schnell",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Promoting Women to Managerial Roles in the Bangladeshi Garment Sector",
+          "url": "https://doi.org/10.3982/ecta18759",
+          "authors": "Rocco Macchiavello, Andreas Menzel, Atonu Rabbani, Christopher Woodruff",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
           "title": "Reply to comments on <i>‘Fisher–Schultz Lecture: Contracting Over Pharmaceutical Formularies and Rebates’</i>",
           "url": "https://doi.org/10.3982/ecta24816",
           "authors": "Kate Ho, Robin S. Lee",
@@ -8333,6 +8733,26 @@
           "firstSeen": "2026-07-02T07:56:39.893Z",
           "lastSeen": "2026-07-15T17:26:16.762Z",
           "seenCount": 10
+        },
+        {
+          "title": "Screening Property Rights for Innovation",
+          "url": "https://doi.org/10.3982/ecta22363",
+          "authors": "William Matcham, Mark Schankerman",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Security Design Under Common‐Value Competition",
+          "url": "https://doi.org/10.3982/ecta21366",
+          "authors": "Yue Yuan",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
         },
         {
           "title": "Spatial Economics for Granular Settings",
@@ -8405,6 +8825,26 @@
           "seenCount": 21
         },
         {
+          "title": "The Random Priority Mechanism Is Uniquely Simple, Efficient, and Fair",
+          "url": "https://doi.org/10.3982/ecta23230",
+          "authors": "Marek Pycia, Peter Troyan",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "The Role of Trade in Premature Deindustrialization and Industry Polarization",
+          "url": "https://doi.org/10.3982/ecta20428",
+          "authors": "Michael Sposi, Kei-Mu Yi, Jing Zhang",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
           "title": "Trade and Domestic Distortions: The Case of Informality",
           "url": "https://doi.org/10.3982/ecta19378",
           "authors": "Rafael Dix-Carneiro, Pinelopi Goldberg, Costas Meghir, Gabriel Ulyssea",
@@ -8435,6 +8875,16 @@
           "seenCount": 21
         },
         {
+          "title": "Why Do Workers Dislike Inflation? Wage Erosion and Conflict Costs",
+          "url": "https://doi.org/10.3982/ecta23874",
+          "authors": "Joao Guerreiro, Jonathon Hazell, Chen Lian, Christina Patterson",
+          "date": "2026",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
           "title": "Work Hours Mismatch",
           "url": "https://doi.org/10.3982/ecta21849",
           "authors": "Marta Lachowska, Alexandre Mas, Raffaele Saggio, Stephen A. Woodbury",
@@ -8454,6 +8904,66 @@
       "latestIssue": "Latest articles (2026-09) + Forthcoming",
       "articles": [
         {
+          "title": "Demographics, Wealth, and Global Imbalances in the Twenty-First Century",
+          "url": "https://doi.org/10.1093/restud/rdag103",
+          "authors": "Adrien Auclert, Hannes Malmberg, Frédéric Martenet, Matthew Rognlie",
+          "date": "2026-09-16",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Entry and Profits in an Aging Economy: The Role of Consumer Inertia",
+          "url": "https://doi.org/10.1093/restud/rdag108",
+          "authors": "Gideon Bornstein",
+          "date": "2026-09-16",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "The End of Oil",
+          "url": "https://doi.org/10.1093/restud/rdag106",
+          "authors": "Ryan Kellogg",
+          "date": "2026-09-16",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Machine Learning for Dynamic Incentive Problems",
+          "url": "https://doi.org/10.1093/restud/rdag105",
+          "authors": "Philipp Renner, Simon Scheidegger",
+          "date": "2026-09-15",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Measuring Markets for Network Goods",
+          "url": "https://doi.org/10.1093/restud/rdag099",
+          "authors": "Leonardo Bursztyn, Matthew Gentzkow, Rafael Jiménez-Durán, Aaron Leonard, Filip Milojević, Christopher Roth",
+          "date": "2026-09-15",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Company Wage Policy in a Low-Wage Labor Market",
+          "url": "https://doi.org/10.1093/restud/rdag102",
+          "authors": "Giulia Giupponi, Stephen Machin",
+          "date": "2026-09-11",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
           "title": "CompanyWage Policy in a Low-Wage Labor Market",
           "url": "https://doi.org/10.1093/restud/rdag102",
           "authors": "Giulia Giupponi, Stephen Machin",
@@ -8470,8 +8980,8 @@
           "date": "2026-09-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "A Robust Test for Weak Instruments for 2SLS with Multiple Endogenous Regressors",
@@ -8490,8 +9000,8 @@
           "date": "2026-09-08",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Latent Heterogeneity in the Marginal Propensity to Consume",
@@ -8500,8 +9010,8 @@
           "date": "2026-09-08",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 23
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 24
         },
         {
           "title": "Patent Term, Innovation, and the Role of Technology Disclosure Externalities",
@@ -8520,8 +9030,8 @@
           "date": "2026-09-08",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 40
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 41
         },
         {
           "title": "The Illiquidity of Water Markets",
@@ -8550,8 +9060,8 @@
           "date": "2026-09-03",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Public Employee Pensions and Municipal Insolvency",
@@ -8560,8 +9070,8 @@
           "date": "2026-08-28",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Early-Career Discrimination: Spiraling or Self-Correcting?",
@@ -8580,8 +9090,8 @@
           "date": "2026-08-25",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Labor Supply and the Pension Contribution-Benefit Link",
@@ -8590,8 +9100,8 @@
           "date": "2026-08-25",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-25T16:48:22.058Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 9
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 10
         },
         {
           "title": "Paying to Match: Decentralized Markets with Information Frictions",
@@ -8600,8 +9110,8 @@
           "date": "2026-08-25",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Why Veil? Religious Headscarves and the Economic Role of Women",
@@ -8610,8 +9120,8 @@
           "date": "2026-08-25",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-25T16:48:22.058Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 9
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 10
         },
         {
           "title": "Affective Polarization, Media Outlets, and Opinion Dynamics",
@@ -8620,8 +9130,8 @@
           "date": "2026-08-24",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Recruiting Talent",
@@ -8630,8 +9140,8 @@
           "date": "2026-08-22",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "An Optimal Test for Strategic Interaction in Network Formation Games",
@@ -8640,8 +9150,8 @@
           "date": "2026-08-13",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "Capital Unemployment",
@@ -8650,8 +9160,8 @@
           "date": "2026-08-12",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "Informative Certification: Screening versus Acquisition",
@@ -8660,8 +9170,8 @@
           "date": "2026-08-12",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Informative Certification: Screening vs. Acquisition",
@@ -8690,8 +9200,8 @@
           "date": "2026-08-11",
           "articleType": "forthcoming",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "How You Pay Drives What You Choose: Mental Accounting in Health Insurance Plan Choice",
@@ -8700,8 +9210,8 @@
           "date": "2026-08-10",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-11T17:06:18.536Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 12
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 13
         },
         {
           "title": "College, Cognitive Ability, and Socioeconomic Disadvantage: Policy Lessons from the U.K. in 1960–2004",
@@ -9839,8 +10349,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "Central Banks as Dollar Lenders of Last Resort: Implications for Regulation and Reserve Holdings",
@@ -9849,8 +10359,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 34
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 35
         },
         {
           "title": "Deciphering Federal Reserve Communication via Text Analysis of Alternative FOMC Statements",
@@ -9859,8 +10369,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "Did the United States Really Grow Out of Its World War II Debt?",
@@ -9869,8 +10379,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 34
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 35
         },
         {
           "title": "Expecting Floods: Firm Entry, Employment, and Aggregate Implications",
@@ -9879,8 +10389,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "Import Liberalization as Export Destruction? Evidence from the United States",
@@ -9889,8 +10399,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "Resource Misallocation in European Firms: The Role of Constraints, Firm Characteristics, and Managerial Decisions",
@@ -9899,8 +10409,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "Selection, Structural Transformation, and the Cost Disease of Services",
@@ -9909,8 +10419,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "Self-Fulfilling Prophecies in the Transition to Clean Technology",
@@ -9919,8 +10429,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "TFPR: Dispersion and Cyclicality",
@@ -9929,8 +10439,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "The Economic Consequences of Effective Carbon Taxes",
@@ -9939,8 +10449,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "The Life Cycle Implications of Temporary Employment Contracts",
@@ -9949,8 +10459,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "University Research and the Market for Higher Education",
@@ -9959,8 +10469,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "Banking Networks and Economic Growth: From Idiosyncratic Shocks to Aggregate Fluctuations",
@@ -10148,8 +10658,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Data Linkages and Privacy Regulation",
@@ -10158,8 +10668,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Exploiting Rivals' Strengths",
@@ -10168,8 +10678,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Failures of Contingent Reasoning in Annuitization Decisions",
@@ -10178,8 +10688,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Higher-Order Beliefs and (Mis)learning from Prices",
@@ -10188,8 +10698,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Liquidity Constraints and the Value of Insurance",
@@ -10198,8 +10708,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Optimal Design of Market Access",
@@ -10208,8 +10718,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Product Liability Litigation and Innovation: Evidence from Medical Devices",
@@ -10218,8 +10728,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Rational Misspecification: Framework and Applications",
@@ -10228,8 +10738,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Sequential Protest Formation",
@@ -10238,8 +10748,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "The Combinatorial Multi-Round Ascending Auction",
@@ -10248,8 +10758,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "The Economics of Discriminatory Job Reservations",
@@ -10258,8 +10768,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "The Effects of Sin Taxes and Advertising Restrictions in a Dynamic Equilibrium",
@@ -10268,8 +10778,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Welfare of Competitive Price Discrimination with Captive Consumers",
@@ -10278,8 +10788,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "A Measure of Behavioral Heterogeneity",
@@ -10537,8 +11047,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "Dominated Pension Investments: The Role of Search Frictions and Unawareness",
@@ -10547,8 +11057,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 36
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 37
         },
         {
           "title": "Fostering Cooperation: The Conflict-Reducing Effects of Intervillage Competition for Government Transfers",
@@ -10557,8 +11067,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "Order Effects and Teacher Labor Supply: A Nationwide RCT in Ecuador",
@@ -10567,8 +11077,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "The Dynamic Effects of Cash Transfers to Agricultural Households",
@@ -10577,8 +11087,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "The Effect of Low-Skill Immigration Restrictions on US Firms and Workers: Evidence from a Randomized Lottery",
@@ -10587,8 +11097,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 36
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 37
         },
         {
           "title": "The Political Geography of Cities",
@@ -10597,8 +11107,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "The Welfare Economics of Reference Dependence",
@@ -10607,8 +11117,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 36
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 37
         },
         {
           "title": "Turbocharging Profits? Contract Gaming and Revenue Allocation in Healthcare",
@@ -10617,8 +11127,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "Which Reference Groups Matter and How? A Relative Income Information Experiment with Administrative Data",
@@ -10627,8 +11137,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 36
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 37
         },
         {
           "title": "Age at School Entry and Human Capital Development: Evidence from Lesotho",
@@ -10776,8 +11286,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Are Building Codes an Effective Adaptation to Wind Risk? Evidence from Remotely Detected Blue Tarps",
@@ -10786,8 +11296,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Attracting and Retaining Highly Effective Educators in Hard-to-Staff Schools",
@@ -10796,8 +11306,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Collective Bargaining Rights, Policing, and Civilian Deaths",
@@ -10806,8 +11316,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Estimating the Economic Value of Zoning Reform",
@@ -10816,8 +11326,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Female Leaders and Intrahousehold Dynamics: Evidence from State Elections in India",
@@ -10826,8 +11336,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Flood Risk Mapping and the Distributional Impacts of Climate Information",
@@ -10836,8 +11346,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Hurricanes, Climate Change Policies, and Electoral Accountability",
@@ -10846,8 +11356,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Perils of the Paperwork: The Impact of Information and Application Assistance on Social Benefit Take-Up in India",
@@ -10856,8 +11366,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Racial and Ethnic Inequality and the China Shock",
@@ -10866,8 +11376,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Rainfall Inequality, Political Power, and Ethnic Conflict in Africa",
@@ -10876,8 +11386,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Tax and Occupancy of Business Properties: Evidence from UK Business Rate Reliefs",
@@ -10886,8 +11396,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "The Option Value of Municipal Liquidity",
@@ -10896,8 +11406,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "The Value of School Social Climate Information: Evidence from Chicago Housing Transactions",
@@ -10906,8 +11416,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "The Welfare Effects of Eligibility Expansions: Theory and Evidence from SNAP",
@@ -10916,8 +11426,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "When the Effects of Informational Interventions Are Driven by Salience—Evidence from School Parents in Brazil",
@@ -10926,8 +11436,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Adjustable Product Attributes, Indirect Network Effects, and Subsidy Design: The Case of Electric Vehicles",
@@ -11225,8 +11735,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Does a Food Waste Tax Work? Evidence from Quasi-Experiments in South Korea",
@@ -11235,8 +11745,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Excessive Pharmaceutical Marketing Expenditure: Policy Remedies from China",
@@ -11245,8 +11755,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Firm Concentration and Job Design: The Case of Schedule Flexible Work Arrangements",
@@ -11255,8 +11765,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Fiscal Policy in Small Open Economies: The International Intertemporal Keynesian Cross",
@@ -11265,8 +11775,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Outside Income as a Signal: Evidence from Politicians and Voters",
@@ -11275,8 +11785,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Synthetic Controls for Experimental Design",
@@ -11285,8 +11795,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "The Bronx Is Burning: Urban Disinvestment Effects of Fair Access to Insurance Requirements Plans",
@@ -11295,8 +11805,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "The Effects of Social Movements: Evidence from #MeToo",
@@ -11305,8 +11815,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "The Factor Bias of External Inputs: Implications for Substitution between Capital and Labor",
@@ -11315,8 +11825,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Was Javert Right to Be Suspicious? Marginal Treatment Effects with Duration Outcomes",
@@ -11325,8 +11835,8 @@
           "date": "2026-07-21",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "<i>Review of Economics and Statistics</i> 2026 Annual Report",
@@ -11335,8 +11845,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Attrition and the Gender Patenting Gap",
@@ -11345,8 +11855,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Baby Bumps in the Road: The Impact of Parenthood on Job Performance, Human Capital, and Career Advancement",
@@ -11355,8 +11865,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Critical Values Robust to P-Hacking",
@@ -11365,8 +11875,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Destruction, Policy, and the Evolving Consequences of Washington, DC’s 1968 Civil Disturbance",
@@ -11375,8 +11885,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Difference-in-Differences Estimators of Intertemporal Treatment Effects",
@@ -11385,8 +11895,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Disentangling Reputation from Selection Effects in Markets with Informational Asymmetries: A Field Experiment",
@@ -11395,8 +11905,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Family-Leave Mandates and Female Labor at U.S. Firms: Evidence from a Trade Shock",
@@ -11405,8 +11915,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Federal Tax Deductions and the Demand for Local Public Goods",
@@ -11415,8 +11925,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Human Capital and Climate Change",
@@ -11425,8 +11935,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Information Transmission in Groups: Peer Influence in High-Stakes, Irreversible Financial Decisions",
@@ -11435,8 +11945,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Is Hybrid Work the Best of Both Worlds? Evidence from a Field Experiment",
@@ -11445,8 +11955,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Knowledge Access: The Effects of Carnegie Libraries on Innovation",
@@ -11455,8 +11965,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Machine Learning Can Predict Shooting Victimization Well Enough to Help Prevent It",
@@ -11465,8 +11975,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Monetary Policy and Home Buying Inequality",
@@ -11475,8 +11985,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Opioid Use, Mortality Risks, and Crime: Insights from a Rapid Reduction in Heroin Supply",
@@ -11485,8 +11995,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Permanent and Transitory Responses to Capital Gains Taxes: Evidence from a Lifetime Exemption in Canada",
@@ -11495,8 +12005,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Quantile Effects in Discrete Choice with Social Interactions",
@@ -11505,8 +12015,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "School Choice, Student Sorting, and Academic Performance",
@@ -11515,8 +12025,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Urban Transit Infrastructure and Inequality",
@@ -11525,8 +12035,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Using Rich Lists to Study the Super-Rich and Top Wealth Inequality: Insights from Switzerland",
@@ -11535,8 +12045,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Weak Identification in Low-Dimensional Factor Models with One or Two Factors",
@@ -11545,8 +12055,8 @@
           "date": "2026-07-17",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-24T17:45:44.751Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 18
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 19
         },
         {
           "title": "Asymptotics of Cointegration Tests for High-Dimensional Var(k)",
@@ -11555,8 +12065,8 @@
           "date": "2026-07-10",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-28T00:51:31.069Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 7
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 8
         },
         {
           "title": "Disentangling the Effects of the 2018–2019 Tariffs on a Globally Connected U.S. Manufacturing Sector",
@@ -12334,8 +12844,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Basic income versus fairness: redistribution with inactive agents",
@@ -12344,8 +12854,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-06T17:58:42.266Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 13
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 14
         },
         {
           "title": "Benefit-based taxation can include substantial redistribution",
@@ -12354,8 +12864,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-06T17:58:42.266Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 13
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 14
         },
         {
           "title": "Do information and communication technologies empower female workers? Evidence from Vietnam",
@@ -12364,8 +12874,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "Do prosecutor and defendant race pairings matter? Evidence from random assignment",
@@ -12374,8 +12884,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Election results and democratic discontent: Expectations, extremism, and democratic values in post-election Brazil",
@@ -12384,8 +12894,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Escaping temporary traps? Evidence from age-based incentives to permanent employment",
@@ -12394,8 +12904,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Fairness perceptions of redistribution and predistribution",
@@ -12404,8 +12914,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "Friends with drugs: The role of social networks in the opioid epidemic",
@@ -12414,8 +12924,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "From prison peers to co-offenders",
@@ -12424,8 +12934,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Green spills: Peer effects in pro-environmental behaviors",
@@ -12434,8 +12944,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "How to fund nonprofits?",
@@ -12444,8 +12954,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Immigration enforcement and safety net participation in mixed-status households",
@@ -12454,8 +12964,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Impacts of a partial welfare reform on targeting and political competition",
@@ -12464,8 +12974,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Information manipulation and repression: Theory and evidence from the COVID-19 response in Russia",
@@ -12474,8 +12984,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Language and identity: Evidence from a schooling reform",
@@ -12484,8 +12994,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Minimum wage laws and job search",
@@ -12494,8 +13004,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-06T17:58:42.266Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 13
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 14
         },
         {
           "title": "Mortality regressivity and pension design",
@@ -12504,8 +13014,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Non-monetary incentives and bureaucratic performance: Evidence from U.S. courts",
@@ -12514,8 +13024,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "Safety net payment digitization and participant outcomes: Evidence from the WIC EBT transition",
@@ -12524,8 +13034,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Smart power limits: Designing shortage mechanisms for extreme events",
@@ -12534,8 +13044,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "The accuracy of jobseekers’ wage expectations",
@@ -12544,8 +13054,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "The costs of environmental land use regulation",
@@ -12564,8 +13074,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "The impact of election fraud on government performance",
@@ -12584,8 +13094,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Wage spillovers across sectors: Evidence from a localized public-sector wage cut",
@@ -12594,8 +13104,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "Agency incentives and disparate revenue collection: Evidence from Chicago parking tickets",
@@ -13477,14 +13987,24 @@
       "latestIssue": "Vol. 164",
       "articles": [
         {
+          "title": "Can time-varying currency risk hedging explain exchange rates?",
+          "url": "https://doi.org/10.1016/j.jinteco.2026.104333",
+          "authors": "Leonie Bräuer, Harald Hau",
+          "date": "2026-12",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
           "title": "Climate policies as a catalyst for green FDI",
           "url": "https://doi.org/10.1016/j.jinteco.2026.104331",
           "authors": "Samuel Pienknagura",
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-26T16:54:19.279Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 8
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 9
         },
         {
           "title": "Different no more: Country spreads in advanced and emerging economies",
@@ -13493,8 +14013,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-06T17:58:42.266Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 13
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 14
         },
         {
           "title": "Expert inflation preferences and the evaluation of monetary policy",
@@ -13503,8 +14023,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-11T17:06:18.536Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 12
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 13
         },
         {
           "title": "Exporter survival with uncertainty and experimentation",
@@ -13513,8 +14033,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-11T17:06:18.536Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 12
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 13
         },
         {
           "title": "Global production networks and imperfect competition",
@@ -13523,8 +14043,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-06T17:58:42.266Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 13
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 14
         },
         {
           "title": "Horizontal regulatory barriers in international trade: Evidence from electric plugs",
@@ -13533,8 +14053,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-06T17:58:42.266Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 13
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 14
         },
         {
           "title": "Industrial composition of syndicated loans and banks’ climate commitments",
@@ -13543,8 +14063,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "Labor mobility and the level of unemployment in a currency union",
@@ -13553,8 +14073,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Optimal monetary and exchange rate frameworks for commodity-exposed economies",
@@ -13563,8 +14083,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Persistent global growth differences and euro area adjustment: Real activity, trade and the real exchange rate",
@@ -13573,8 +14093,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-06T17:58:42.266Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 13
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 14
         },
         {
           "title": "Reshaping factory Asia: How did the US-China trade war affect the Asian-Pacific supply chain?",
@@ -13583,8 +14103,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Tapping into excess capacity: Chinese machinery exports and African industrialization",
@@ -13593,8 +14113,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "The extensive margin of restructuring: Adoption of new work in a global economy",
@@ -13603,8 +14123,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-11T17:06:18.536Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 12
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 13
         },
         {
           "title": "The impact of AI and cross-border data regulation on international trade in digital services",
@@ -13613,8 +14133,18 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
+        },
+        {
+          "title": "Trade shocks and human capital: Evidence from Brazil’s trade liberalization",
+          "url": "https://doi.org/10.1016/j.jinteco.2026.104334",
+          "authors": "Marcos Y. Nakaguma, Arthur A. Viaro",
+          "date": "2026-12",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
         },
         {
           "title": "Transportation networks, technology adoption, and structural transformation",
@@ -13623,8 +14153,8 @@
           "date": "2026-12",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "A nascent international financial channel of China’s monetary policy transmission",
@@ -14232,8 +14762,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Ancestral origins of democratic preferences: The role of state experience",
@@ -14242,8 +14772,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-13T02:06:17.485Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 2
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 3
         },
         {
           "title": "Annual overseas migration and housing markets: Evidence from Australian neighborhoods",
@@ -14252,8 +14782,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Approximately efficient resource allocation: A theoretical and experimental evaluation",
@@ -14262,8 +14792,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Corporate contributions and political selection: Evidence from Brazil",
@@ -14272,8 +14802,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Diversity in teams: Collaboration and performance in experiments with different tasks",
@@ -14282,8 +14812,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Do individualists and collectivists cooperate differently?",
@@ -14292,8 +14822,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Do you remember? Prosocial behavior declines in memory-based decisions",
@@ -14302,8 +14832,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-28T00:51:31.069Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 7
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 8
         },
         {
           "title": "Does happiness spread within organizations? Evidence from a field experiment in Norway",
@@ -14312,8 +14842,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Does LaTeX enhance perceptions of research quality in economics?",
@@ -14322,8 +14852,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Does slow strategizing indicate optimal behavior or uncertainty?",
@@ -14332,8 +14862,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Emergency department visits and temperature: Evidence from Mexico",
@@ -14342,8 +14872,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Endogenous depopulation and economic growth",
@@ -14352,8 +14882,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Endogenous syndicate formation in (rent-seeking) contests",
@@ -14362,8 +14892,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Energy poverty and health: Evidence from European countries",
@@ -14372,8 +14902,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Human accuracy in social network analysis: The role of network characteristics in infection risk assessment",
@@ -14382,8 +14912,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Market versus state in driving growth: An institutional interpretation of TFP changes in China",
@@ -14392,8 +14922,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Organizational culture and habit formation in public procurement",
@@ -14402,8 +14932,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Peer comparisons and the cost of pro-social behavior: Evidence from the lab",
@@ -14412,8 +14942,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Reputation, punishment and the enforcement of social norms",
@@ -14422,8 +14952,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "The persistent legacy: Colonial railroads and agricultural productivity in Africa",
@@ -14432,8 +14962,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-13T23:07:04.687Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 1
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 2
         },
         {
           "title": "Variations in the two-step norm elicitation procedure: timing, incentives, and scope",
@@ -14442,8 +14972,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-29T00:32:54.511Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 6
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 7
         },
         {
           "title": "Who is concerned about climate change when forests are burning? Evidence from Swedish forest fires",
@@ -14452,8 +14982,8 @@
           "date": "2026-10",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-13T23:07:04.687Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 1
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 2
         },
         {
           "title": "(Un)equal and safe: How distributional and defense information shape fuel tax support?",
@@ -15781,8 +16311,8 @@
           "date": "2027-02",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Familiar faces, honest answers? The impacts of enumerator familiarity and modality on survey responses",
@@ -15791,8 +16321,18 @@
           "date": "2027-02",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
+        },
+        {
+          "title": "FDI spillovers in history: Interwar Japanese “Zaikabo” investment in China's cotton spinning industry",
+          "url": "https://doi.org/10.1016/j.jdeveco.2026.103925",
+          "authors": "Holger Görg, Toshihiro Okubo, Eric Strobl, Maximilian Von Ehrlich",
+          "date": "2027-02",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
         },
         {
           "title": "Payroll taxes, firm dynamism, and aggregate productivity",
@@ -15801,8 +16341,28 @@
           "date": "2027-02",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
+        },
+        {
+          "title": "Political career incentives and the environmental costs: Evidence from China’s promotion tournaments",
+          "url": "https://doi.org/10.1016/j.jdeveco.2026.103924",
+          "authors": "JingXuan Xu, Hao Xu, Guangrong Ma",
+          "date": "2027-02",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "The health effects of genetically modified crops",
+          "url": "https://doi.org/10.1016/j.jdeveco.2026.103930",
+          "authors": "Zhiqiang Wang, Xianling Long",
+          "date": "2027-02",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
         },
         {
           "title": "Under pressure: High-Stakes exams and media-reported student suicides in India",
@@ -15811,8 +16371,8 @@
           "date": "2027-02",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Adult children's human capital accumulation and parents' risky behaviors: Evidence from the higher education expansion in China",
@@ -16930,8 +17490,8 @@
           "date": "2027-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Beyond the early era of EVs: Evidence from the staggered rollout of the HOV lane network in California",
@@ -16940,8 +17500,8 @@
           "date": "2027-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Local charger availability and electric vehicle adoption: Evidence from Norway",
@@ -16950,8 +17510,8 @@
           "date": "2027-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Political patronage, rent-extraction, and social costs: Evidence from China's environmental cleanup",
@@ -16960,8 +17520,8 @@
           "date": "2027-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Why did air conditioning adoption accelerate faster than predicted? Evidence from Mexico",
@@ -16970,8 +17530,8 @@
           "date": "2027-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Window-dressing in environmental regulation: Short-term incentives and temporary abatement",
@@ -16980,8 +17540,8 @@
           "date": "2027-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Competition between green and blue hydrogen and indirect network effects",
@@ -17729,8 +18289,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-28T00:51:31.069Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 7
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 8
         },
         {
           "title": "Pricing with Algorithms",
@@ -17739,8 +18299,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-28T00:51:31.069Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 7
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 8
         },
         {
           "title": "Prime Locations",
@@ -17749,8 +18309,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-28T00:51:31.069Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 7
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 8
         },
         {
           "title": "Screening Adaptive Cartels",
@@ -17759,8 +18319,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-28T00:51:31.069Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 7
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 8
         },
         {
           "title": "The Missing Loan-to-Value Cycle",
@@ -17769,8 +18329,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-28T00:51:31.069Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 7
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 8
         },
         {
           "title": "The Missing Middle Managers: Labor Costs, Firm Structure, and Development",
@@ -17779,8 +18339,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-28T00:51:31.069Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 7
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 8
         },
         {
           "title": "Unconditional Convergence in Manufacturing: A Reassessment",
@@ -17789,8 +18349,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-28T00:51:31.069Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 7
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 8
         },
         {
           "title": "What Is Newsworthy? Theory and Evidence",
@@ -17799,8 +18359,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-28T00:51:31.069Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 7
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 8
         },
         {
           "title": "An Evolutionary Perspective on Updating Risk and Ambiguity Preferences",
@@ -17988,8 +18548,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-19T18:05:22.342Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 40
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 41
         },
         {
           "title": "Cleaner but Volatile Energy? The Effect of Coal Plant Retirement on Market Competition in the Wholesale Electricity Market",
@@ -17998,8 +18558,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-23T18:07:46.879Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 39
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 40
         },
         {
           "title": "Consumer Search, Firm Heterogeneity, and Platform Design",
@@ -18008,8 +18568,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "Issue Information",
@@ -18018,8 +18578,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 91
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 92
         },
         {
           "title": "Market Effects of Brand Search Advertising",
@@ -18028,8 +18588,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "Mergers in the Presence of Adverse Selection",
@@ -18038,8 +18598,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-25T18:21:00.098Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "Nonlinear Pricing in Oligopoly: How Brand Preferences Shape Market Outcomes",
@@ -18048,8 +18608,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "Output Quality, Productivity, and Demand: Evidence from the Chinese Steel Industry",
@@ -18058,8 +18618,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-17T18:29:00.388Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 36
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 37
         },
         {
           "title": "Peer Learning, Enforcement, and Reputation",
@@ -18068,8 +18628,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-19T18:05:22.342Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 40
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 41
         },
         {
           "title": "Preemptive Entry and Technology Diffusion: The Market for Drive‐In Theaters",
@@ -18078,8 +18638,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-19T18:05:22.342Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "Price Discrimination With Manipulable Observables",
@@ -18088,8 +18648,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-23T18:07:46.879Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 39
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 40
         },
         {
           "title": "Pulp Friction: The Value of Quantity Contracts in Decentralized Markets",
@@ -18098,8 +18658,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-15T17:26:16.762Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 22
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 23
         },
         {
           "title": "The Competitive Effects of Mergers with Cournot Competition",
@@ -18108,8 +18668,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "The Incidence of Coarse Certification: Evidence From the ENERGY STAR Program",
@@ -18118,8 +18678,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-29T18:18:17.512Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 35
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 36
         },
         {
           "title": "Welfare Effects of Trade Associations: The Case of the Chilean Salmon Export Industry",
@@ -18128,8 +18688,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-26T18:00:09.278Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 37
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 38
         },
         {
           "title": "What Causes Geographic Variation in Drug Prescribing? Evidence from Physician Migration",
@@ -18138,8 +18698,8 @@
           "date": "2026-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-06-25T18:21:00.098Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 38
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 39
         },
         {
           "title": "Distributional Effect of Insurer Competition on Premiums: Evidence From the Employer‐Sponsored Health Insurance Market",
@@ -18148,8 +18708,8 @@
           "date": "2026-08-26",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-26T16:54:19.279Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 8
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 9
         },
         {
           "title": "Acquisitions, Innovation and the Entrenchment of Monopoly",
@@ -18268,8 +18828,8 @@
           "date": "2026-03-23",
           "articleType": "forthcoming",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 84
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 85
         },
         {
           "title": "Consumer‐Minded Informational Intermediary and Welfare Losses",
@@ -18278,8 +18838,8 @@
           "date": "2026-03-17",
           "articleType": "forthcoming",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 85
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 86
         },
         {
           "title": "Full Discretion is Inevitable",
@@ -18288,8 +18848,8 @@
           "date": "2026-03-17",
           "articleType": "forthcoming",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 85
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 86
         },
         {
           "title": "Network Structure and the Efficiency Gains from Mergers: Evidence from U.S. Freight Railroads",
@@ -18298,8 +18858,8 @@
           "date": "2026-03-17",
           "articleType": "forthcoming",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 85
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 86
         },
         {
           "title": "Ad Valorem Taxation in a Multiproduct Monopoly",
@@ -18447,8 +19007,8 @@
           "date": "2026-07-01",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-02T07:39:10.318Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 32
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 33
         },
         {
           "title": "Beyond IQ: The Rising Value of Extraversion",
@@ -18457,8 +19017,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-11T17:07:51.078Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 24
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 25
         },
         {
           "title": "Breaking Silence: How Intimate Partner Violence And Reporting Shape Later Life Outcomes",
@@ -18467,8 +19027,8 @@
           "date": "2026-07-01",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-02T07:39:10.318Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 32
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 33
         },
         {
           "title": "Childbirth and Firm Performance: Evidence from Norwegian Entrepreneurs",
@@ -18477,8 +19037,8 @@
           "date": "2026-07-01",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-02T07:56:39.893Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 31
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 32
         },
         {
           "title": "College Majors and Earnings Growth",
@@ -18487,8 +19047,8 @@
           "date": "2026-07-01",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-02T07:56:39.893Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 31
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 32
         },
         {
           "title": "Consumption and Income Inequality across Generations",
@@ -18497,8 +19057,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-11T17:07:51.078Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 24
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 25
         },
         {
           "title": "Customer Discrimination in the Workplace: Evidence from Online Sales",
@@ -18507,8 +19067,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-11T17:07:51.078Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 24
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 25
         },
         {
           "title": "Does Monitoring Change Teacher Pedagogy and Student Outcomes?",
@@ -18517,8 +19077,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-11T17:07:51.078Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 24
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 25
         },
         {
           "title": "Gene-Environment Complementarity in Educational Attainment",
@@ -18527,8 +19087,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-11T17:07:51.078Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 24
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 25
         },
         {
           "title": "Instrumental Variables with Unordered Treatments: Theory and Evidence from Returns to Fields of Study",
@@ -18537,8 +19097,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-11T17:07:51.078Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 24
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 25
         },
         {
           "title": "Profits of Prejudiced Algorithms",
@@ -18547,8 +19107,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-05-29T11:12:18.931Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 53
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 54
         },
         {
           "title": "The Economics of Gender-Specific Minimum Wage Legislation",
@@ -18557,8 +19117,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-11T17:07:51.078Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 24
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 25
         },
         {
           "title": "The Effect of Financial Resources on Fertility: Evidence from Administrative Data on Lottery Winners",
@@ -18567,8 +19127,8 @@
           "date": "2026-07-01",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-02T07:39:10.318Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 32
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 33
         },
         {
           "title": "When Is Discrimination Unfair?",
@@ -18577,8 +19137,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-11T17:07:51.078Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 24
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 25
         },
         {
           "title": "Working Hours, Top Management Appointments, and Gender: Evidence from Linked Employer-Employee Data",
@@ -18587,8 +19147,8 @@
           "date": "2026-07-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-07-11T17:07:51.078Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 24
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 25
         },
         {
           "title": "Patterns and Implications of Ability Tracking: Evidence from Texas Public Schools",
@@ -18597,8 +19157,8 @@
           "date": "2026-06-17",
           "articleType": "forthcoming",
           "firstSeen": "2026-06-18T18:32:50.263Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 41
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 42
         },
         {
           "title": "College Networks: The Importance of Employer Connections",
@@ -18717,8 +19277,8 @@
           "date": "2026-03-02",
           "articleType": "forthcoming",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 91
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 92
         },
         {
           "title": "How Does the Earned Income Tax Credit Work? Exploring the Role of Commuting and Personal Transportation",
@@ -18727,8 +19287,8 @@
           "date": "2026-03-02",
           "articleType": "forthcoming",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 91
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 92
         },
         {
           "title": "Educational Ambition, Marital Sorting, and Inequality.",
@@ -18737,8 +19297,8 @@
           "date": "2026-02-24",
           "articleType": "forthcoming",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 91
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 92
         },
         {
           "title": "Robots and Workers",
@@ -18747,8 +19307,8 @@
           "date": "2026-01-05",
           "articleType": "forthcoming",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 91
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 92
         },
         {
           "title": "\"Workhorses of Opportunity\": Regional Universities Increase Local Social Mobility",
@@ -18757,8 +19317,8 @@
           "date": "2025-12-24",
           "articleType": "forthcoming",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 91
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 92
         },
         {
           "title": "Barriers to Entry: Decomposing the Gender Gap in Job Search in Urban Pakistan",
@@ -18827,8 +19387,8 @@
           "date": "2025-12-23",
           "articleType": "forthcoming",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 60
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 61
         }
       ]
     },
@@ -18840,14 +19400,34 @@
       "latestIssue": "Latest articles (2026-09) + Forthcoming",
       "articles": [
         {
+          "title": "Media Slant is Contagious",
+          "url": "https://doi.org/10.1093/ej/ueag116",
+          "authors": "Philine Widmer, Clémentine Abed Meraim, Sergio Galletta, Elliott Ash",
+          "date": "2026-09-16",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
+          "title": "Government Recommendations and Health Behaviours: Evidence from Breast Cancer Screening Guidelines",
+          "url": "https://doi.org/10.1093/ej/ueag110",
+          "authors": "Brandyn F Churchill, Emily C Lawler",
+          "date": "2026-09-14",
+          "articleType": "latest_issue",
+          "firstSeen": "2026-09-16T23:13:23.006Z",
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 1
+        },
+        {
           "title": "Sabotage as Industrial Policy",
           "url": "https://doi.org/10.1093/ej/ueag111",
           "authors": "Jin Liu, Martin Rotemberg, Sharon Traiberman",
           "date": "2026-09-11",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "More on onetary Economics",
@@ -18856,8 +19436,8 @@
           "date": "2026-09-09",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Incomplete Information and Self-fulfilling Inflation Dynamics —Lucas meets Keynes",
@@ -18866,8 +19446,8 @@
           "date": "2026-09-08",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Teacher Effects on Students’ Socio-Emotional Skills and Young Adult Outcomes",
@@ -18876,8 +19456,8 @@
           "date": "2026-09-08",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Contingent Trade Agreements: Linking Free Trade and Environmental Conservation",
@@ -18886,8 +19466,8 @@
           "date": "2026-09-07",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Helping in the Workplace: The Role of Leadership Relative to Employee Personality and Preferences",
@@ -18896,8 +19476,8 @@
           "date": "2026-09-07",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-12T04:02:48.601Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 3
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 4
         },
         {
           "title": "Revealed Social Networks",
@@ -18906,8 +19486,8 @@
           "date": "2026-08-26",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-26T16:54:19.279Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 8
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 9
         },
         {
           "title": "Group Identity and Belief Formation: A Microfoundation of Political Polarization",
@@ -18916,8 +19496,8 @@
           "date": "2026-08-17",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "Remote work and effort provision in teams",
@@ -18926,8 +19506,8 @@
           "date": "2026-08-17",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-25T15:53:28.595Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 10
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 11
         },
         {
           "title": "A Comment on “The Heterogeneous Tax Pass-Through Under Different Vertical Relationships” by Bajo-Buenestado and Borrella-Mas",
@@ -18936,8 +19516,8 @@
           "date": "2026-08-14",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "Demographic transition and the rise of wealth inequality",
@@ -18946,8 +19526,8 @@
           "date": "2026-08-14",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "Political Polarization and Counter-attitudinal Information Consumption and Internalization",
@@ -18956,8 +19536,8 @@
           "date": "2026-08-14",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "Blood and Iron: Political Fragmentation in the Ancient Eastern Mediterranean",
@@ -18966,8 +19546,8 @@
           "date": "2026-08-13",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-14T17:02:22.590Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 11
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 12
         },
         {
           "title": "<i>Encomienda</i> , The Colonial State and Long-Run Development in Colombia",
@@ -19096,8 +19676,8 @@
           "date": "2026-08-04",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-06T17:58:42.266Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 13
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 14
         },
         {
           "title": "Long-run effects of technological change: the impact of automation on intergenerational mobility",
@@ -19106,8 +19686,8 @@
           "date": "2026-07-30",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Understanding Cost Pass-Through when Prices are Dispersed",
@@ -19116,8 +19696,8 @@
           "date": "2026-07-30",
           "articleType": "forthcoming",
           "firstSeen": "2026-08-02T17:09:54.071Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 15
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 16
         },
         {
           "title": "Managerial Coordination in Decentralized Markets",
@@ -19126,8 +19706,8 @@
           "date": "2026-07-29",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "The Value of Communication for Mental Health",
@@ -19136,8 +19716,8 @@
           "date": "2026-07-27",
           "articleType": "forthcoming",
           "firstSeen": "2026-07-29T17:24:04.756Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 16
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 17
         },
         {
           "title": "Disclosure in Insurance Markets with Limited Screening",
@@ -20095,8 +20675,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Book Reviews",
@@ -20105,8 +20685,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 90
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 91
         },
         {
           "title": "Conti-Brown, Peter, and Sean H. Vanatta. Private Finance, Public Power: A History of Bank Supervision in America",
@@ -20115,8 +20695,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Deep Learning for Solving Economic Models",
@@ -20125,8 +20705,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Demand, Competition, and Public Policy in the Automobile Industry",
@@ -20135,8 +20715,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Fasteau, Marc, and Ian Fletcher. Industrial Policy for the United States: Winning the Competition for Good Jobs and High-Value Industries",
@@ -20145,8 +20725,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Frey, Carl Benedikt. How Progress Ends: Technology, Innovation, and the Fate of Nations",
@@ -20155,8 +20735,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Gans, Joshua. The Microeconomics of Artificial Intelligence",
@@ -20165,8 +20745,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Humans in the Loop: The Next Frontier in the Credibility Revolution",
@@ -20175,8 +20755,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Intermediaries and Asset Prices",
@@ -20185,8 +20765,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Parkin, Katherine J. The Abortion Market: Buying and Selling Access in the Era Before Roe",
@@ -20195,8 +20775,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Refugees' Economic Integration",
@@ -20205,8 +20785,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Rilinger, Georg. Failure by Design: The California Energy Crisis and the Limits of Market Planning",
@@ -20215,8 +20795,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Scoring the Behavioral Economics of Crime: Reflections on Unforgiving Places: The Unexpected Origins of American Gun Violence",
@@ -20225,8 +20805,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Selgin, George. False Dawn: The New Deal and the Promise of Recovery, 1933–1947",
@@ -20235,8 +20815,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Why Is Fertility So Low in High-Income Countries?",
@@ -20245,8 +20825,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "Williams, Robert B. Funding White Supremacy: Federal Wealth Policies and the Modern Racial Wealth Gap",
@@ -20255,8 +20835,8 @@
           "date": "2026-09-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-09-01T07:05:02.254Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 4
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 5
         },
         {
           "title": "<i>Journal of Economic Literature</i> , June 2026, Volume LXIV, Number 2",
@@ -20614,8 +21194,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "Correct (and Incorrect) Inference with a Single Instrumental Variable: Practical Takeaways from the Weak Instruments Literature",
@@ -20624,8 +21204,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "Evaluating the Fiscal and Distributional Implications of Tariffs",
@@ -20634,8 +21214,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "Global Imbalances, Tariffs, and Industrial Policy",
@@ -20644,8 +21224,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "Labor Market Responses to Tariffs: Frictions, Dynamics, and Policy Responses",
@@ -20654,8 +21234,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "Leniency Designs: An Operator's Manual",
@@ -20664,8 +21244,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "Recommendations for Further Reading",
@@ -20674,8 +21254,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-04-04T10:27:22.510Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 91
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 92
         },
         {
           "title": "Should We Tax Trade? A Pigouvian Perspective",
@@ -20684,8 +21264,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "Stefanie Stantcheva, 2025 Clark Medalist",
@@ -20694,8 +21274,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "The Emerging Market for Intelligence: How Firms Buy and Sell AI",
@@ -20704,8 +21284,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "The Incidence of Tariffs: Rates and Reality",
@@ -20714,8 +21294,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "US Tariff Policy Since 1789",
@@ -20724,8 +21304,8 @@
           "date": "2026-08-01",
           "articleType": "latest_issue",
           "firstSeen": "2026-08-04T17:58:16.021Z",
-          "lastSeen": "2026-09-13T23:07:04.687Z",
-          "seenCount": 14
+          "lastSeen": "2026-09-16T23:13:23.006Z",
+          "seenCount": 15
         },
         {
           "title": "A Users’ Guide to Uncovering Worker and Firm Effects: The ABC of AKM",
@@ -23690,7 +24270,7 @@
       "name": "世界经济",
       "language": "zh",
       "sourceUrl": "https://navi.cnki.net/knavi/detail?p=mK1ZVKSnEbRN4zRKPbotVixY1zF5fyHv7mOpujeBn28Llrj29o2LnEmtlB8mcEYFEo4REWyJRhsQbLrQ-kZ0-vPe6in9PIY1-SFoA7vJyrgkANEDw5PC9g==&uniplatform=NZKPT&language=CHS",
-      "latestIssue": "2026年08期",
+      "latestIssue": "CNKI fetch failed",
       "articles": [
         {
           "title": "“内卷式”竞争与高质量创新：基于熊彼特增长模型的分析",
@@ -24169,7 +24749,7 @@
       "name": "金融研究",
       "language": "zh",
       "sourceUrl": "https://navi.cnki.net/knavi/detail?p=mK1ZVKSnEbTzGIisnUzuqouRd4uikbhFCyKF7IlJ2f2XDh1T15o4JfhIrXJTh62lgjkxmQOS4viepoahB1zQrm5t7nQkHjR0B41zxVvs44rQ_ZvEdx3RNA==&uniplatform=NZKPT&language=CHS",
-      "latestIssue": "2026年07期",
+      "latestIssue": "CNKI fetch failed",
       "articles": [
         {
           "title": "“垫脚石”还是“绊脚石”:债券特殊条款能缓解企业投资不足吗?",
