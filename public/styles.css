@@ -320,6 +320,19 @@ button:disabled {
   margin-top: 18px;
 }
 
+.scholar-brief-section {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+}
+
+.weekly-brief {
+  margin: 0;
+  max-width: 900px;
+  color: #344055;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
 .scholar-page-head {
   display: flex;
   align-items: end;
@@ -333,6 +346,23 @@ button:disabled {
 }
 
 .scholar-directory {
+  display: grid;
+  gap: 22px;
+}
+
+.scholar-directory-group {
+  display: grid;
+  gap: 9px;
+}
+
+.scholar-directory-group h3 {
+  margin: 0;
+  color: var(--accent);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 17px;
+}
+
+.scholar-directory-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;

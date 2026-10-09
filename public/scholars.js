@@ -2,6 +2,7 @@ const meta = document.getElementById('scholarMeta');
 const search = document.getElementById('scholarSearch');
 const topicSelect = document.getElementById('scholarTopic');
 const updatesList = document.getElementById('scholarUpdatesList');
+const weeklyBrief = document.getElementById('weeklyBrief');
 const directory = document.getElementById('scholarDirectory');
 const directoryCount = document.getElementById('scholarDirectoryCount');
 const PAGE_BASE = window.location.pathname.replace(/[^/]*$/, '');
@@ -17,6 +18,38 @@ function searchText(item) {
   return [item.name, item.nameZh, item.institution, item.chinaTopic, item.title, ...(item.tags || [])]
     .join(' ')
     .toLocaleLowerCase();
+}
+
+function researchTheme(title = '') {
+  const text = title.toLocaleLowerCase();
+  if (/industrial polic/.test(text)) return '中国产业政策';
+  if (/asset privatization|intergenerational/.test(text)) return '资产私有化与代际分配';
+  if (/malpractice|physician|risk perception/.test(text)) return '医疗纠纷与风险感知';
+  if (/demographic|baby bust|growth boom/.test(text)) return '人口变化与宏观增长';
+  if (/employment|community/.test(text)) return '就业与社区协作';
+  if (/artificial intelligence|\bai\b|human cognition|knowledge/.test(text)) return '人工智能与知识积累';
+  if (/machine learning|incentive/.test(text)) return '机器学习的激励机制';
+  if (/workforce development/.test(text)) return '发展中经济体的人力资本';
+  return `《${title}》`;
+}
+
+function renderWeeklyBrief() {
+  const records = updates?.records || [];
+  if (!records.length) {
+    weeklyBrief.textContent = '本周尚未从学者主页识别到新的论文或工作论文链接；下次周度巡检会继续重试暂时无法访问的主页。';
+    return;
+  }
+
+  const scholars = [...new Set(records.map((record) => record.scholar))];
+  const workingPapers = records.filter((record) => record.type === '工作论文').length;
+  const periodLabel = updates?.initialScan ? '本次首次建档扫描' : '本周';
+  const themes = [...new Set(records.map((record) => researchTheme(record.title)))].slice(0, 6);
+  const scholarHighlights = scholars.slice(0, 3).map((name) => {
+    const ownThemes = [...new Set(records.filter((record) => record.scholar === name).map((record) => researchTheme(record.title)))].slice(0, 3);
+    return `${name} 聚焦${ownThemes.join('、')}`;
+  });
+  const tail = scholars.length > 3 ? `，另有 ${scholars.length - 3} 位学者更新` : '';
+  weeklyBrief.textContent = `${periodLabel}从学者个人主页识别到 ${records.length} 项论文及工作论文更新，来自 ${scholars.length} 位学者，其中 ${workingPapers} 项为工作论文。研究主题主要涉及${themes.join('、')}；${scholarHighlights.join('；')}${tail}。`;
 }
 
 function populateTopics() {
@@ -95,26 +128,51 @@ function renderUpdates() {
 
 function renderDirectory() {
   const term = search.value.trim().toLocaleLowerCase();
-  const entries = registry.filter((scholar) => !term || searchText(scholar).includes(term));
+  const entries = registry
+    .filter((scholar) => !term || searchText(scholar).includes(term))
+    .sort((a, b) => surname(a).localeCompare(surname(b)) || a.name.localeCompare(b.name));
   clear(directory);
   directoryCount.textContent = `显示 ${entries.length} / ${registry.length} 位学者`;
+  const groups = new Map();
   for (const scholar of entries) {
-    const card = document.createElement('a');
-    card.className = 'scholar-directory-card';
-    card.href = scholar.homepage;
-    card.target = '_blank';
-    card.rel = 'noopener noreferrer';
-    const name = document.createElement('strong');
-    name.textContent = [scholar.name, scholar.nameZh].filter(Boolean).join(' / ');
-    const details = document.createElement('span');
-    details.textContent = [scholar.institution, scholar.chinaTopic].filter(Boolean).join(' | ');
-    card.append(name, details);
-    directory.appendChild(card);
+    const initial = surname(scholar).slice(0, 1).toUpperCase();
+    const key = /^[A-Z]$/.test(initial) ? initial : '#';
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(scholar);
   }
+  for (const [initial, scholars] of [...groups.entries()].sort(([a], [b]) => a.localeCompare(b))) {
+    const group = document.createElement('section');
+    group.className = 'scholar-directory-group';
+    const heading = document.createElement('h3');
+    heading.textContent = initial;
+    const grid = document.createElement('div');
+    grid.className = 'scholar-directory-grid';
+    group.append(heading, grid);
+    for (const scholar of scholars) {
+      const card = document.createElement('a');
+      card.className = 'scholar-directory-card';
+      card.href = scholar.homepage;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+      const name = document.createElement('strong');
+      name.textContent = [scholar.name, scholar.nameZh].filter(Boolean).join(' / ');
+      const details = document.createElement('span');
+      details.textContent = [scholar.institution, scholar.chinaTopic].filter(Boolean).join(' | ');
+      card.append(name, details);
+      grid.appendChild(card);
+    }
+    directory.appendChild(group);
+  }
+}
+
+function surname(scholar) {
+  const words = String(scholar.name || '').trim().split(/\s+/).filter(Boolean);
+  return words.at(-1) || scholar.name || '';
 }
 
 function render() {
   populateTopics();
+  renderWeeklyBrief();
   renderUpdates();
   renderDirectory();
 }
