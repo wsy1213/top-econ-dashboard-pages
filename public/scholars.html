@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中国经济学者动态追踪</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container scholar-page">
+      <nav class="site-nav" aria-label="Site sections">
+        <a class="site-nav-link" href="./index.html">文献追踪</a>
+        <a class="site-nav-link active" href="./scholars.html">中国经济学者动态</a>
+      </nav>
+
+      <header class="hero">
+        <p class="kicker">Scholar Monitor</p>
+        <h1>中国经济学者动态追踪</h1>
+        <p class="subtitle">每周直接检查学者本人主页、研究页和发表页，识别新出现的论文与工作论文链接。</p>
+        <p id="scholarMeta" class="meta scholar-page-meta">正在读取追踪结果...</p>
+      </header>
+
+      <section class="section scholar-controls-section">
+        <div class="scholar-controls">
+          <input id="scholarSearch" type="search" placeholder="搜索学者、机构、研究主题或论文题目" />
+          <select id="scholarTopic" aria-label="按研究主题筛选">
+            <option value="">全部研究领域</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head scholar-page-head">
+          <div>
+            <p class="section-kicker">本周主页新发现</p>
+            <h2>论文与工作论文</h2>
+          </div>
+        </div>
+        <div id="scholarUpdatesList" class="scholar-updates-list" aria-live="polite"></div>
+      </section>
+
+      <section class="section scholar-directory-section">
+        <div class="section-head scholar-page-head">
+          <div>
+            <p class="section-kicker">追踪名单</p>
+            <h2>学者主页</h2>
+          </div>
+          <p id="scholarDirectoryCount" class="section-meta"></p>
+        </div>
+        <div id="scholarDirectory" class="scholar-directory"></div>
+      </section>
+    </main>
+    <script src="./scholars.js" type="module"></script>
+  </body>
+</html>

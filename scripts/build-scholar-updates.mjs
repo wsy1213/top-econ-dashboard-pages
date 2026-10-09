@@ -1,138 +1,187 @@
+import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = path.resolve(path.dirname(__filename), '..');
 const DATA_DIR = path.join(ROOT, 'public', 'data');
 const REGISTRY_FILE = path.join(DATA_DIR, 'scholar-registry.json');
-const AUTHOR_ID_FILE = path.join(DATA_DIR, 'scholar-author-ids.json');
+const CACHE_FILE = path.join(DATA_DIR, 'scholar-homepage-cache.json');
 const OUT_FILE = path.join(DATA_DIR, 'scholar-updates.json');
 const HISTORY_DIR = path.join(DATA_DIR, 'scholar-history');
-const DAYS_BACK = Number(process.env.SCHOLAR_UPDATE_DAYS || 8);
-const REQUEST_TIMEOUT_MS = Number(process.env.SCHOLAR_REQUEST_TIMEOUT_MS || 20000);
-const CONCURRENCY = Math.max(1, Number(process.env.SCHOLAR_FETCH_CONCURRENCY || 1));
-const MIN_REQUEST_INTERVAL_MS = Number(process.env.SCHOLAR_REQUEST_INTERVAL_MS || 1100);
-const SEMANTIC_SCHOLAR_API_KEY = process.env.SEMANTIC_SCHOLAR_API_KEY || '';
-let nextRequestAt = 0;
+const REQUEST_TIMEOUT_MS = Number(process.env.SCHOLAR_REQUEST_TIMEOUT_MS || 12000);
+const CONCURRENCY = Math.max(1, Number(process.env.HOMEPAGE_FETCH_CONCURRENCY || 6));
+const MAX_DETAIL_PAGES = Math.max(0, Number(process.env.SCHOLAR_DETAIL_PAGES || 2));
+const INITIAL_LOOKBACK_DAYS = Math.max(1, Number(process.env.SCHOLAR_INITIAL_LOOKBACK_DAYS || 180));
+const USER_AGENT = 'China-Economist-Monitor/1.0 (academic homepage monitor)';
 
-const TOPICS = [
-  ['中国宏观与增长', /china|chinese|macroeconom|growth|business cycle|monetary/i],
-  ['贸易与全球化', /trade|tariff|export|import|supply chain|global value chain|wto/i],
-  ['产业与企业', /firm|industry|manufactur|innovation|productivity|subsid/i],
-  ['金融与公司', /finance|bank|credit|bond|stock|capital market|corporate/i],
-  ['劳动与人口', /labor|labour|wage|employment|migration|population|education|health/i],
-  ['公共财政与政策', /tax|fiscal|government|public|regulation|policy|welfare/i],
-  ['环境与能源', /environment|climate|pollution|carbon|energy/i],
-  ['城市与空间', /urban|city|housing|land|spatial|regional|transport/i],
-  ['经济史与政治经济', /history|historical|political economy|institution/i]
-];
+const PUBLICATION_PAGE = /publications?|papers?|working[ -]?papers?|writing|论文|发表|工作论文/i;
+const PAPER_URL = /doi\.org|nber\.org\/papers|ssrn\.com|arxiv\.org|ideas\.repec\.org|cepr\.org|\.pdf(?:$|[?#])/i;
+const GENERIC_LINK = /^(home|about|research|publications?|papers?|working papers?|cv|curriculum vitae|download cv|google scholar|contact|teaching|news|more|read more|here|主页|关于|研究|论文|发表|工作论文|简历|联系)$/i;
 
-function normalized(value = '') {
-  return String(value).toLowerCase().replace(/[^a-z0-9]/g, '');
+function cleanText(value = '') {
+  return String(value)
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;|&#160;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;|&#34;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)))
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
-function nameTokens(value = '') {
-  return String(value).toLowerCase().match(/[a-z]+/g) || [];
+function decodeUrl(value = '') {
+  try {
+    return decodeURIComponent(value.replace(/&amp;/g, '&'));
+  } catch {
+    return value.replace(/&amp;/g, '&');
+  }
 }
 
-function dateKey(daysBack) {
-  const d = new Date();
-  d.setUTCDate(d.getUTCDate() - daysBack);
-  return d.toISOString().slice(0, 10);
+function normalKey(value = '') {
+  return cleanText(value).toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]+/g, '');
 }
 
-async function fetchJson(url) {
-  const waitMs = Math.max(0, nextRequestAt - Date.now());
-  if (waitMs) await new Promise((resolve) => setTimeout(resolve, waitMs));
-  nextRequestAt = Date.now() + MIN_REQUEST_INTERVAL_MS;
+function shortHash(value) {
+  return crypto.createHash('sha256').update(value).digest('hex').slice(0, 16);
+}
+
+function initialCutoff() {
+  const date = new Date();
+  date.setUTCDate(date.getUTCDate() - INITIAL_LOOKBACK_DAYS);
+  return date.toISOString().slice(0, 10);
+}
+
+function absoluteUrl(href, sourceUrl) {
+  try {
+    const url = new URL(decodeUrl(href), sourceUrl);
+    if (!['http:', 'https:'].includes(url.protocol)) return '';
+    url.hash = '';
+    return url.href;
+  } catch {
+    return '';
+  }
+}
+
+async function fetchPage(url) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
   try {
     const response = await fetch(url, {
-      headers: {
-        'User-Agent': 'Top-Econ-Scholar-Dashboard/1.0 (research monitor)',
-        ...(SEMANTIC_SCHOLAR_API_KEY ? { 'x-api-key': SEMANTIC_SCHOLAR_API_KEY } : {})
-      },
+      headers: { 'User-Agent': USER_AGENT, Accept: 'text/html,application/xhtml+xml' },
+      redirect: 'follow',
       signal: controller.signal
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return await response.json();
+    const contentType = response.headers.get('content-type') || '';
+    if (!/html|xml|text/i.test(contentType)) throw new Error(`Unsupported content type: ${contentType}`);
+    return { url: response.url, html: await response.text() };
   } finally {
     clearTimeout(timer);
   }
 }
 
-function semanticScholarUrl(pathname, params) {
-  const url = new URL(`https://api.semanticscholar.org/graph/v1/${pathname}`);
-  for (const [key, value] of Object.entries(params)) {
-    if (value) url.searchParams.set(key, String(value));
+function anchorsFromHtml(html, sourceUrl) {
+  const anchors = [];
+  const pattern = /<a\b([^>]*)>([\s\S]*?)<\/a>/gi;
+  for (const match of html.matchAll(pattern)) {
+    const hrefMatch = match[1].match(/\bhref\s*=\s*(["'])(.*?)\1/i) || match[1].match(/\bhref\s*=\s*([^\s>]+)/i);
+    if (!hrefMatch) continue;
+    const href = absoluteUrl(hrefMatch[2] || hrefMatch[1], sourceUrl);
+    const text = cleanText(match[2]);
+    if (href && text) anchors.push({ href, text });
   }
-  return url;
+  return anchors;
 }
 
-function candidateScore(scholar, candidate) {
-  const target = normalized(scholar.name);
-  const actual = normalized(candidate.name);
-  if (!target || !actual) return -100;
-  let score = target === actual ? 100 : 0;
-  const targetTokens = nameTokens(scholar.name);
-  const actualTokens = nameTokens(candidate.name);
-  if (targetTokens.length && actualTokens.length
-    && targetTokens.every((token) => actualTokens.includes(token))) score += 25;
-
-  const institution = String(scholar.institution || '').toLowerCase();
-  const candidateInstitutions = (candidate.affiliations || []).map((item) => String(item || '').toLowerCase());
-  if (institution && candidateInstitutions.some((item) => item && (institution.includes(item) || item.includes(institution)))) {
-    score += 30;
+function isSameSite(url, homepage) {
+  try {
+    return new URL(url).hostname === new URL(homepage).hostname;
+  } catch {
+    return false;
   }
-  return score;
 }
 
-async function resolveAuthor(scholar) {
-  const data = await fetchJson(semanticScholarUrl('author/search', {
-    query: scholar.name,
-    limit: 10,
-    fields: 'name,affiliations,paperCount'
-  }));
-  const ranked = (data.data || [])
-    .map((candidate) => ({ candidate, score: candidateScore(scholar, candidate) }))
-    .sort((a, b) => b.score - a.score);
-  const best = ranked[0];
-  const exactNameCandidates = ranked.filter(({ candidate }) => normalized(candidate.name) === normalized(scholar.name));
-  // A name-only match is safe only when the index returns one exact candidate.
-  // When names collide, require corroborating institution evidence.
-  const minimumScore = exactNameCandidates.length === 1 ? 125 : 155;
-  if (!best || best.score < minimumScore) return '';
-  return best.candidate.authorId || '';
+function detailPageUrls(homepage, anchors) {
+  const urls = [];
+  const homepageUrl = new URL(homepage);
+  const personalPrefix = homepageUrl.pathname.endsWith('/') ? homepageUrl.pathname : `${homepageUrl.pathname}/`;
+  const isRootHomepage = homepageUrl.pathname === '/';
+  for (const anchor of anchors) {
+    if (!PUBLICATION_PAGE.test(`${anchor.text} ${anchor.href}`)) continue;
+    if (!isSameSite(anchor.href, homepage)) continue;
+    const candidateUrl = new URL(anchor.href);
+    if (!isRootHomepage && !candidateUrl.pathname.startsWith(personalPrefix)) continue;
+    if (!urls.some((entry) => entry.href === anchor.href) && anchor.href !== homepage) {
+      const score = (candidateUrl.pathname.startsWith(personalPrefix) ? 20 : 0)
+        + (/working[ -]?papers?/i.test(`${anchor.text} ${anchor.href}`) ? 8 : 0)
+        + (/publications?|papers?/i.test(`${anchor.text} ${anchor.href}`) ? 5 : 0);
+      urls.push({ href: anchor.href, score });
+    }
+  }
+  return urls.sort((a, b) => b.score - a.score).slice(0, MAX_DETAIL_PAGES).map((entry) => entry.href);
 }
 
-function classify(title, abstract) {
-  const text = `${title || ''} ${abstract || ''}`;
-  const tags = TOPICS.filter(([, pattern]) => pattern.test(text)).map(([label]) => label);
-  return tags.length ? tags.slice(0, 3) : ['其他经济研究'];
+function titleLooksLikePaper(title) {
+  const words = title.match(/[A-Za-z]{2,}|[\u4e00-\u9fff]{2,}/g) || [];
+  return title.length >= 18 && title.length <= 360 && words.length >= 3 && !GENERIC_LINK.test(title);
 }
 
-function authorMatchesWork(work, authorId) {
-  return (work.authors || []).some((author) => author.authorId === authorId);
+function extractDateNearLink(html, title) {
+  const position = html.toLowerCase().indexOf(title.toLowerCase());
+  if (position < 0) return '';
+  const context = cleanText(html.slice(Math.max(0, position - 180), position + title.length + 180));
+  const match = context.match(/\b(20\d{2})[-/.](0?[1-9]|1[0-2])(?:[-/.](0?[1-9]|[12]\d|3[01]))?\b/);
+  if (!match) return '';
+  return match[3]
+    ? `${match[1]}-${String(match[2]).padStart(2, '0')}-${String(match[3]).padStart(2, '0')}`
+    : `${match[1]}-${String(match[2]).padStart(2, '0')}`;
 }
 
-function workUrl(work) {
-  return work.externalIds?.DOI ? `https://doi.org/${work.externalIds.DOI}` : work.url || '';
+function topicTags(scholar, title) {
+  const fromRegistry = String(scholar.chinaTopic || '')
+    .split(/[、,，;；/|]/)
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .slice(0, 2);
+  if (fromRegistry.length) return fromRegistry;
+  if (/china|chinese|中国/i.test(title)) return ['中国经济研究'];
+  return ['经济学研究'];
 }
 
-function workType(work) {
-  const types = work.publicationTypes || [];
-  if (types.includes('Preprint')) return '预印本';
-  if (types.includes('JournalArticle')) return '期刊论文';
-  if (types.includes('BookChapter')) return '书籍章节';
-  return '研究成果';
-}
-
-function isScholarlyWork(work) {
-  const allowed = new Set(['JournalArticle', 'Preprint', 'BookChapter', 'Review', 'Report']);
-  return (work.publicationTypes || []).some((type) => allowed.has(type));
+function candidateRecords(scholar, page, allowTitleOnly) {
+  const results = [];
+  const seen = new Set();
+  for (const anchor of anchorsFromHtml(page.html, page.url)) {
+    const isPaperLink = PAPER_URL.test(anchor.href);
+    if (!isPaperLink && !(allowTitleOnly && titleLooksLikePaper(anchor.text))) continue;
+    if (GENERIC_LINK.test(anchor.text)) continue;
+    const key = `${scholar.name}|${normalKey(anchor.text) || shortHash(anchor.href)}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    results.push({
+      key,
+      scholar: scholar.name,
+      scholarZh: scholar.nameZh || '',
+      institution: scholar.institution || '',
+      homepage: scholar.homepage || '',
+      title: anchor.text,
+      date: extractDateNearLink(page.html, anchor.text),
+      type: /working|nber|ssrn|arxiv|工作论文/i.test(`${anchor.href} ${page.url}`) ? '工作论文' : '论文 / 研究成果',
+      url: anchor.href,
+      source: '学者主页',
+      sourcePage: page.url,
+      tags: topicTags(scholar, anchor.text)
+    });
+  }
+  return results;
 }
 
 async function readJson(file, fallback) {
@@ -144,96 +193,80 @@ async function readJson(file, fallback) {
 }
 
 async function mapWithConcurrency(items, worker) {
-  const results = [];
-  let nextIndex = 0;
+  const results = new Array(items.length);
+  let index = 0;
   async function run() {
-    while (nextIndex < items.length) {
-      const index = nextIndex;
-      nextIndex += 1;
-      results[index] = await worker(items[index]);
+    while (index < items.length) {
+      const current = index;
+      index += 1;
+      results[current] = await worker(items[current]);
     }
   }
   await Promise.all(Array.from({ length: Math.min(CONCURRENCY, items.length) }, run));
   return results;
 }
 
+async function scanScholar(scholar) {
+  if (!scholar.homepage) return { failed: { name: scholar.name, reason: '未提供个人主页' } };
+  try {
+    const homepage = await fetchPage(scholar.homepage);
+    const pages = [{ ...homepage, isPublicationPage: false }];
+    const details = detailPageUrls(homepage.url, anchorsFromHtml(homepage.html, homepage.url));
+    const detailResults = await Promise.allSettled(details.map(fetchPage));
+    for (const result of detailResults) {
+      if (result.status === 'fulfilled') pages.push({ ...result.value, isPublicationPage: true });
+    }
+    const unique = new Map();
+    for (const page of pages) {
+      for (const record of candidateRecords(scholar, page, page.isPublicationPage)) unique.set(record.key, record);
+    }
+    return { records: [...unique.values()], pageCount: pages.length };
+  } catch (error) {
+    return { failed: { name: scholar.name, reason: error.name === 'AbortError' ? '请求超时' : error.message } };
+  }
+}
+
 async function main() {
   const registry = await readJson(REGISTRY_FILE, null);
-  if (!registry?.scholars?.length) {
-    throw new Error(`Scholar registry missing or empty: ${REGISTRY_FILE}`);
-  }
-
-  const previous = await readJson(OUT_FILE, { records: [] });
-  const authorCache = await readJson(AUTHOR_ID_FILE, { version: 3, authors: {} });
-  const authorIds = authorCache.version === 3 ? authorCache.authors || {} : {};
-  const previousKeys = new Set((previous.records || []).map((record) => record.key));
-  const fromDate = dateKey(DAYS_BACK);
-  const records = [];
-  const unresolved = [];
-
-  const scanResults = await mapWithConcurrency(registry.scholars, async (scholar) => {
-    try {
-      const authorId = authorIds[scholar.name] || await resolveAuthor(scholar);
-      if (!authorId) {
-        return { unresolved: { name: scholar.name, reason: '身份匹配置信度不足' } };
-      }
-      authorIds[scholar.name] = authorId;
-      const works = await fetchJson(semanticScholarUrl(`author/${authorId}/papers`, {
-        limit: 100,
-        fields: 'title,abstract,authors,year,publicationDate,publicationTypes,externalIds,url,venue'
-      }));
-      const scholarRecords = [];
-      for (const work of works.data || []) {
-        if (!authorMatchesWork(work, authorId) || !isScholarlyWork(work)) continue;
-        const publicationDate = work.publicationDate || (work.year ? `${work.year}-01-01` : '');
-        if (!publicationDate || publicationDate < fromDate) continue;
-        const key = `${scholar.name}|${normalized(work.externalIds?.DOI || work.title)}`;
-        const abstract = work.abstract || '';
-        scholarRecords.push({
-          key,
-          scholar: scholar.name,
-          scholarZh: scholar.nameZh || '',
-          institution: scholar.institution || '',
-          homepage: scholar.homepage || '',
-          title: work.title || 'Untitled',
-          date: publicationDate,
-          type: workType(work),
-          url: workUrl(work),
-          source: 'Semantic Scholar',
-          tags: classify(work.title, abstract),
-          abstract: abstract.slice(0, 520),
-          isNew: !previousKeys.has(key)
-        });
-      }
-      return { records: scholarRecords };
-    } catch (error) {
-      return { unresolved: { name: scholar.name, reason: error.message } };
-    }
-  });
-
+  if (!registry?.scholars?.length) throw new Error(`Scholar registry missing or empty: ${REGISTRY_FILE}`);
+  const cache = await readJson(CACHE_FILE, { version: 1, seen: {} });
+  const hadBaseline = Object.keys(cache.seen || {}).length > 0;
+  const scanResults = await mapWithConcurrency(registry.scholars, scanScholar);
+  const candidates = [];
+  const failures = [];
+  let checkedCount = 0;
   for (const result of scanResults) {
-    if (result?.unresolved) unresolved.push(result.unresolved);
-    records.push(...(result?.records || []));
+    if (result?.failed) failures.push(result.failed);
+    if (result?.pageCount) checkedCount += 1;
+    candidates.push(...(result?.records || []));
   }
-
   const unique = new Map();
-  for (const record of records) unique.set(record.key, record);
-  const sorted = [...unique.values()].sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  for (const record of candidates) unique.set(record.key, record);
   const nowIso = new Date().toISOString();
+  const allRecords = [...unique.values()]
+    .map((record) => ({ ...record, isNew: !cache.seen[record.key] }))
+    .sort((a, b) => String(b.date).localeCompare(String(a.date)) || a.scholar.localeCompare(b.scholar));
+  const records = hadBaseline
+    ? allRecords.filter((record) => record.isNew)
+    : allRecords.filter((record) => record.date && record.date >= initialCutoff());
+  for (const key of unique.keys()) cache.seen[key] ||= nowIso;
   const payload = {
     generatedAt: nowIso,
-    windowStart: fromDate,
+    source: '学者个人主页及其 Research / Publications / Working Papers 页面',
     scholarCount: registry.scholars.length,
-    records: sorted,
-    newRecordCount: sorted.filter((record) => record.isNew).length,
-    unresolved
+    scannedScholarCount: registry.scholars.length,
+    checkedCount,
+    records,
+    newRecordCount: records.length,
+    initialScan: !hadBaseline,
+    initialLookbackDays: !hadBaseline ? INITIAL_LOOKBACK_DAYS : undefined,
+    failures
   };
-
   await fs.mkdir(HISTORY_DIR, { recursive: true });
-  await fs.writeFile(AUTHOR_ID_FILE, `${JSON.stringify({ version: 3, authors: authorIds }, null, 2)}\n`, 'utf8');
+  await fs.writeFile(CACHE_FILE, `${JSON.stringify({ version: 1, seen: cache.seen }, null, 2)}\n`, 'utf8');
   await fs.writeFile(OUT_FILE, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
   await fs.writeFile(path.join(HISTORY_DIR, `${nowIso.slice(0, 10)}.json`), `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-  console.log(`Scholar scan complete: ${sorted.length} papers, ${unresolved.length} unresolved scholars.`);
+  console.log(`Homepage scan complete: ${checkedCount}/${registry.scholars.length} homepages checked, ${records.length} visible records, ${failures.length} failures.`);
 }
 
 main().catch((error) => {

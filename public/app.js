@@ -908,7 +908,9 @@ document.addEventListener('click', (ev) => {
   if (btn) btn.setAttribute('aria-expanded', 'false');
   openDropdown = null;
 });
-scholarSearch.addEventListener('input', renderScholarUpdates);
-scholarTopic.addEventListener('change', renderScholarUpdates);
-loadScholarUpdates();
+if (scholarSearch && scholarTopic) {
+  scholarSearch.addEventListener('input', renderScholarUpdates);
+  scholarTopic.addEventListener('change', renderScholarUpdates);
+  loadScholarUpdates();
+}
 loadData();

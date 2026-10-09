@@ -1,581 +1,359 @@
 {
-  "generatedAt": "2026-10-09T03:55:01.286Z",
-  "windowStart": "2026-10-01",
+  "generatedAt": "2026-10-09T13:33:12.431Z",
+  "source": "学者个人主页及其 Research / Publications / Working Papers 页面",
   "scholarCount": 145,
-  "records": [],
-  "newRecordCount": 0,
-  "unresolved": [
+  "scannedScholarCount": 145,
+  "checkedCount": 97,
+  "records": [
     {
-      "name": "Daron Acemoglu",
-      "reason": "HTTP 429"
+      "key": "Hanming Fang|assetprivatizationasintergenerationalredistribution",
+      "scholar": "Hanming Fang",
+      "scholarZh": "方汉明",
+      "institution": "未逐人复核现职",
+      "homepage": "https://web.sas.upenn.edu/hfang/",
+      "title": "Asset Privatization as Intergenerational Redistribution",
+      "date": "2026-07",
+      "type": "工作论文",
+      "url": "https://web.sas.upenn.edu/hfang/files/2026/09/NBER_w35754.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://web.sas.upenn.edu/hfang/working-papers/",
+      "tags": [
+        "中国餐厅顾客的观察学习实验"
+      ],
+      "isNew": true
     },
     {
-      "name": "Franklin Allen",
-      "reason": "HTTP 429"
+      "key": "Hanming Fang|fearandriskperceptionunderstandingphysicians8217dynamicresponsestomalpracticelawsuits",
+      "scholar": "Hanming Fang",
+      "scholarZh": "方汉明",
+      "institution": "未逐人复核现职",
+      "homepage": "https://web.sas.upenn.edu/hfang/",
+      "title": "Fear and Risk Perception: Understanding Physicians' Dynamic Responses to Malpractice Lawsuits",
+      "date": "2026-07",
+      "type": "工作论文",
+      "url": "https://web.sas.upenn.edu/hfang/files/2025/08/2025-8-1-malpractice.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://web.sas.upenn.edu/hfang/working-papers/",
+      "tags": [
+        "中国餐厅顾客的观察学习实验"
+      ],
+      "isNew": true
     },
     {
-      "name": "Douglas Almond",
-      "reason": "HTTP 429"
+      "key": "Hanming Fang|decodingchina8217sindustrialpolicies",
+      "scholar": "Hanming Fang",
+      "scholarZh": "方汉明",
+      "institution": "未逐人复核现职",
+      "homepage": "https://web.sas.upenn.edu/hfang/",
+      "title": "Decoding China&#8217;s Industrial Policies",
+      "date": "2026-07",
+      "type": "工作论文",
+      "url": "https://web.sas.upenn.edu/hfang/files/2026/07/2026-7-26-China_Industrial_Policy_main.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://web.sas.upenn.edu/hfang/working-papers/",
+      "tags": [
+        "中国餐厅顾客的观察学习实验"
+      ],
+      "isNew": true
     },
     {
-      "name": "David H. Autor",
-      "reason": "身份匹配置信度不足"
+      "key": "Daron Acemoglu|babybustsandgrowthboomsdemographicchangeandthemacroeconomy",
+      "scholar": "Daron Acemoglu",
+      "scholarZh": "",
+      "institution": "MIT Economics",
+      "homepage": "https://economics.mit.edu/people/faculty/daron-acemoglu",
+      "title": "Baby Busts and Growth Booms: Demographic Change and the Macroeconomy",
+      "date": "2026-06",
+      "type": "工作论文",
+      "url": "https://economics.mit.edu/sites/default/files/2026-06/Baby%20Busts%20and%20Growth%20Booms%20-%20Demographic%20Change%20and%20the%20Macroeconomy.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://economics.mit.edu/people/faculty/daron-acemoglu/working-papers",
+      "tags": [
+        "中国学术研究方向与政治经济学"
+      ],
+      "isNew": true
     },
     {
-      "name": "Pierre Azoulay",
-      "reason": "身份匹配置信度不足"
+      "key": "Daron Acemoglu|employmentandcommunitysocioeconomiccooperationanditsbreakdown",
+      "scholar": "Daron Acemoglu",
+      "scholarZh": "",
+      "institution": "MIT Economics",
+      "homepage": "https://economics.mit.edu/people/faculty/daron-acemoglu",
+      "title": "Employment and Community: Socioeconomic Cooperation and Its Breakdown",
+      "date": "2026-06",
+      "type": "工作论文",
+      "url": "https://economics.mit.edu/sites/default/files/2026-06/Employment%20and%20Community%20-%20Socioeconomic%20Cooperation%20and%20Its%20Breakdown.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://economics.mit.edu/people/faculty/daron-acemoglu/working-papers",
+      "tags": [
+        "中国学术研究方向与政治经济学"
+      ],
+      "isNew": true
     },
     {
-      "name": "Chong-En Bai",
-      "reason": "身份匹配置信度不足"
+      "key": "David H. Autor|babybustsandgrowthboomsdemographicchangeandthemacroeconomy",
+      "scholar": "David H. Autor",
+      "scholarZh": "",
+      "institution": "MIT Economics",
+      "homepage": "https://economics.mit.edu/people/faculty/david-h-autor",
+      "title": "Baby Busts and Growth Booms: Demographic Change and the Macroeconomy",
+      "date": "2026-06",
+      "type": "工作论文",
+      "url": "https://economics.mit.edu/sites/default/files/2026-06/Baby%20Busts%20and%20Growth%20Booms%20-%20Demographic%20Change%20and%20the%20Macroeconomy.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://economics.mit.edu/people/faculty/david-h-autor/working-papers",
+      "tags": [
+        "中国贸易冲击及其美国就业效应"
+      ],
+      "isNew": true
+    },
+    {
+      "key": "Gordon H. Hanson|workforcedevelopmentforthedevelopingworld",
+      "scholar": "Gordon H. Hanson",
+      "scholarZh": "",
+      "institution": "Harvard Kennedy School",
+      "homepage": "https://gordonhanson.scholars.harvard.edu/",
+      "title": "Workforce Development for the Developing World",
+      "date": "2026-06",
+      "type": "论文 / 研究成果",
+      "url": "https://gordonhanson.scholars.harvard.edu/sites/g/files/omnuum6571/files/2026-07/Hanson,%20Gordon%20Workforce%20Development%20CID%20paper.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://gordonhanson.scholars.harvard.edu/publications-0",
+      "tags": [
+        "中国贸易冲击与全球生产"
+      ],
+      "isNew": true
+    },
+    {
+      "key": "Daron Acemoglu|aihumancognitionandknowledgecollapse",
+      "scholar": "Daron Acemoglu",
+      "scholarZh": "",
+      "institution": "MIT Economics",
+      "homepage": "https://economics.mit.edu/people/faculty/daron-acemoglu",
+      "title": "AI, Human Cognition and Knowledge Collapse",
+      "date": "2026-05",
+      "type": "工作论文",
+      "url": "https://economics.mit.edu/sites/default/files/2026-05/AI,%20Human%20Cognition%20and%20Knowledge%20Collapse%2005-05-26.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://economics.mit.edu/people/faculty/daron-acemoglu/working-papers",
+      "tags": [
+        "中国学术研究方向与政治经济学"
+      ],
+      "isNew": true
+    },
+    {
+      "key": "David H. Autor|misalignedbydesignincentivefailuresinmachinelearning",
+      "scholar": "David H. Autor",
+      "scholarZh": "",
+      "institution": "MIT Economics",
+      "homepage": "https://economics.mit.edu/people/faculty/david-h-autor",
+      "title": "Misaligned by Design: Incentive Failures in Machine Learning",
+      "date": "2026-05",
+      "type": "工作论文",
+      "url": "https://economics.mit.edu/sites/default/files/2026-05/Misaligned%20by%20Design%20-%20Inventive%20Failures%20in%20Machine%20Learning.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://economics.mit.edu/people/faculty/david-h-autor/working-papers",
+      "tags": [
+        "中国贸易冲击及其美国就业效应"
+      ],
+      "isNew": true
+    }
+  ],
+  "newRecordCount": 9,
+  "initialScan": true,
+  "initialLookbackDays": 180,
+  "failures": [
+    {
+      "name": "Laura Alfaro",
+      "reason": "HTTP 403"
     },
     {
       "name": "Jie Bai",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Ying Bai",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Panle Jia Barwick",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Martin Beraja",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Nicholas Bloom",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Matilde Bombardini",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Loren Brandt",
-      "reason": "身份匹配置信度不足"
+      "reason": "fetch failed"
     },
     {
       "name": "Greg Buchak",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Jing Cai",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Shengmao Cao",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Yiming Cao",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Binkai Chen",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Hui Chen",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Kaiji Chen",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Qiaoyi Chen",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Shuo Chen",
-      "reason": "身份匹配置信度不足"
+      "reason": "fetch failed"
     },
     {
       "name": "Yuyu Chen",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Zhao Chen",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Zhiwu Chen",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Zhuo Chen",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Davin Chor",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Christopher Clayton",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Emanuele Colonnelli",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Lin William Cong",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "David Dorn",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Xinming Du",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Alex Eble",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Dennis Egger",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Benjamin Faber",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Hanming Fang",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Raymond Fisman",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Eyal G. Frank",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Chao Fu",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Itay Goldstein",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Jie Gong",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Gautam Gowrisankaran",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Michael Greenstone",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Quanlin Gu",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Gordon H. Hanson",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Guojun He",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Zhiguo He",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Harrison Hong",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Sabrina T. Howell",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Chang-Tai Hsieh",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Jiayin Hu",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Yasheng Huang",
-      "reason": "身份匹配置信度不足"
+      "reason": "fetch failed"
     },
     {
       "name": "Yi Huang",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Koichiro Ito",
-      "reason": "身份匹配置信度不足"
+      "reason": "fetch failed"
     },
     {
       "name": "Ruixue Jia",
-      "reason": "身份匹配置信度不足"
-    },
-    {
-      "name": "Wei Jiang",
-      "reason": "身份匹配置信度不足"
+      "reason": "HTTP 403"
     },
     {
       "name": "Wenxi Jiang",
-      "reason": "身份匹配置信度不足"
+      "reason": "fetch failed"
     },
     {
       "name": "Myrto Kalouptsidi",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Wolfgang Keller",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Amit Khandelwal",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "James Kai-Sing Kung",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Josh Lerner",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Bingjing Li",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "David Daokui Li",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Hongbin Li",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Ming Li",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Shanjun Li",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Chen Lin",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Justin Yifu Lin",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Wei Lin",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Bibo Liu",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Ernest Liu",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Lizhi Liu",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Qing Liu",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Zhikuo Liu",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Ming Lu",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Yi Lu",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Chicheng Ma",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Hong Ma",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Matteo Maggiori",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Meng Miao",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Grant Miller",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Scott T. Nelson",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Benjamin A. Olken",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Shumiao Ouyang",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Gerard Padró i Miquel",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Jun Pan",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Cameron Peng",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Jacopo Ponticelli",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Jun Qian",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Nancy Qian",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Wenlan Qian",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Yingyi Qian",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Bei Qin",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Scott Rozelle",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Hong Ru",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Peter K. Schott",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Jesse Schreger",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Juan Carlos Suárez Serrato",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Kang Shi",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Carol H. Shiue",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Hong Song",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Zheng (Michael) Song",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Kjetil Storesletten",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Adam Szeidl",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Yulu Tang",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Zhigang Tao",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Xuan Tian",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Robert M. Townsend",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Francesco Trebbi",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Ao Wang",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Jin Wang",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Shaoda Wang",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Shing-Yi Wang",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Yongxiang Wang",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Shang-Jin Wei",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Jaya Y. Wen",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Yanhui Wu",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Huihua Xie",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Wei Xiong",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Chenggang Xu",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Chenzi Xu",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Daniel Yi Xu",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Melanie Meng Xue",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "David Y. Yang",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Xiaoyang Ye",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Yang You",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Chuan Yu",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Noam Yuchtman",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Tao Zha",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Anthony Lee Zhang",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Bing Zhang",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Hongliang Zhang",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Junsen Zhang",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     },
     {
       "name": "Shuang Zhang",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Xiaobo Zhang",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Siqi Zheng",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Jie Zhou",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Li-An Zhou",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Lianming Zhu",
-      "reason": "HTTP 429"
+      "reason": "fetch failed"
     },
     {
       "name": "Xiaodong Zhu",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Fabrizio Zilibotti",
-      "reason": "HTTP 429"
-    },
-    {
-      "name": "Eric Zou",
-      "reason": "HTTP 429"
+      "reason": "HTTP 403"
     }
   ]
 }
