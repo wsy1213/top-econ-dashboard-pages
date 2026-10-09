@@ -64,7 +64,18 @@ jobs:
             echo "No data changes to commit."
           else
             git commit -m "chore(data): update latest + archive snapshots"
-            git push
+            pushed=false
+            for attempt in 1 2 3; do
+              if git -c http.version=HTTP/1.1 push; then
+                pushed=true
+                break
+              fi
+              echo "Push attempt ${attempt} failed; retrying shortly."
+              sleep $((attempt * 15))
+            done
+            if [ "$pushed" != true ]; then
+              echo "::warning::Generated data could not be pushed, but Pages deployment will continue with this run's static files."
+            fi
           fi
 
       - name: Configure Pages
