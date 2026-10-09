@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.mjs",
     "build:static": "node scripts/build-static-data.mjs",
+    "build:scholars": "node scripts/build-scholar-updates.mjs",
     "postinstall": "npx playwright install chromium"
   },
   "dependencies": {

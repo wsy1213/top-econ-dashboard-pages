@@ -28,6 +28,22 @@
       </header>
 
       <nav id="journalSwitcher" class="journal-switcher" aria-label="Journal switcher"></nav>
+      <section id="scholarUpdatesSection" class="section scholar-updates-section">
+        <div class="section-head scholar-updates-head">
+          <div>
+            <p class="section-kicker">每周更新</p>
+            <h2>中国经济学者动态</h2>
+          </div>
+          <p id="scholarUpdatesMeta" class="section-meta">Loading scholar updates...</p>
+        </div>
+        <div class="scholar-controls">
+          <input id="scholarSearch" type="search" placeholder="搜索学者、机构、论文或研究领域" />
+          <select id="scholarTopic" aria-label="Filter scholar updates by topic">
+            <option value="">全部研究领域</option>
+          </select>
+        </div>
+        <div id="scholarUpdatesList" class="scholar-updates-list" aria-live="polite"></div>
+      </section>
       <section id="topicResultsSection" class="section hidden">
         <div class="section-head">
           <h2 id="topicTitle">Topic View</h2>

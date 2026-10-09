@@ -266,6 +266,22 @@ button:disabled {
   margin-bottom: 10px;
 }
 
+.scholar-updates-section { border-top: 1px solid var(--border); padding-top: 24px; }
+.scholar-updates-head { display: flex; align-items: end; justify-content: space-between; gap: 18px; }
+.section-kicker { margin: 0 0 4px; color: var(--accent); font-family: "Trebuchet MS", Verdana, sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.section-meta, .scholar-paper-meta, .empty-state { margin: 0; color: var(--muted); font-size: 14px; }
+.scholar-controls { display: flex; gap: 10px; margin: 14px 0; }
+.scholar-controls input, .scholar-controls select { min-height: 42px; border: 1px solid var(--border); border-radius: 6px; background: #fff; color: var(--ink); font: inherit; padding: 8px 10px; }
+.scholar-controls input { flex: 1; min-width: 0; }
+.scholar-updates-list { display: grid; gap: 10px; }
+.scholar-update { display: grid; grid-template-columns: minmax(180px, 0.32fr) minmax(0, 1fr); column-gap: 18px; row-gap: 5px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.scholar-name, .scholar-paper-title { color: #0d3e78; font-weight: 700; text-decoration: none; }
+.scholar-name:hover, .scholar-paper-title:hover { text-decoration: underline; }
+.scholar-paper-title, .scholar-paper-meta, .scholar-tags, .scholar-abstract { grid-column: 2; }
+.scholar-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.scholar-tag { border: 1px solid #9ed2c9; background: var(--accent-soft); border-radius: 999px; color: #0b5f57; font-family: "Trebuchet MS", Verdana, sans-serif; font-size: 12px; padding: 1px 7px; }
+.scholar-abstract { margin: 2px 0 0; color: #4a566c; font-size: 14px; line-height: 1.45; }
+
 .single-head {
   display: flex;
   align-items: center;
@@ -454,6 +470,24 @@ h2 {
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .scholar-updates-head,
+  .scholar-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .scholar-update {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .scholar-paper-title,
+  .scholar-paper-meta,
+  .scholar-tags,
+  .scholar-abstract {
+    grid-column: 1;
   }
 
   .card {

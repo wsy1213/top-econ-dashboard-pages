@@ -1,0 +1,581 @@
+{
+  "generatedAt": "2026-10-09T03:55:01.286Z",
+  "windowStart": "2026-10-01",
+  "scholarCount": 145,
+  "records": [],
+  "newRecordCount": 0,
+  "unresolved": [
+    {
+      "name": "Daron Acemoglu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Franklin Allen",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Douglas Almond",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "David H. Autor",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Pierre Azoulay",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Chong-En Bai",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Jie Bai",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Ying Bai",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Panle Jia Barwick",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Martin Beraja",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Nicholas Bloom",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Matilde Bombardini",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Loren Brandt",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Greg Buchak",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Jing Cai",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Shengmao Cao",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Yiming Cao",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Binkai Chen",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Hui Chen",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Kaiji Chen",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Qiaoyi Chen",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Shuo Chen",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Yuyu Chen",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Zhao Chen",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Zhiwu Chen",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Zhuo Chen",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Davin Chor",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Christopher Clayton",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Emanuele Colonnelli",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Lin William Cong",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "David Dorn",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Xinming Du",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Alex Eble",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Dennis Egger",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Benjamin Faber",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Hanming Fang",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Raymond Fisman",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Eyal G. Frank",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Chao Fu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Itay Goldstein",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Jie Gong",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Gautam Gowrisankaran",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Michael Greenstone",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Quanlin Gu",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Gordon H. Hanson",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Guojun He",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Zhiguo He",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Harrison Hong",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Sabrina T. Howell",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Chang-Tai Hsieh",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Jiayin Hu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Yasheng Huang",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Yi Huang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Koichiro Ito",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Ruixue Jia",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Wei Jiang",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Wenxi Jiang",
+      "reason": "身份匹配置信度不足"
+    },
+    {
+      "name": "Myrto Kalouptsidi",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Wolfgang Keller",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Amit Khandelwal",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "James Kai-Sing Kung",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Josh Lerner",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Bingjing Li",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "David Daokui Li",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Hongbin Li",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Ming Li",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Shanjun Li",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Chen Lin",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Justin Yifu Lin",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Wei Lin",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Bibo Liu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Ernest Liu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Lizhi Liu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Qing Liu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Zhikuo Liu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Ming Lu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Yi Lu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Chicheng Ma",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Hong Ma",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Matteo Maggiori",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Meng Miao",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Grant Miller",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Scott T. Nelson",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Benjamin A. Olken",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Shumiao Ouyang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Gerard Padró i Miquel",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Jun Pan",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Cameron Peng",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Jacopo Ponticelli",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Jun Qian",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Nancy Qian",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Wenlan Qian",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Yingyi Qian",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Bei Qin",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Scott Rozelle",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Hong Ru",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Peter K. Schott",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Jesse Schreger",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Juan Carlos Suárez Serrato",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Kang Shi",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Carol H. Shiue",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Hong Song",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Zheng (Michael) Song",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Kjetil Storesletten",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Adam Szeidl",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Yulu Tang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Zhigang Tao",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Xuan Tian",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Robert M. Townsend",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Francesco Trebbi",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Ao Wang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Jin Wang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Shaoda Wang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Shing-Yi Wang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Yongxiang Wang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Shang-Jin Wei",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Jaya Y. Wen",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Yanhui Wu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Huihua Xie",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Wei Xiong",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Chenggang Xu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Chenzi Xu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Daniel Yi Xu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Melanie Meng Xue",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "David Y. Yang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Xiaoyang Ye",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Yang You",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Chuan Yu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Noam Yuchtman",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Tao Zha",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Anthony Lee Zhang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Bing Zhang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Hongliang Zhang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Junsen Zhang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Shuang Zhang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Xiaobo Zhang",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Siqi Zheng",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Jie Zhou",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Li-An Zhou",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Lianming Zhu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Xiaodong Zhu",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Fabrizio Zilibotti",
+      "reason": "HTTP 429"
+    },
+    {
+      "name": "Eric Zou",
+      "reason": "HTTP 429"
+    }
+  ]
+}

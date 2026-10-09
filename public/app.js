@@ -16,6 +16,10 @@ const topicTitle = document.getElementById('topicTitle');
 const topicList = document.getElementById('topicList');
 const overviewSections = Array.from(document.querySelectorAll('.overview-section'));
 const cardTpl = document.getElementById('cardTpl');
+const scholarUpdatesMeta = document.getElementById('scholarUpdatesMeta');
+const scholarUpdatesList = document.getElementById('scholarUpdatesList');
+const scholarSearch = document.getElementById('scholarSearch');
+const scholarTopic = document.getElementById('scholarTopic');
 let latestPayload = null;
 let archivePayload = null;
 let latestTranslationMap = {};
@@ -24,6 +28,7 @@ let selectedMode = 'journal';
 let selectedTopic = 'all';
 let selectedScope = 'latest';
 let selectedJournalFilter = 'all';
+let scholarUpdatesPayload = null;
 const PAGE_BASE = window.location.pathname.replace(/[^/]*$/, '');
 
 const PUBLIC_ECON_PATTERNS_EN = [
@@ -171,6 +176,115 @@ const SCOPE_OPTIONS = [
 
 function clearNodes(el) {
   while (el.firstChild) el.removeChild(el.firstChild);
+}
+
+function scholarRecordSearchText(record) {
+  return [record.scholar, record.scholarZh, record.institution, record.title, record.abstract, ...(record.tags || [])]
+    .join(' ')
+    .toLocaleLowerCase();
+}
+
+function populateScholarTopics(records) {
+  const selected = scholarTopic.value;
+  const topics = [...new Set(records.flatMap((record) => record.tags || []))].sort((a, b) => a.localeCompare(b));
+  clearNodes(scholarTopic);
+  const all = document.createElement('option');
+  all.value = '';
+  all.textContent = '全部研究领域';
+  scholarTopic.appendChild(all);
+  for (const topic of topics) {
+    const option = document.createElement('option');
+    option.value = topic;
+    option.textContent = topic;
+    scholarTopic.appendChild(option);
+  }
+  scholarTopic.value = topics.includes(selected) ? selected : '';
+}
+
+function renderScholarUpdates() {
+  if (!scholarUpdatesPayload) return;
+  const records = scholarUpdatesPayload.records || [];
+  populateScholarTopics(records);
+  const term = scholarSearch.value.trim().toLocaleLowerCase();
+  const topic = scholarTopic.value;
+  const visible = records.filter((record) => {
+    if (term && !scholarRecordSearchText(record).includes(term)) return false;
+    return !topic || (record.tags || []).includes(topic);
+  });
+
+  clearNodes(scholarUpdatesList);
+  const stamp = toLocaleDate(scholarUpdatesPayload.generatedAt);
+  scholarUpdatesMeta.textContent = records.length
+    ? `${visible.length} 篇论文 | 已扫描 ${scholarUpdatesPayload.scholarCount || 0} 位学者 | 更新于 ${stamp}`
+    : `本周暂无可确认的新论文 | 已扫描 ${scholarUpdatesPayload.scholarCount || 0} 位学者 | 更新于 ${stamp}`;
+
+  if (!visible.length) {
+    const empty = document.createElement('p');
+    empty.className = 'empty-state';
+    empty.textContent = records.length
+      ? '没有符合当前筛选条件的论文。'
+      : '下一次周度扫描会在作者身份核验通过后发布论文。';
+    scholarUpdatesList.appendChild(empty);
+    return;
+  }
+
+  for (const record of visible.slice(0, 60)) {
+    const article = document.createElement('article');
+    article.className = 'scholar-update';
+    const scholar = document.createElement(record.homepage ? 'a' : 'div');
+    scholar.className = 'scholar-name';
+    scholar.textContent = [record.scholar, record.scholarZh].filter(Boolean).join(' / ');
+    if (record.homepage) {
+      scholar.href = record.homepage;
+      scholar.target = '_blank';
+      scholar.rel = 'noopener noreferrer';
+    }
+    article.appendChild(scholar);
+
+    const title = document.createElement('a');
+    title.className = 'scholar-paper-title';
+    title.href = record.url || record.homepage || '#';
+    title.target = '_blank';
+    title.rel = 'noopener noreferrer';
+    title.textContent = record.title || 'Untitled';
+    article.appendChild(title);
+
+    const details = document.createElement('p');
+    details.className = 'scholar-paper-meta';
+    details.textContent = [record.institution, record.type, record.date, record.source].filter(Boolean).join(' | ');
+    article.appendChild(details);
+
+    if (record.tags?.length) {
+      const tags = document.createElement('div');
+      tags.className = 'scholar-tags';
+      for (const tag of record.tags) {
+        const label = document.createElement('span');
+        label.className = 'scholar-tag';
+        label.textContent = tag;
+        tags.appendChild(label);
+      }
+      article.appendChild(tags);
+    }
+
+    if (record.abstract) {
+      const summary = document.createElement('p');
+      summary.className = 'scholar-abstract';
+      summary.textContent = record.abstract;
+      article.appendChild(summary);
+    }
+    scholarUpdatesList.appendChild(article);
+  }
+}
+
+async function loadScholarUpdates() {
+  try {
+    const response = await fetch(`${PAGE_BASE}data/scholar-updates.json?t=${Date.now()}`, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    scholarUpdatesPayload = await response.json();
+    renderScholarUpdates();
+  } catch {
+    scholarUpdatesMeta.textContent = '学者动态将在首次周度扫描完成后显示。';
+  }
 }
 
 function toLocaleDate(value) {
@@ -794,4 +908,7 @@ document.addEventListener('click', (ev) => {
   if (btn) btn.setAttribute('aria-expanded', 'false');
   openDropdown = null;
 });
+scholarSearch.addEventListener('input', renderScholarUpdates);
+scholarTopic.addEventListener('change', renderScholarUpdates);
+loadScholarUpdates();
 loadData();
