@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "baselineEstablishedAt": "2026-10-10T07:57:21.118Z",
   "seen": {
     "Daron Acemoglu|viewdownloadcv": "2026-10-09T13:33:12.431Z",
     "Daron Acemoglu|whydonewtechnologiescomplementskillsdirectedtechnicalchangeandwageinequality": "2026-10-09T13:33:12.431Z",
@@ -2103,6 +2104,5 @@
     "Eric Zou|nberworkingpaper34918": "2026-10-09T13:33:12.431Z",
     "Eric Zou|nberworkingpaper35345": "2026-10-09T13:33:12.431Z"
   },
-  "baselineEstablishedAt": "2026-10-10T07:57:21.118Z",
   "pending": {}
 }

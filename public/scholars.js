@@ -77,7 +77,12 @@ function renderUpdates() {
 
     const source = document.createElement('p');
     source.className = 'scholar-paper-meta';
-    source.textContent = [visibleInstitution(record.institution), record.type, record.firstDetectedAt?.slice(0, 10), '来源：学者主页'].filter(Boolean).join(' | ');
+    source.textContent = [
+      visibleInstitution(record.institution),
+      record.type,
+      record.detection === 'archive-backfill' ? '近期首次出现（网页快照验证）' : record.firstDetectedAt?.slice(0, 10),
+      '来源：学者主页'
+    ].filter(Boolean).join(' | ');
     card.appendChild(source);
 
     const tags = document.createElement('div');

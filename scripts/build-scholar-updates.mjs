@@ -19,6 +19,11 @@ const MAX_DETAIL_PAGES = Math.max(0, Number(process.env.SCHOLAR_DETAIL_PAGES || 
 const USER_AGENT = 'China-Economist-Monitor/1.0 (academic homepage monitor)';
 const PDF_TEXT_TIMEOUT_MS = Number(process.env.SCHOLAR_PDF_TEXT_TIMEOUT_MS || 45000);
 const PDF_MAX_BYTES = Number(process.env.SCHOLAR_PDF_MAX_BYTES || 16 * 1024 * 1024);
+const BACKFILL_ENABLED = process.env.SCHOLAR_BACKFILL === '1';
+const BACKFILL_DAYS = [30, 60, 90];
+const BACKFILL_CANDIDATE_DAYS = Number(process.env.SCHOLAR_BACKFILL_CANDIDATE_DAYS || 120);
+const BACKFILL_MAX_CANDIDATES = Number(process.env.SCHOLAR_BACKFILL_MAX_CANDIDATES || 80);
+const ARCHIVE_TIMEOUT_MS = Number(process.env.SCHOLAR_ARCHIVE_TIMEOUT_MS || 10000);
 const execFileAsync = promisify(execFile);
 
 const PUBLICATION_PAGE = /publications?|papers?|working[ -]?papers?|writing|论文|发表|工作论文/i;
@@ -67,6 +72,17 @@ function absoluteUrl(href, sourceUrl) {
   } catch {
     return '';
   }
+}
+
+function dateDaysAgo(days) {
+  const date = new Date();
+  date.setUTCDate(date.getUTCDate() - days);
+  return date;
+}
+
+function dateWithinDays(dateValue, days) {
+  if (!/^20\d{2}-\d{2}(?:-\d{2})?$/.test(String(dateValue || ''))) return false;
+  return String(dateValue) >= dateDaysAgo(days).toISOString().slice(0, 10);
 }
 
 async function fetchPage(url) {
@@ -142,6 +158,56 @@ async function translateAbstract(abstract) {
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function archiveSnapshotNear(url, targetDate) {
+  const query = new URL('https://archive.org/wayback/available');
+  query.searchParams.set('url', url);
+  query.searchParams.set('timestamp', targetDate.toISOString().slice(0, 10).replaceAll('-', ''));
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), ARCHIVE_TIMEOUT_MS);
+  try {
+    const response = await fetch(query, { headers: { 'User-Agent': USER_AGENT }, signal: controller.signal });
+    if (!response.ok) return null;
+    const snapshot = (await response.json())?.archived_snapshots?.closest;
+    if (!snapshot?.available || !/^\d{14}$/.test(String(snapshot.timestamp || ''))) return null;
+    const snapshotDate = new Date(`${snapshot.timestamp.slice(0, 4)}-${snapshot.timestamp.slice(4, 6)}-${snapshot.timestamp.slice(6, 8)}T12:00:00Z`);
+    const gapInDays = Math.abs(snapshotDate.getTime() - targetDate.getTime()) / 86400000;
+    // A closest snapshot outside this narrow window cannot establish recent first appearance.
+    if (gapInDays > 10) return null;
+    return { timestamp: snapshot.timestamp, original: url };
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function wasAbsentFromArchivedPage(record) {
+  if (!dateWithinDays(record.date, BACKFILL_CANDIDATE_DAYS) || !record.sourcePage) return null;
+  const snapshots = [];
+  for (const days of BACKFILL_DAYS) {
+    const snapshot = await archiveSnapshotNear(record.sourcePage, dateDaysAgo(days));
+    if (!snapshot || snapshots.some((item) => item.timestamp === snapshot.timestamp)) continue;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), ARCHIVE_TIMEOUT_MS);
+    try {
+      const response = await fetch(`https://web.archive.org/web/${snapshot.timestamp}id_/${snapshot.original}`, {
+        headers: { 'User-Agent': USER_AGENT },
+        signal: controller.signal
+      });
+      if (!response.ok) continue;
+      snapshots.push({ ...snapshot, html: await response.text() });
+    } catch {
+      // A missing archive response is not evidence of absence.
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  if (snapshots.length < 2) return null;
+  const key = normalKey(record.title);
+  if (!key || snapshots.some((snapshot) => normalKey(snapshot.html).includes(key))) return null;
+  return snapshots.map((snapshot) => snapshot.timestamp);
 }
 
 function anchorsFromHtml(html, sourceUrl) {
@@ -344,7 +410,7 @@ async function main() {
     .map((record) => ({ ...record, isNew: !cache.seen[record.key] }))
     .sort((a, b) => String(b.date).localeCompare(String(a.date)) || a.scholar.localeCompare(b.scholar));
 
-  const detectedNow = hadBaseline ? allRecords.filter((record) => record.isNew) : [];
+  const detectedNow = hadBaseline && !BACKFILL_ENABLED ? allRecords.filter((record) => record.isNew) : [];
   for (const key of unique.keys()) cache.seen[key] ||= nowIso;
   if (!hadBaseline) cache.baselineEstablishedAt = nowIso;
 
@@ -358,6 +424,31 @@ async function main() {
     firstDetectedAt: cache.pending[record.key].firstDetectedAt
   }));
   for (const record of records) delete cache.pending[record.key];
+
+  if (BACKFILL_ENABLED) {
+    const candidates = allRecords
+      .filter((record) => dateWithinDays(record.date, BACKFILL_CANDIDATE_DAYS))
+      .sort((a, b) => String(b.date).localeCompare(String(a.date)))
+      .slice(0, BACKFILL_MAX_CANDIDATES);
+    const archiveChecks = await mapWithConcurrency(candidates, async (record) => ({
+      record,
+      snapshots: await wasAbsentFromArchivedPage(record)
+    }));
+    const backfillCandidates = archiveChecks
+      .filter((item) => item.snapshots)
+      .map((item) => ({ ...item.record, archiveSnapshots: item.snapshots }));
+    const backfillEnriched = await mapWithConcurrency(backfillCandidates, async (record) => enrichNewRecord(record));
+    for (let index = 0; index < backfillEnriched.length; index += 1) {
+      const record = backfillEnriched[index];
+      if (!record) continue;
+      records.push({
+        ...record,
+        firstDetectedAt: nowIso,
+        detection: 'archive-backfill',
+        archiveSnapshots: backfillCandidates[index].archiveSnapshots
+      });
+    }
+  }
   const payload = {
     generatedAt: nowIso,
     source: '学者个人主页及其 Research / Publications / Working Papers 页面',
@@ -366,8 +457,9 @@ async function main() {
     checkedCount,
     records,
     newRecordCount: records.length,
-    baselineEstablished: !hadBaseline,
+    baselineEstablished: Boolean(cache.baselineEstablishedAt),
     pendingAbstractCount: Object.keys(cache.pending).length,
+    backfill: BACKFILL_ENABLED,
     failures
   };
   await fs.mkdir(HISTORY_DIR, { recursive: true });

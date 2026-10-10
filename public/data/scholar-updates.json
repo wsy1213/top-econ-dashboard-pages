@@ -1,12 +1,14 @@
 {
-  "generatedAt": "2026-10-09T13:33:12.431Z",
+  "generatedAt": "2026-10-10T08:20:00.000Z",
   "source": "学者个人主页及其 Research / Publications / Working Papers 页面",
   "scholarCount": 145,
   "scannedScholarCount": 145,
   "checkedCount": 97,
   "records": [],
   "newRecordCount": 0,
-  "initialScan": false,
+  "baselineEstablished": true,
+  "pendingAbstractCount": 0,
+  "backfill": false,
   "failures": [
     {
       "name": "Laura Alfaro",
@@ -200,7 +202,5 @@
       "name": "Xiaodong Zhu",
       "reason": "HTTP 403"
     }
-  ],
-  "baselineEstablished": true,
-  "pendingAbstractCount": 0
+  ]
 }

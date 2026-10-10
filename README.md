@@ -71,7 +71,7 @@ For some CNKI journals that cannot be fetched reliably via plain HTTP, the app u
 - Optional (recommended for CNKI-restricted journals): provide login cookie:
   - `CNKI_COOKIE='your_cookie_string' npm start`
 
-## Public Website + Daily 07:05 Auto Update (GitHub Actions)
+## Public Website + Monday 07:05 Auto Update
 
 This copy supports static deployment to GitHub Pages.
 
@@ -107,7 +107,10 @@ Workflow file:
 
 - `.github/workflows/deploy-pages.yml`
 
-It runs:
+The local Mac trigger runs:
 
 - manually (`workflow_dispatch`)
-- daily at UTC `23:05`, which is Beijing time `07:05` next day.
+- every Monday at Beijing time `07:05`.
+
+GitHub Actions itself intentionally has no `schedule`: the local trigger keeps the
+self-hosted Mac awake long enough for the runner to complete the update.
