@@ -145,15 +145,39 @@ function extractDateNearLink(html, title) {
     : `${match[1]}-${String(match[2]).padStart(2, '0')}`;
 }
 
-function topicTags(scholar, title) {
-  const fromRegistry = String(scholar.chinaTopic || '')
-    .split(/[、,，;；/|]/)
-    .map((item) => item.trim())
-    .filter(Boolean)
-    .slice(0, 2);
-  if (fromRegistry.length) return fromRegistry;
-  if (/china|chinese|中国/i.test(title)) return ['中国经济研究'];
-  return ['经济学研究'];
+function paperMetadata(title) {
+  const text = cleanText(title).toLowerCase();
+  if (/asset privatization|intergenerational redistribution/.test(text)) {
+    return { tags: ['公共经济', '代际分配'], summary: '研究资产私有化如何在不同代际之间重新分配资源与福利。' };
+  }
+  if (/malpractice|physician|risk perception/.test(text)) {
+    return { tags: ['卫生经济', '风险与激励'], summary: '考察医生面对医疗纠纷诉讼时，风险感知和诊疗决策如何随时间调整。' };
+  }
+  if (/decoding china.*industrial polic/.test(text)) {
+    return { tags: ['中国产业政策', '政治经济学'], summary: '分析中国产业政策的识别方式、实施逻辑及其可能的经济影响。' };
+  }
+  if (/baby bust|demographic change|growth boom/.test(text)) {
+    return { tags: ['人口经济学', '宏观增长'], summary: '讨论生育率与人口结构变化如何影响宏观增长和经济波动。' };
+  }
+  if (/employment.*community|community.*employment/.test(text)) {
+    return { tags: ['劳动经济学', '社会资本'], summary: '研究就业状态与社区合作之间的关系，以及这种合作何时会瓦解。' };
+  }
+  if (/artificial intelligence|\bai\b|human cognition|knowledge collapse/.test(text)) {
+    return { tags: ['人工智能', '创新与增长'], summary: '探讨人工智能如何改变人的认知与知识生产，并评估潜在的知识流失风险。' };
+  }
+  if (/machine learning|incentive failures?/.test(text)) {
+    return { tags: ['人工智能', '激励机制'], summary: '分析机器学习系统设计中的激励错配及其造成的效率问题。' };
+  }
+  if (/workforce development/.test(text)) {
+    return { tags: ['发展经济学', '人力资本'], summary: '评估发展中经济体劳动力技能培养与就业能力提升的路径。' };
+  }
+  if (/trade|tariff|export|import/.test(text)) {
+    return { tags: ['国际贸易'], summary: '围绕贸易政策、跨境流动或企业贸易行为展开研究。' };
+  }
+  if (/china|chinese|中国/.test(text)) {
+    return { tags: ['中国经济'], summary: '围绕中国经济中的具体制度、政策或市场现象展开研究。' };
+  }
+  return { tags: ['经济学研究'], summary: `围绕“${cleanText(title)}”所涉及的经济问题展开研究。` };
 }
 
 function candidateRecords(scholar, page, allowTitleOnly) {
@@ -166,6 +190,7 @@ function candidateRecords(scholar, page, allowTitleOnly) {
     const key = `${scholar.name}|${normalKey(anchor.text) || shortHash(anchor.href)}`;
     if (seen.has(key)) continue;
     seen.add(key);
+    const metadata = paperMetadata(anchor.text);
     results.push({
       key,
       scholar: scholar.name,
@@ -178,7 +203,8 @@ function candidateRecords(scholar, page, allowTitleOnly) {
       url: anchor.href,
       source: '学者主页',
       sourcePage: page.url,
-      tags: topicTags(scholar, anchor.text)
+      tags: metadata.tags,
+      summary: metadata.summary
     });
   }
   return results;
