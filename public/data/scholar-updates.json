@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T08:20:00.000Z",
+  "generatedAt": "2026-10-15T05:43:33.542Z",
   "source": "学者个人主页及其 Research / Publications / Working Papers 页面",
   "scholarCount": 145,
   "scannedScholarCount": 145,
@@ -7,7 +7,7 @@
   "records": [],
   "newRecordCount": 0,
   "baselineEstablished": true,
-  "pendingAbstractCount": 0,
+  "pendingAbstractCount": 91,
   "backfill": false,
   "failures": [
     {
