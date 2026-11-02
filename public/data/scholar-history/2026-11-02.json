@@ -1,0 +1,202 @@
+{
+  "generatedAt": "2026-11-02T02:54:26.989Z",
+  "source": "学者个人主页及其 Research / Publications / Working Papers 页面",
+  "scholarCount": 145,
+  "scannedScholarCount": 145,
+  "checkedCount": 98,
+  "records": [],
+  "newRecordCount": 0,
+  "baselineEstablished": true,
+  "pendingAbstractCount": 99,
+  "backfill": false,
+  "failures": [
+    {
+      "name": "Laura Alfaro",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Jie Bai",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Martin Beraja",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Greg Buchak",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Jing Cai",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Yiming Cao",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Kaiji Chen",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Yuyu Chen",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Davin Chor",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Yi Huang",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Ruixue Jia",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Wenxi Jiang",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Myrto Kalouptsidi",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Wolfgang Keller",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Josh Lerner",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Bingjing Li",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Ming Li",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Justin Yifu Lin",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Wei Lin",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Ernest Liu",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Lizhi Liu",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Qing Liu",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Zhikuo Liu",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Ming Lu",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Yi Lu",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Chicheng Ma",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Hong Ma",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Meng Miao",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Wenlan Qian",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Bei Qin",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Kang Shi",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Carol H. Shiue",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Zheng (Michael) Song",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Kjetil Storesletten",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Yulu Tang",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Xuan Tian",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Jin Wang",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Shaoda Wang",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Shing-Yi Wang",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Yongxiang Wang",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Huihua Xie",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "David Y. Yang",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Hongliang Zhang",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Shuang Zhang",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Li-An Zhou",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Lianming Zhu",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Xiaodong Zhu",
+      "reason": "HTTP 403"
+    }
+  ]
+}

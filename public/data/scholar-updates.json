@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-25T23:09:18.844Z",
+  "generatedAt": "2026-11-02T02:54:26.989Z",
   "source": "学者个人主页及其 Research / Publications / Working Papers 页面",
   "scholarCount": 145,
   "scannedScholarCount": 145,
-  "checkedCount": 96,
+  "checkedCount": 98,
   "records": [],
   "newRecordCount": 0,
   "baselineEstablished": true,
-  "pendingAbstractCount": 97,
+  "pendingAbstractCount": 99,
   "backfill": false,
   "failures": [
     {
@@ -44,10 +44,6 @@
     },
     {
       "name": "Davin Chor",
-      "reason": "fetch failed"
-    },
-    {
-      "name": "Guojun He",
       "reason": "fetch failed"
     },
     {
@@ -180,10 +176,6 @@
     },
     {
       "name": "David Y. Yang",
-      "reason": "fetch failed"
-    },
-    {
-      "name": "Chuan Yu",
       "reason": "fetch failed"
     },
     {

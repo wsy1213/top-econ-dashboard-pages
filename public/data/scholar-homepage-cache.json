@@ -2199,7 +2199,9 @@
     "Zhiguo He|anoteonassetdemandsystems": "2026-10-25T23:09:18.844Z",
     "Amit Khandelwal|indiaatthecrossroadsofglobaltrade": "2026-10-25T23:09:18.844Z",
     "Jun Pan|globaltradelocaljobsandtheriseoftrump10": "2026-10-25T23:09:18.844Z",
-    "Yang You|whatsdrivinghongkongspokmoncardboom": "2026-10-25T23:09:18.844Z"
+    "Yang You|whatsdrivinghongkongspokmoncardboom": "2026-10-25T23:09:18.844Z",
+    "Panle Jia Barwick|aiassharedbusinessinfrastructurefirmgrowthandthedistributionofgains": "2026-11-02T02:54:26.989Z",
+    "Gordon H. Hanson|introductiontotheusplacebasedpolicysupplychain": "2026-11-02T02:54:26.989Z"
   },
   "pending": {
     "Chen Lin|researchcentresinstitutes": {
@@ -3947,6 +3949,42 @@
       "abstractZh": "",
       "isNew": true,
       "firstDetectedAt": "2026-10-25T23:09:18.844Z"
+    },
+    "Gordon H. Hanson|introductiontotheusplacebasedpolicysupplychain": {
+      "key": "Gordon H. Hanson|introductiontotheusplacebasedpolicysupplychain",
+      "scholar": "Gordon H. Hanson",
+      "scholarZh": "",
+      "institution": "Harvard Kennedy School",
+      "homepage": "https://gordonhanson.scholars.harvard.edu/",
+      "title": "Introduction to The US Place- Based Policy Supply Chain",
+      "date": "",
+      "type": "论文 / 研究成果",
+      "url": "https://gordonhanson.scholars.harvard.edu/sites/g/files/omnuum6571/files/2026-10/Hanson,%20Gordon%20introduction%2000%20Gaubert%20et%20al%20Place-BasedPolicies.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://gordonhanson.scholars.harvard.edu/publications-0",
+      "tags": [],
+      "abstractEn": "",
+      "abstractZh": "",
+      "isNew": true,
+      "firstDetectedAt": "2026-11-02T02:54:26.989Z"
+    },
+    "Panle Jia Barwick|aiassharedbusinessinfrastructurefirmgrowthandthedistributionofgains": {
+      "key": "Panle Jia Barwick|aiassharedbusinessinfrastructurefirmgrowthandthedistributionofgains",
+      "scholar": "Panle Jia Barwick",
+      "scholarZh": "贾潘乐",
+      "institution": "未逐人复核现职",
+      "homepage": "https://panlebarwick.github.io/",
+      "title": "AI as Shared Business Infrastructure: Firm Growth and the Distribution of Gains",
+      "date": "",
+      "type": "论文 / 研究成果",
+      "url": "https://panlebarwick.github.io/papers/Yr26_AI_FirmGrowth.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://panlebarwick.github.io/publications.html",
+      "tags": [],
+      "abstractEn": "",
+      "abstractZh": "",
+      "isNew": true,
+      "firstDetectedAt": "2026-11-02T02:54:26.989Z"
     }
   }
 }
