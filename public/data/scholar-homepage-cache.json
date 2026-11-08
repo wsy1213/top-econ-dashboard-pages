@@ -2201,7 +2201,8 @@
     "Jun Pan|globaltradelocaljobsandtheriseoftrump10": "2026-10-25T23:09:18.844Z",
     "Yang You|whatsdrivinghongkongspokmoncardboom": "2026-10-25T23:09:18.844Z",
     "Panle Jia Barwick|aiassharedbusinessinfrastructurefirmgrowthandthedistributionofgains": "2026-11-02T02:54:26.989Z",
-    "Gordon H. Hanson|introductiontotheusplacebasedpolicysupplychain": "2026-11-02T02:54:26.989Z"
+    "Gordon H. Hanson|introductiontotheusplacebasedpolicysupplychain": "2026-11-02T02:54:26.989Z",
+    "Chenzi Xu|nberdaeprogramreport": "2026-11-08T23:08:08.410Z"
   },
   "pending": {
     "Chen Lin|researchcentresinstitutes": {
@@ -3985,6 +3986,24 @@
       "abstractZh": "",
       "isNew": true,
       "firstDetectedAt": "2026-11-02T02:54:26.989Z"
+    },
+    "Chenzi Xu|nberdaeprogramreport": {
+      "key": "Chenzi Xu|nberdaeprogramreport",
+      "scholar": "Chenzi Xu",
+      "scholarZh": "",
+      "institution": "UC Berkeley Economics",
+      "homepage": "https://chenzi-xu.com/",
+      "title": "NBER DAE Program Report",
+      "date": "",
+      "type": "工作论文",
+      "url": "https://chenzi-xu.com/docs/NBER_DAE_Report_2025.pdf",
+      "source": "学者主页",
+      "sourcePage": "https://chenzi-xu.com/",
+      "tags": [],
+      "abstractEn": "",
+      "abstractZh": "",
+      "isNew": true,
+      "firstDetectedAt": "2026-11-08T23:08:08.410Z"
     }
   }
 }
